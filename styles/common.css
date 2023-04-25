@@ -3,17 +3,20 @@ header {
     color: #fff;
     padding: 10px;
 }
-#main-title{
+
+#main-title {
     display: inline;
     margin: 0;
 }
-nav{
+
+nav {
     display: flex;
     flex-wrap: wrap;
     align-content: space-around;
     justify-content: space-around;
     align-items: flex-end;
 }
+
 nav ul {
     position: relative;
     list-style: none;
@@ -41,6 +44,6 @@ nav a:hover {
     color: #ffcc00;
 }
 
-.active{
+.active {
     color: #939393;
 }
