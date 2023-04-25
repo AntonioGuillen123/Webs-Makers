@@ -1,4 +1,4 @@
-function setActive(htmlValue){
+function setActive(htmlValue) {
     var options = document.getElementsByClassName("options");
 
     for (let i = 0; i < options.length; i++) {
