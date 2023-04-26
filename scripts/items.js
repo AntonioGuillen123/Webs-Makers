@@ -1,3 +1,27 @@
+const productList = [
+    {
+        "name": "banana",
+        "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
+        "description": "Esto es una fruta amarilla, rica en potasio y original de canarias"
+    },
+    {
+        "name": "manzana",
+        "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
+        "description": "Esto es una fruta roja, rica en vitaminas"
+    },
+    {
+        "name": "Naranja",
+        "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
+        "description": "Esto es una fruta naranja, rica en vitaminas C, proviene del Tesorillo"
+    }
+];
+
+function addProducts(){
+    productList.forEach(product => {
+        createProduct(product);
+    });
+}
+
 function searchProducts(value) {
     // var document = pokemonList;
 
@@ -11,7 +35,7 @@ function searchProducts(value) {
     }
 }
 
-function createProduct(product){
+function createProduct(product) {
 
     var itemContainer = document.createElement("div");
     itemContainer.classList.add("item");
@@ -20,13 +44,13 @@ function createProduct(product){
     divImage.classList.add("image");
 
     var image = document.createElement("img");
-    image.src = "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png";
+    image.src = product.imageUrl;
     image.alt = "Lo siento, este producto se ha encontrado :(";
     image.classList.add("product-image");
 
     var productName = document.createElement("div");
     productName.classList.add("name");
-    productName.innerHTML = "Plátano";
+    productName.innerHTML = product.name;
 
     var identification = document.createElement("div");
     identification.classList.add("id");
@@ -34,12 +58,13 @@ function createProduct(product){
 
     var description = document.createElement("div");
     description.classList.add("description");
+    description.innerHTML = product.description;
 
-    document.getElementById("items-list").appendChild(enlace);
-    enlace.appendChild(bicho);
     itemContainer.appendChild(divImage);
     itemContainer.appendChild(productName);
     itemContainer.appendChild(identification);
     itemContainer.appendChild(description);
     divImage.appendChild(image);
+
+    document.getElementById("items-list").appendChild(itemContainer);
 }
