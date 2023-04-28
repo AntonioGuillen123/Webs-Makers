@@ -23,14 +23,12 @@ function addProducts(){
 }
 
 function searchProducts(value) {
-    // var document = pokemonList;
+    var itemList = document.getElementById("items-list");
+    itemList.innerHTML = "";
 
-    document.innerHTML = "";
-    var select = sessionStorage.getItem("select");
-    var split, generation;
-    for (var i = 0; i < listPokemons.length; i++) {
-        if (listPokemons[i].name.toUpperCase().includes(valor.toUpperCase())) {
-            createProduct(listPokemons[i]);
+    for (var i = 0; i < productList.length; i++) {
+        if (productList[i].name.toLowerCase().includes(value.toLowerCase())) {
+            createProduct(productList[i]);
         }
     }
 }
