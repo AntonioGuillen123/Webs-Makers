@@ -48,21 +48,43 @@ function createProduct(product) {
 
     var productName = document.createElement("div");
     productName.classList.add("name");
-    productName.innerHTML = product.name;
+
+    var productNameTitle = document.createElement("p");
+    productNameTitle.innerHTML = "Nombre";
+
+    var productNameValue = document.createElement("p");
+    productNameValue.innerHTML = product.name;
+
 
     var identification = document.createElement("div");
     identification.classList.add("id");
-    identification.innerHTML = "1";
+
+    var identificationTitle = document.createElement("p");
+    identificationTitle.innerHTML = "ID";
+
+    var identificationValue = document.createElement("p");
+    identificationValue.innerHTML = "1";
 
     var description = document.createElement("div");
     description.classList.add("description");
-    description.innerHTML = product.description;
+
+    var descriptionTitle = document.createElement("p");
+    descriptionTitle.innerHTML = "Descripción";
+
+    var descriptionValue = document.createElement("p");
+    descriptionValue.innerHTML = product.description;
 
     itemContainer.appendChild(divImage);
     itemContainer.appendChild(productName);
     itemContainer.appendChild(identification);
     itemContainer.appendChild(description);
     divImage.appendChild(image);
+    productName.appendChild(productNameTitle);
+    productName.appendChild(productNameValue);
+    identification.appendChild(identificationTitle);
+    identification.appendChild(identificationValue);
+    description.appendChild(descriptionTitle);
+    description.appendChild(descriptionValue);
 
     document.getElementById("items-list").appendChild(itemContainer);
 }
