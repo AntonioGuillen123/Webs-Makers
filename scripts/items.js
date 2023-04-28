@@ -45,7 +45,7 @@ function createProduct(product) {
 
     var image = document.createElement("img");
     image.src = product.imageUrl;
-    image.alt = "Lo siento, este producto se ha encontrado :(";
+    image.alt = "Lo siento, este producto no se ha encontrado :(";
     image.classList.add("product-image");
 
     var productName = document.createElement("div");

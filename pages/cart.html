@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="../images/favicons/cartfavicon.png">
 </head>
 
-<body>
+<body onload="startCart()">
     <header>
         <nav>
             <h1 id="main-title">WEBS-MAKERS</h1>
@@ -24,7 +24,18 @@
         </nav>
     </header>
 
+    <div id="item-list">
+        <span>Lista De Productos:</span>
+        <hr>
+    </div>
+
+    <div id="finish">
+        <input type="text" id="data">
+        <button type="submit" onclick="submit()">COMPRAR
+    </div>
+
     <script src="../scripts/main.js"></script>
+    <script src="../scripts/cart.js"></script>
 </body>
 
 </html>
