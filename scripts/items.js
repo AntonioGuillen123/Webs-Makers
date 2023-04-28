@@ -2,17 +2,20 @@ const productList = [
     {
         "name": "banana",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
-        "description": "Esto es una fruta amarilla, rica en potasio y original de canarias"
+        "description": "Esto es una fruta amarilla, rica en potasio y original de canarias",
+        "id": 3
     },
     {
         "name": "manzana",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
-        "description": "Esto es una fruta roja, rica en vitaminas"
+        "description": "Esto es una fruta roja, rica en vitaminas",
+        "id": 2
     },
     {
         "name": "Naranja",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
-        "description": "Esto es una fruta naranja, rica en vitaminas C, proviene del Tesorillo"
+        "description": "Esto es una fruta naranja, rica en vitaminas C, proviene del Tesorillo",
+        "id": 1
     }
 ];
 
@@ -105,4 +108,15 @@ function createProduct(product) {
     // description.appendChild(descriptionValue);
 
     document.getElementById("items-list").appendChild(itemContainer);
+}
+
+function orderItems(){
+    var list = productList.slice();
+
+    // list.id.sort(function(a, b){return a - b});
+
+
+    list.sort((a, b) => a.id - b.id);
+
+    console.log(list);
 }
