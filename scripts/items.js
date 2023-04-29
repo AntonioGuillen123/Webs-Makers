@@ -36,9 +36,9 @@ function searchProducts(value) {
     var itemList = document.getElementById("items-list");
     itemList.innerHTML = "";
 
-    for (var i = 0; i < productList.length; i++) {
-        if (productList[i].name.toLowerCase().includes(value.toLowerCase())) {
-            createProduct(productList[i]);
+    for (var i = 0; i < productList.items.length; i++) {
+        if (productList.items[i].name.toLowerCase().includes(value.toLowerCase())) {
+            createProduct(productList.items[i]);
         }
     }
 }
@@ -62,9 +62,6 @@ function createProduct(product) {
     tableContainer.appendChild(tableTitle);
     tableContainer.appendChild(tableValue);
 
-    // var productName = document.createElement("div");
-    // productName.classList.add("name");
-
     var productNameTitle = document.createElement("th");
     productNameTitle.innerHTML = "Nombre";
     tableTitle.appendChild(productNameTitle);
@@ -74,22 +71,14 @@ function createProduct(product) {
     tableValue.appendChild(productNameValue);
 
 
-
-    // var identification = document.createElement("div");
-    // identification.classList.add("id");
-
     var identificationTitle = document.createElement("th");
     identificationTitle.innerHTML = "ID";
     tableTitle.appendChild(identificationTitle);
 
 
     var identificationValue = document.createElement("td");
-    identificationValue.innerHTML = "1";
+    identificationValue.innerHTML = product.id;
     tableValue.appendChild(identificationValue);
-
-
-    // var description = document.createElement("div");
-    // description.classList.add("description");
 
     var descriptionTitle = document.createElement("th");
     descriptionTitle.innerHTML = "Descripción";
@@ -102,26 +91,14 @@ function createProduct(product) {
 
 
     itemContainer.appendChild(divImage);
-    // itemContainer.appendChild(productName);
-    // itemContainer.appendChild(identification);
-    // itemContainer.appendChild(description);
     itemContainer.appendChild(tableContainer);
     divImage.appendChild(image);
-    // productName.appendChild(productNameTitle);
-    // productName.appendChild(productNameValue);
-    // identification.appendChild(identificationTitle);
-    // identification.appendChild(identificationValue);
-    // description.appendChild(descriptionTitle);
-    // description.appendChild(descriptionValue);
 
     document.getElementById("items-list").appendChild(itemContainer);
 }
 
 function orderItems(){
     var list = productList.slice();
-
-    // list.id.sort(function(a, b){return a - b});
-
 
     list.sort((a, b) => a.id - b.id);
 
