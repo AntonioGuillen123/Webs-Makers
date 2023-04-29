@@ -109,3 +109,13 @@ td{
     flex: 1 70%;
     flex-direction: column;
 }
+.plus, .minus{
+    width: 10%;
+    height: auto;
+}
+.signContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}

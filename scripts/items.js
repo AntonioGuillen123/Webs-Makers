@@ -9,9 +9,9 @@ var shoppingCart = [];
 
 var countProduct = 1;
 
-for(var i = 0; i < 3; i++){
+for (var i = 0; i < 3; i++) {
     shoppingCart.push({
-        "item": `object${i+1}`,
+        "item": `object${i + 1}`,
         "amount": 3
     });
 }
@@ -22,13 +22,18 @@ console.log(shoppingCart);
 
 /*FIN :)*/
 
-async function startItems(){
+async function startItems() {
     productList = await giveItems();
 
-   addProducts();
+    addProducts();
+
+    document.getElementsByClassName("plus")[0].addEventListener("click", () => {
+        document.getElementsByClassName("count")[0].childNodes[1].children[1].innerHTML = parseInt(document.getElementsByClassName("count")[0].childNodes[1].children[1].innerHTML) +1;
+    });
+
 }
 
-function addProducts(){
+function addProducts() {
     productList.items.forEach(element => {
         createProduct(element);
     });
@@ -85,7 +90,7 @@ function createProduct(product) {
     var descriptionTitle = document.createElement("th");
     descriptionTitle.innerHTML = "Descripción";
     tableTitle.appendChild(descriptionTitle);
-    
+
 
     var descriptionValue = document.createElement("td");
     descriptionValue.innerHTML = product.description;
@@ -108,10 +113,23 @@ function createProduct(product) {
     var countValue = document.createElement("p");
     countValue.innerHTML = countProduct;
 
+    var minus = document.createElement("img");
+    minus.classList.add("minus");
+    minus.src = "https://cdn-icons-png.flaticon.com/512/10513/10513669.png";
+    var plus = document.createElement("img");
+    plus.classList.add("plus");
+    plus.src = "https://cdn-icons-png.flaticon.com/512/10513/10513669.png";
+
+    var signContainer = document.createElement("div");
+    signContainer.classList.add("signContainer");
+    signContainer.appendChild(minus);
+    signContainer.appendChild(countValue);
+    signContainer.appendChild(plus);
+
     var countContainer = document.createElement("div");
     countContainer.classList.add("countContainer");
 
-    countTitle.appendChild(countValue);
+    countTitle.appendChild(signContainer);
     priceTitle.appendChild(priceValue);
     itemContainer.appendChild(divImage);
     itemContainer.appendChild(descriptionContainer);
@@ -124,10 +142,11 @@ function createProduct(product) {
     document.getElementById("items-list").appendChild(itemContainer);
 }
 
-function orderItems(){
+function orderItems() {
     var list = productList.slice();
 
     list.sort((a, b) => a.id - b.id);
 
     console.log(list);
 }
+
