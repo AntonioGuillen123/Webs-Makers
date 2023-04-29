@@ -91,14 +91,21 @@ function createProduct(product) {
 
     var priceTitle = document.createElement("div");
     priceTitle.innerHTML = "Precio";
+    priceTitle.classList.add("price");
 
     var priceValue = document.createElement("p");
     priceValue.innerHTML = product.cost;
 
+    var descriptionContainer = document.createElement("div");
+    descriptionContainer.classList.add("descriptionContainer");
+
+
+
     priceTitle.appendChild(priceValue);
     itemContainer.appendChild(divImage);
-    itemContainer.appendChild(tableContainer);
-    itemContainer.appendChild(priceTitle);
+    itemContainer.appendChild(descriptionContainer);
+    descriptionContainer.appendChild(tableContainer);
+    descriptionContainer.appendChild(priceTitle);
     divImage.appendChild(image);
 
     document.getElementById("items-list").appendChild(itemContainer);
