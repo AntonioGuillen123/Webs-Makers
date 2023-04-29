@@ -1,4 +1,4 @@
-var count = 2;
+var count = 3;
 
 
 function writePassword() {
@@ -15,7 +15,7 @@ function writePassword() {
         else {
             p.innerHTML = count;
             
-            if (count >= 0) {
+            if (count == 0) {
                 if (input.value === "") {
                     alert("No has introducido contraseña");
                 } else {
@@ -36,7 +36,7 @@ function timeOut() {
     var minutes = datetime.getMinutes();
     var canTry = false;
 
-    if (session == null || session == minutes) {
+    if (session == null || session >= minutes) {
         canTry = true;
     } else {
         canTry = false;
@@ -44,6 +44,7 @@ function timeOut() {
 
     if(count == 0){
         sessionStorage.setItem("timeOut", finalTime(minutes));
+        count = 3;
     }
 
     return canTry;
