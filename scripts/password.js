@@ -1,28 +1,60 @@
-var URL = window.location.search;
+var count = 2;
+
 
 function writePassword() {
     var truePassword = "asdf";
 
     var input = document.getElementById("data");
 
-    var div = document.getElementById("finish");
-    var p = document.createElement("p");
+    var p = document.getElementById("tries");
 
-    var count = 0;
-
-    if(input.value == truePassword){
-        p.innerHTML = "Has entrado con la contraseña: " + input.value;
-        input.value = "";
-        URL = "../pages/"
-    }
-    else{
-        if (input.value === "") {
-            alert("No has introducido contraseña");
-        }else{
-            alert("Contraseña incorrecta");
-            input.value = "";
+    if (timeOut()) {
+        if (input.value == truePassword) {
+            window.location.href = "admin.html";
         }
+        else {
+            p.innerHTML = count;
+            
+            if (count >= 0) {
+                if (input.value === "") {
+                    alert("No has introducido contraseña");
+                } else {
+                    alert("Contraseña incorrecta");
+                    input.value = "";
+                }
+                count--;
+            }
+        }
+    }else{
+        alert("Has alcanzado el máximo número de intentos\nPrueba de nuevo en 2 min");
+    }
+}
+
+function timeOut() {
+    var session = sessionStorage.getItem("timeOut");
+    var datetime = new Date();
+    var minutes = datetime.getMinutes();
+    var canTry = false;
+
+    if (session == null || session == minutes) {
+        canTry = true;
+    } else {
+        canTry = false;
     }
 
-    div.appendChild(p);
+    if(count == 0){
+        sessionStorage.setItem("timeOut", finalTime(minutes));
+    }
+
+    return canTry;
+}
+
+function finalTime(minutes) {
+    minutes += 2;
+
+    if (minutes > 67) {
+        minutes = minutes % 10;
+    }
+
+    return minutes;
 }
