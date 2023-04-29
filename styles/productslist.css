@@ -86,8 +86,7 @@ table {
 td{
     background-color: rgba(145, 152, 158, 0.2);
 }
-.price{
-    flex: auto;
+.price, .count{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -97,13 +96,13 @@ td{
     border: none;
     font-weight: bold;
 }
-.price p{
+.price p, .count p{
     font-weight: lighter
 }
 
 .countContainer{
     display: flex;
-    
+    justify-content: space-evenly;
 }
 .descriptionContainer{
     display: flex;
