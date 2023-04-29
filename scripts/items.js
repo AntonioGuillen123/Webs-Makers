@@ -89,9 +89,16 @@ function createProduct(product) {
     descriptionValue.innerHTML = product.description;
     tableValue.appendChild(descriptionValue);
 
+    var priceTitle = document.createElement("div");
+    priceTitle.innerHTML = "Precio";
 
+    var priceValue = document.createElement("p");
+    priceValue.innerHTML = product.cost;
+
+    priceTitle.appendChild(priceValue);
     itemContainer.appendChild(divImage);
     itemContainer.appendChild(tableContainer);
+    itemContainer.appendChild(priceTitle);
     divImage.appendChild(image);
 
     document.getElementById("items-list").appendChild(itemContainer);
