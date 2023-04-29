@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Carrito || Webs-Makers</title>
+    <link rel="stylesheet" href="../styles/cart.css">
     <link rel="stylesheet" href="../styles/common.css">
     <link rel="shortcut icon" href="../images/favicons/cartfavicon.png">
 </head>
@@ -30,8 +31,8 @@
     </div>
 
     <div id="finish">
-        <input type="text" id="data">
-        <button type="submit" onclick="submit()">COMPRAR
+        <input type="text" id="data" onkeyup="buttonState(this.value)">
+        <button id="submit" onclick="submit()">COMPRAR
     </div>
 
     <script src="../scripts/main.js"></script>

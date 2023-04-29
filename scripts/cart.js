@@ -10,13 +10,23 @@ function itemList(){
 
     var itemm = document.createElement("div");
 
-    if(items.length >= 1){
+    if(items?.length >= 1){
         itemm.innerHTML = "Estos soon los productossss";
     }else{
         itemm.innerHTML = "SU CARRITO ESTÁ VACIO";
     }
 
     itemList.appendChild(itemm);
+}
+
+function buttonState(text){
+    var button = document.getElementById("submit");
+
+    if(text.length != 0){
+        button.style.display = "flex";
+    }else{
+        button.style.display = "";
+    }
 }
 
 function zeroFill(text){
