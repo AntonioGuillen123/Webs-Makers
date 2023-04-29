@@ -14,8 +14,8 @@ function writePassword() {
         }
         else {
             p.innerHTML = count;
-            
-            if (count == 0) {
+
+            if (count >= 0) {
                 if (input.value === "") {
                     alert("No has introducido contraseña");
                 } else {
@@ -25,7 +25,7 @@ function writePassword() {
                 count--;
             }
         }
-    }else{
+    } else {
         alert("Has alcanzado el máximo número de intentos\nPrueba de nuevo en 2 min");
     }
 }
@@ -42,7 +42,7 @@ function timeOut() {
         canTry = false;
     }
 
-    if(count == 0){
+    if (count == 0) {
         sessionStorage.setItem("timeOut", finalTime(minutes));
         count = 3;
     }
