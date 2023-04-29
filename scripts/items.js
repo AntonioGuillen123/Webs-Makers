@@ -1,27 +1,31 @@
-const productList = [
-    {
-        "name": "banana",
-        "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
-        "description": "Esto es una fruta amarilla, rica en potasio y original de canarias",
-        "id": 3
-    },
-    {
-        "name": "manzana",
-        "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
-        "description": "Esto es una fruta roja, rica en vitaminas",
-        "id": 2
-    },
-    {
-        "name": "Naranja",
-        "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
-        "description": "Esto es una fruta naranja, rica en vitaminas C, proviene del Tesorillo",
-        "id": 1
-    }
-];
+var productList;
+
+/*Esto es una prueba para enviar los items al carrito*/
+
+var shoppingCart = [];
+
+for(var i = 0; i < 3; i++){
+    shoppingCart.push({
+        "item": `object${i+1}`,
+        "amount": 3
+    });
+}
+
+sessionStorage.setItem("items", JSON.stringify(shoppingCart));
+
+console.log(shoppingCart);
+
+/*FIN :)*/
+
+async function startItems(){
+    productList = await giveItems();
+
+   addProducts();
+}
 
 function addProducts(){
-    productList.forEach(product => {
-        createProduct(product);
+    productList.items.forEach(element => {
+        createProduct(element);
     });
 }
 

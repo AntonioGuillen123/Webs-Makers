@@ -1,12 +1,4 @@
-var giveSession = () => sessionStorage.getItem("products").split(',');
-
-var ho = [];
-
-for(var i = 0; i < 10; i++){
-    ho.push(i);
-}
-
-sessionStorage.setItem("products", ho);
+var giveSession = JSON.parse(sessionStorage.getItem("items"));
 
 function startCart(){
     itemList();
@@ -14,22 +6,36 @@ function startCart(){
 
 function itemList(){
     const itemList = document.getElementById("item-list");
-    var itemCount = giveSession();
+    var items = giveSession;
 
-    var items = document.createElement("div");
+    var itemm = document.createElement("div");
 
-    if(itemCount == 0){
-        items.innerHTML = "SU CARRITO ESTÁ VACIO";
+    if(items.length >= 1){
+        itemm.innerHTML = "Estos soon los productossss";
     }else{
-        items.innerHTML = "Estos soon los productossss";
+        itemm.innerHTML = "SU CARRITO ESTÁ VACIO";
     }
 
-    itemList.appendChild(items);
+    itemList.appendChild(itemm);
+}
+
+function zeroFill(text){
+    text = text.toString();
+
+    if(text.length == 1){
+        text = text.padStart(1, 0);
+    }
+
+    return text;
 }
 
 async function submit(){
     var name = document.getElementById("data").value;
-    var itemCount = giveSession();
+    var itemCount = giveSession;
+
+    const time = new Date();
+    const dateShop = `${zeroFill(time.getDay())}/${zeroFill(time.getMonth())}/${time.getFullYear()}`;
+    const timeShop = `${time.getHours()}:${zeroFill(time.getMinutes())}:${zeroFill(time.getSeconds())}`;
 
     const data = 
     {
@@ -37,7 +43,9 @@ async function submit(){
             {
                 "user": name,
                 "items": [
-                ]
+                ],
+                "date": dateShop,
+                "time": timeShop
             }
         ]
     };
