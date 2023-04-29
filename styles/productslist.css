@@ -67,9 +67,9 @@
     display: contents;
 }
 
-.item div {
+/* .item div {
     padding: 1vw;
-}
+} */
 
 th,
 td {
@@ -99,4 +99,14 @@ td{
 }
 .price p{
     font-weight: lighter
+}
+
+.countContainer{
+    display: flex;
+    
+}
+.descriptionContainer{
+    display: flex;
+    flex: 1 70%;
+    flex-direction: column;
 }

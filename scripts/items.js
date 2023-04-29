@@ -7,6 +7,8 @@ var productList;
 
 var shoppingCart = [];
 
+var countProduct = 1;
+
 for(var i = 0; i < 3; i++){
     shoppingCart.push({
         "item": `object${i+1}`,
@@ -99,13 +101,24 @@ function createProduct(product) {
     var descriptionContainer = document.createElement("div");
     descriptionContainer.classList.add("descriptionContainer");
 
+    var countTitle = document.createElement("div");
+    countTitle.innerHTML = "Cantidad";
+    countTitle.classList.add("count");
 
+    var countValue = document.createElement("p");
+    countValue.innerHTML = countProduct;
 
+    var countContainer = document.createElement("div");
+    countContainer.classList.add("countContainer");
+
+    countTitle.appendChild(countValue);
     priceTitle.appendChild(priceValue);
     itemContainer.appendChild(divImage);
     itemContainer.appendChild(descriptionContainer);
     descriptionContainer.appendChild(tableContainer);
-    descriptionContainer.appendChild(priceTitle);
+    descriptionContainer.appendChild(countContainer);
+    countContainer.appendChild(countTitle);
+    countContainer.appendChild(priceTitle);
     divImage.appendChild(image);
 
     document.getElementById("items-list").appendChild(itemContainer);
