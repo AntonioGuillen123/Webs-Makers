@@ -10,10 +10,10 @@ function itemList(){
 
     var itemm = document.createElement("div");
 
-    if(items?.length >= 1){
-        itemm.innerHTML = "Estos soon los productossss";
-    }else{
+    if(items?.length == 0){
         itemm.innerHTML = "SU CARRITO ESTÁ VACIO";
+    }else{
+        
     }
 
     itemList.appendChild(itemm);
@@ -23,7 +23,7 @@ function buttonState(text){
     var button = document.getElementById("submit");
 
     if(text.length != 0){
-        button.style.display = "flex";
+        button.style.display = "inline";
     }else{
         button.style.display = "";
     }
@@ -33,7 +33,7 @@ function zeroFill(text){
     text = text.toString();
 
     if(text.length == 1){
-        text = text.padStart(1, 0);
+        text = text.padStart(2, 0);
     }
 
     return text;
@@ -41,7 +41,7 @@ function zeroFill(text){
 
 async function submit(){
     var name = document.getElementById("data").value;
-    var itemCount = giveSession;
+    var items = giveSession;
 
     const time = new Date();
     const dateShop = `${zeroFill(time.getDay())}/${zeroFill(time.getMonth())}/${time.getFullYear()}`;
@@ -60,11 +60,11 @@ async function submit(){
         ]
     };
 
-    for(var i = 0; i < itemCount.length; i++){
+    for(var i = 0; i < items.length; i++){
         data.users[0].items.push({
-            "id": i.toString().padStart(3, 0),
-            "name": itemCount[i],
-            "amount": itemCount[i] + 1
+            "id": items[i].item.id,
+            "name": items[i].item.name,
+            "amount": items[i].amount
         });
     }
 

@@ -31,11 +31,14 @@ async function startItems() {
         document.getElementsByClassName("count")[0].childNodes[1].children[1].innerHTML = parseInt(document.getElementsByClassName("count")[0].childNodes[1].children[1].innerHTML) + 1;
     });
 
-    document.getElementsByClassName("btn-cart")[0].addEventListener("click", () => {
-        var productId =  document.getElementsByClassName("btn-cart")[0].getAttribute("id");
-        console.log(findProductById(productId));
-    });
+    var btnCarts = document.getElementsByClassName("btn-cart");
 
+    for(var i = 0; i < btnCarts.length; i++){
+        btnCarts[i].addEventListener("click", () => {
+            var productId =  btnCarts[i].id;
+            console.log(findProductById(productId));
+        });
+    }
 }
 
 function addProducts() {
