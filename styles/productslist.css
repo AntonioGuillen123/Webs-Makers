@@ -60,7 +60,7 @@
 
 .image>img {
     width: 20%;
-    height: auto;
+    height: 80%;
 }
 
 .image {
@@ -102,6 +102,7 @@ td{
 
 .countContainer{
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
 }
 .descriptionContainer{

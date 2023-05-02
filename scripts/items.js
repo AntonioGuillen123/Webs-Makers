@@ -28,7 +28,12 @@ async function startItems() {
     addProducts();
 
     document.getElementsByClassName("plus")[0].addEventListener("click", () => {
-        document.getElementsByClassName("count")[0].childNodes[1].children[1].innerHTML = parseInt(document.getElementsByClassName("count")[0].childNodes[1].children[1].innerHTML) +1;
+        document.getElementsByClassName("count")[0].childNodes[1].children[1].innerHTML = parseInt(document.getElementsByClassName("count")[0].childNodes[1].children[1].innerHTML) + 1;
+    });
+
+    document.getElementsByClassName("btn-cart")[0].addEventListener("click", () => {
+        var productId =  document.getElementsByClassName("btn-cart")[0].getAttribute("id");
+        console.log(findProductById(productId));
     });
 
 }
@@ -54,6 +59,7 @@ function createProduct(product) {
 
     var itemContainer = document.createElement("div");
     itemContainer.classList.add("item");
+    itemContainer.classList.add(product.id);
 
     var divImage = document.createElement("div");
     divImage.classList.add("image");
@@ -113,6 +119,11 @@ function createProduct(product) {
     var countValue = document.createElement("p");
     countValue.innerHTML = countProduct;
 
+    var addCartButton = document.createElement("button");
+    addCartButton.innerHTML = "Añadir al carrito";
+    addCartButton.classList.add("btn-cart");
+    addCartButton.setAttribute("id", product.id);
+
     var minus = document.createElement("img");
     minus.classList.add("minus");
     minus.src = "https://cdn-icons-png.flaticon.com/512/10513/10513669.png";
@@ -135,8 +146,9 @@ function createProduct(product) {
     itemContainer.appendChild(descriptionContainer);
     descriptionContainer.appendChild(tableContainer);
     descriptionContainer.appendChild(countContainer);
-    countContainer.appendChild(countTitle);
     countContainer.appendChild(priceTitle);
+    countContainer.appendChild(countTitle);
+    countContainer.appendChild(addCartButton);
     divImage.appendChild(image);
 
     document.getElementById("items-list").appendChild(itemContainer);
@@ -150,3 +162,12 @@ function orderItems() {
     console.log(list);
 }
 
+function findProductById(productId){
+    var result = null;
+    productList.items.forEach(element => {
+        if(element.id == productId){
+            result = element;
+        }
+    });
+    return result;
+}
