@@ -28,11 +28,12 @@ async function startItems() {
     addProducts();
 
     document.getElementsByClassName("plus")[0].addEventListener("click", () => {
-        document.getElementsByClassName("count")[0].childNodes[1].children[1].innerHTML = parseInt(document.getElementsByClassName("count")[0].childNodes[1].children[1].innerHTML) +1;
+        document.getElementsByClassName("count")[0].childNodes[1].children[1].innerHTML = parseInt(document.getElementsByClassName("count")[0].childNodes[1].children[1].innerHTML) + 1;
     });
 
     document.getElementsByClassName("btn-cart")[0].addEventListener("click", () => {
-        document.getElementsByClassName("count")[0].childNodes[1].children[1].innerHTML = parseInt(document.getElementsByClassName("count")[0].childNodes[1].children[1].innerHTML) +1;
+        var productId =  document.getElementsByClassName("btn-cart")[0].getAttribute("id");
+        console.log(findProductById(productId));
     });
 
 }
@@ -119,8 +120,9 @@ function createProduct(product) {
     countValue.innerHTML = countProduct;
 
     var addCartButton = document.createElement("button");
-    addCartButton.innerHTML = "Añadir al carrito"; 
+    addCartButton.innerHTML = "Añadir al carrito";
     addCartButton.classList.add("btn-cart");
+    addCartButton.setAttribute("id", product.id);
 
     var minus = document.createElement("img");
     minus.classList.add("minus");
@@ -160,3 +162,12 @@ function orderItems() {
     console.log(list);
 }
 
+function findProductById(productId){
+    var result = null;
+    productList.items.forEach(element => {
+        if(element.id == productId){
+            result = element;
+        }
+    });
+    return result;
+}
