@@ -31,22 +31,8 @@ async function startItems() {
         document.getElementsByClassName("count")[0].childNodes[1].children[1].innerHTML = parseInt(document.getElementsByClassName("count")[0].childNodes[1].children[1].innerHTML) + 1;
     });
 
-    var cart = document.getElementsByClassName("btn-cart");
-
-    for (let i = 0; i < cart.length; i++) {
-        cart[i].addEventListener("click", () => {
-            var productId = cart[i].getAttribute("id");
-            var selectCount = document.querySelector(`[id='${productId}']`);
-            console.log(findProductById(productId));
-            shoppingCart.push({
-                "item": findProductById(productId),
-                "amount": selectCount.innerHTML
-            });
-            console.log(shoppingCart);
-        });
-    }
+    eventListener();
 }
-
 
 function addProducts() {
     productList.items.forEach(element => {
@@ -141,6 +127,7 @@ function createProduct(product) {
     var plus = document.createElement("img");
     plus.classList.add("plus");
     plus.src = "https://cdn-icons-png.flaticon.com/512/10513/10513669.png";
+    plus.setAttribute("id", product.id);
 
     var signContainer = document.createElement("div");
     signContainer.classList.add("signContainer");
@@ -163,6 +150,35 @@ function createProduct(product) {
     divImage.appendChild(image);
 
     document.getElementById("items-list").appendChild(itemContainer);
+}
+
+function eventListener() {
+    var cart = document.getElementsByClassName("btn-cart");
+
+    for (let i = 0; i < cart.length; i++) {
+        cart[i].addEventListener("click", () => {
+            var productId = cart[i].getAttribute("id");
+            var selectCount = document.querySelector(`[id='${productId}']`);
+            console.log(findProductById(productId));
+            shoppingCart.push({
+                "item": findProductById(productId),
+                "amount": selectCount.innerHTML
+            });
+            console.log(shoppingCart);
+        });
+    }
+
+    var plusBtn = document.getElementsByClassName("plus");
+
+    for (let i = 0; i < plusBtn.length; i++) {
+        plusBtn[i].addEventListener("click", () => {
+            var productId = plusBtn[i].getAttribute("id");
+            var selectCount = document.querySelector(`[id='${productId}']`).innerHTML;
+            var countNumber = parseInt(selectCount);
+            console.log(findProductById(productId));
+            selectCount = countNumber++;
+        });
+    }
 }
 
 function orderItems() {
