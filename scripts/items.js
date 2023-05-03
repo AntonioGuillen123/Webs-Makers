@@ -114,7 +114,7 @@ function createProduct(product) {
 
     var countValue = document.createElement("p");
     countValue.innerHTML = countProduct;
-    countValue.setAttribute("id", product.id);
+    countValue.setAttribute("count-id", product.id);
 
     var addCartButton = document.createElement("button");
     addCartButton.innerHTML = "Añadir al carrito";
@@ -124,6 +124,8 @@ function createProduct(product) {
     var minus = document.createElement("img");
     minus.classList.add("minus");
     minus.src = "https://cdn-icons-png.flaticon.com/512/10513/10513669.png";
+    minus.setAttribute("id", product.id);
+
     var plus = document.createElement("img");
     plus.classList.add("plus");
     plus.src = "https://cdn-icons-png.flaticon.com/512/10513/10513669.png";
@@ -158,7 +160,7 @@ function eventListener() {
     for (let i = 0; i < cart.length; i++) {
         cart[i].addEventListener("click", () => {
             var productId = cart[i].getAttribute("id");
-            var selectCount = document.querySelector(`[id='${productId}']`);
+            var selectCount = document.querySelector(`[count-id='${productId}']`);
             console.log(findProductById(productId));
             shoppingCart.push({
                 "item": findProductById(productId),
@@ -168,15 +170,30 @@ function eventListener() {
         });
     }
 
+    // DE MOMENTO SE QUEDA ASÍ PERO LUEGO HABRÁ QUE HACER EL CODIGO MÁS EFICIENTE Y LUEGO COMPROBAR
+    // QUE A LA HORA DE SUMAR Y RESTAR NI SE PASE PARA ARRIBA NI PARA ABAJO :) | :(
+
     var plusBtn = document.getElementsByClassName("plus");
 
     for (let i = 0; i < plusBtn.length; i++) {
         plusBtn[i].addEventListener("click", () => {
             var productId = plusBtn[i].getAttribute("id");
-            var selectCount = document.querySelector(`[id='${productId}']`).innerHTML;
+            var selectCount = document.querySelector(`[count-id='${productId}']`).innerHTML;
             var countNumber = parseInt(selectCount);
             console.log(findProductById(productId));
             selectCount = countNumber++;
+        });
+    }
+
+    var minusBtn = document.getElementsByClassName("minus");
+
+    for (let i = 0; i < minusBtn.length; i++) {
+        minusBtn[i].addEventListener("click", () => {
+            var productId = minusBtn[i].getAttribute("id");
+            var selectCount = document.querySelector(`[count-id='${productId}']`);
+            var countNumber = parseInt(selectCount.innerHTML);
+            console.log(findProductById(productId));
+            selectCount.innerHTML = countNumber - 1;
         });
     }
 }
