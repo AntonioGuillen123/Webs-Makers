@@ -2,15 +2,6 @@ var giveSession = JSON.parse(sessionStorage.getItem("items"));
 
 function startCart() {
     itemList();
-    closeCart();
-}
-
-function closeCart(){
-    window.addEventListener("beforeunload", (e) => {
-        e.preventDefault();
-
-        alert("Está seguro que quiere cerrar la página, todo lo que tenga en el carrito se perderá...");
-    });
 }
 
 function itemList() {
