@@ -8,29 +8,33 @@ function writePassword() {
 
     var p = document.getElementById("tries");
 
-    if (timeOut()) {
-        if (input.value == truePassword) {
-            window.location.href = "admin.html";
+    //if (timeOut()) {
+    if (input.value == truePassword) {
+        window.location.href = "admin.html";
+    }
+    else {
+        p.innerHTML = `*Intentos restantes: ${count}*`;
+
+        if (count > 0) {
+            if (input.value === "") {
+                alert("No has introducido contraseña");
+            } else {
+                alert("Contraseña incorrecta");
+                input.value = "";
+            }
+            count--;
         }
         else {
-            p.innerHTML = count;
-
-            if (count >= 0) {
-                if (input.value === "") {
-                    alert("No has introducido contraseña");
-                } else {
-                    alert("Contraseña incorrecta");
-                    input.value = "";
-                }
-                count--;
-            }
+            alert("Se ha quedado sin intentos\nNo puede entrar en modo Admin");
+            window.location.href = "../index.html";
         }
-    } else {
-        alert("Has alcanzado el máximo número de intentos\nPrueba de nuevo en 2 min");
     }
+    /*} else {
+        alert("Has alcanzado el máximo número de intentos\nPrueba de nuevo en 2 min");
+    }*/
 }
 
-function timeOut() {
+/*function timeOut() {
     var session = sessionStorage.getItem("timeOut");
     var datetime = new Date();
     var minutes = datetime.getMinutes();
@@ -58,4 +62,4 @@ function finalTime(minutes) {
     }
 
     return minutes;
-}
+}*/
