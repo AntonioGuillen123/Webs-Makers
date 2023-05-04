@@ -51,3 +51,8 @@ nav a:hover {
 .active {
     color: #939393;
 }
+
+#cart-image{
+    max-width: 3vw;
+    
+}
