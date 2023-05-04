@@ -13,13 +13,33 @@ function itemList() {
     if (items?.length == 0) {
         itemm.innerHTML = "SU CARRITO ESTÁ VACIO";
     } else {
-        //itemm = createItems(items);
+        itemm = createItems(items, itemm);
     }
 
-    //itemList.appendChild(itemm);
+    itemList.appendChild(itemm);
 }
 
-function createItems(items) {
+function createItems(items, itemContainer) {
+    var totalCost = 0;
+
+    items.forEach(item => {
+        var imageItem = document.createElement("img");
+        imageItem.src = item.item.imageUrl;
+
+        var itemID = document.createElement("div");
+        itemID.innerHTML = item.item.id;
+
+        var itemName = document.createElement("div");
+        itemName.innerHTML = item.item.name[0].toUpperCase() + item.item.name.slice(1);
+
+        var itemCost = document.createElement("div");
+        itemCost.innerHTML = item.item.cost;
+
+        totalCost += item.item.cost * item.amount;
+        console.log(totalCost);
+    });
+
+    return itemContainer;
 }
 
 function buttonState(text) {

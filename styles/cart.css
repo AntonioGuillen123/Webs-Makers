@@ -1,3 +1,35 @@
-#submit{
+#main-page {
+    display: flex;
+    gap: .6vw;
+}
+
+#finish {
+    background-color: rgb(1, 90, 178);
+    padding: 4px;
+}
+
+#item-list,#finish{
+    flex: 1;
+}
+
+#finish,
+#data,
+#submit {
+    border: 3px black solid;
+    border-radius: 15px;
+}
+
+#submit {
     display: none;
+    cursor: pointer;
+}
+
+#divisor-line {
+    width: .3vw;
+    background-color: rgb(154,154,154);
+    border-radius: 15px;
+}
+
+hr{
+    border-color: red;
 }
