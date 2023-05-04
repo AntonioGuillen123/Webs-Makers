@@ -1,45 +1,57 @@
 var giveSession = JSON.parse(sessionStorage.getItem("items"));
 
-function startCart(){
+function startCart() {
     itemList();
+    closeCart();
 }
 
-function itemList(){
+function closeCart(){
+    window.addEventListener("beforeunload", (e) => {
+        e.preventDefault();
+
+        alert("Está seguro que quiere cerrar la página, todo lo que tenga en el carrito se perderá...");
+    });
+}
+
+function itemList() {
     const itemList = document.getElementById("item-list");
     var items = giveSession;
 
     var itemm = document.createElement("div");
 
-    if(items?.length == 0){
+    if (items?.length == 0) {
         itemm.innerHTML = "SU CARRITO ESTÁ VACIO";
-    }else{
-        
+    } else {
+        //itemm = createItems(items);
     }
 
-    itemList.appendChild(itemm);
+    //itemList.appendChild(itemm);
 }
 
-function buttonState(text){
+function createItems(items) {
+}
+
+function buttonState(text) {
     var button = document.getElementById("submit");
 
-    if(text.length != 0){
+    if (text.length != 0) {
         button.style.display = "inline";
-    }else{
+    } else {
         button.style.display = "";
     }
 }
 
-function zeroFill(text){
+function zeroFill(text) {
     text = text.toString();
 
-    if(text.length == 1){
+    if (text.length == 1) {
         text = text.padStart(2, 0);
     }
 
     return text;
 }
 
-async function submit(){
+async function submit() {
     var name = document.getElementById("data").value;
     var items = giveSession;
 
@@ -47,7 +59,7 @@ async function submit(){
     const dateShop = `${zeroFill(time.getDay())}/${zeroFill(time.getMonth())}/${time.getFullYear()}`;
     const timeShop = `${time.getHours()}:${zeroFill(time.getMinutes())}:${zeroFill(time.getSeconds())}`;
 
-    const data = 
+    var data =
     {
         "users": [
             {
@@ -60,7 +72,7 @@ async function submit(){
         ]
     };
 
-    for(var i = 0; i < items.length; i++){
+    for (var i = 0; i < items.length; i++) {
         data.users[0].items.push({
             "id": items[i].item.id,
             "name": items[i].item.name,
