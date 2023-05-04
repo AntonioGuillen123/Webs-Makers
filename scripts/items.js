@@ -27,10 +27,6 @@ async function startItems() {
 
     addProducts();
 
-    document.getElementsByClassName("plus")[0].addEventListener("click", () => {
-        document.getElementsByClassName("count")[0].childNodes[1].children[1].innerHTML = parseInt(document.getElementsByClassName("count")[0].childNodes[1].children[1].innerHTML) + 1;
-    });
-
     eventListener();
 }
 
@@ -178,10 +174,10 @@ function eventListener() {
     for (let i = 0; i < plusBtn.length; i++) {
         plusBtn[i].addEventListener("click", () => {
             var productId = plusBtn[i].getAttribute("id");
-            var selectCount = document.querySelector(`[count-id='${productId}']`).innerHTML;
-            var countNumber = parseInt(selectCount);
+            var selectCount = document.querySelector(`[count-id='${productId}']`);
+            var countNumber = parseInt(selectCount.innerHTML);
             console.log(findProductById(productId));
-            selectCount = countNumber++;
+            selectCount.innerHTML = countNumber + 1;
         });
     }
 
