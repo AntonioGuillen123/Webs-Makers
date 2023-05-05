@@ -177,4 +177,52 @@ function findProductById(productId) {
     return result;
 }
 
-const subtract = (countNumber) => countNumber > 1 ? countNumber-1 : countNumber; 
+const subtract = (countNumber) => countNumber > 1 ? countNumber - 1 : countNumber;
+
+function orderBy(value) {
+    var productListPage = document.getElementById("items-list");
+    var copyProductList = productList.items.slice();
+
+    productListPage.innerHTML = "";
+
+    switch (value) {
+        case "opt1":
+
+            copyProductList = copyProductList.sort((a, b) => a.cost - b.cost);
+
+            break;
+        case "opt2":
+
+            copyProductList = copyProductList.sort((a, b) => a.cost - b.cost).reverse();
+
+            break;
+        case "opt3":
+
+            copyProductList = alphabeticalOrder(copyProductList);
+
+            break;
+        case "opt4":
+
+            copyProductList = alphabeticalOrder(copyProductList).reverse();
+
+            break;
+    }
+
+    copyProductList.forEach(product => createProduct(product));
+
+}
+
+function alphabeticalOrder(productList) {
+
+    productList.sort((a, b, result = 0) => {
+        if (a.nombre < b.nombre) {
+            result = -1;
+        }
+        if (a.nombre > b.nombre) {
+            result = 1;
+        }
+        return result;
+    });
+
+    return productList;
+}
