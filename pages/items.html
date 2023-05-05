@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo || Webs-Makers</title>
     <link rel="stylesheet" href="../styles/common.css">
     <link rel="stylesheet" href="../styles/productslist.css">
@@ -32,6 +32,14 @@
                 <input type="text" placeholder="Buscar Producto..." name="search" id="search-input" autocomplete="off"
                     onkeyup="searchProducts(this.value)" />
             </form>
+        </div>
+        <div class="filter-container">
+            <select name="options" id="options" onchange="orderBy(this.value)">
+                <option value="opt1">Ascendentemente</option>
+                <option value="opt2">Descendentemente</option>
+                <option value="opt3">A-Z</option>
+                <option value="opt4">Z-A</option>
+            </select>
         </div>
         <button onclick="orderItems()">asas</button>
 
