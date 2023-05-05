@@ -154,7 +154,7 @@ function eventListener() {
             var selectCount = document.querySelector(`[count-id='${productId}']`);
             var countNumber = parseInt(selectCount.value);
             console.log(findProductById(productId));
-            selectCount.value = countNumber - 1;
+            selectCount.value = subtract(countNumber);
         });
     }
 }
@@ -176,3 +176,5 @@ function findProductById(productId) {
     });
     return result;
 }
+
+const subtract = (countNumber) => countNumber > 1 ? countNumber-1 : countNumber; 
