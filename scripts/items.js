@@ -50,7 +50,7 @@ function searchProducts(value) {
 function createProduct(product) {
 
     var itemContainer = document.createElement("div");
-    itemContainer.classList.add("item");
+    itemContainer.classList.add("product-card");
     itemContainer.classList.add(product.id);
 
     var divImage = document.createElement("div");
@@ -61,97 +61,66 @@ function createProduct(product) {
     image.alt = "Lo siento, este producto no se ha encontrado :(";
     image.classList.add("product-image");
 
-    var tableContainer = document.createElement("table");
-    var tableTitle = document.createElement("tr");
-    var tableValue = document.createElement("tr");
-    tableContainer.appendChild(tableTitle);
-    tableContainer.appendChild(tableValue);
+    var productName = document.createElement("h3");
+    productName.innerHTML = product.name;
+    productName.classList.add("product-name");
 
-    var productNameTitle = document.createElement("th");
-    productNameTitle.innerHTML = "Nombre";
-    tableTitle.appendChild(productNameTitle);
+    var productDescription = document.createElement("p");
+    productDescription.innerHTML = product.description;
+    productDescription.classList.add("product-description")
 
-    var productNameValue = document.createElement("td");
-    productNameValue.innerHTML = product.name;
-    tableValue.appendChild(productNameValue);
-
-
-    var identificationTitle = document.createElement("th");
-    identificationTitle.innerHTML = "ID";
-    tableTitle.appendChild(identificationTitle);
-
-
-    var identificationValue = document.createElement("td");
-    identificationValue.innerHTML = product.id;
-    tableValue.appendChild(identificationValue);
-
-    var descriptionTitle = document.createElement("th");
-    descriptionTitle.innerHTML = "Descripción";
-    tableTitle.appendChild(descriptionTitle);
-
-
-    var descriptionValue = document.createElement("td");
-    descriptionValue.innerHTML = product.description;
-    tableValue.appendChild(descriptionValue);
-
-    var priceTitle = document.createElement("div");
-    priceTitle.innerHTML = "Precio";
-    priceTitle.classList.add("price");
-
-    var priceValue = document.createElement("p");
-    priceValue.innerHTML = product.cost;
-
-    var descriptionContainer = document.createElement("div");
-    descriptionContainer.classList.add("descriptionContainer");
-
-    var countTitle = document.createElement("div");
-    countTitle.innerHTML = "Cantidad";
-    countTitle.classList.add("count");
-
-    var countValue = document.createElement("p");
-    countValue.innerHTML = countProduct;
-    countValue.setAttribute("count-id", product.id);
-
-    var addCartButton = document.createElement("button");
-    addCartButton.innerHTML = "Añadir al carrito";
-    addCartButton.classList.add("btn-cart");
-    addCartButton.setAttribute("id", product.id);
-
-    var minus = document.createElement("img");
-    minus.classList.add("minus");
-    minus.src = "https://cdn-icons-png.flaticon.com/512/10513/10513669.png";
-    minus.setAttribute("id", product.id);
-
-    var plus = document.createElement("img");
-    plus.classList.add("plus");
-    plus.src = "https://cdn-icons-png.flaticon.com/512/10513/10513669.png";
-    plus.setAttribute("id", product.id);
-
-    var signContainer = document.createElement("div");
-    signContainer.classList.add("signContainer");
-    signContainer.appendChild(minus);
-    signContainer.appendChild(countValue);
-    signContainer.appendChild(plus);
 
     var countContainer = document.createElement("div");
-    countContainer.classList.add("countContainer");
+    countContainer.classList.add("count-container");
 
-    countTitle.appendChild(signContainer);
-    priceTitle.appendChild(priceValue);
-    itemContainer.appendChild(divImage);
-    itemContainer.appendChild(descriptionContainer);
-    descriptionContainer.appendChild(tableContainer);
-    descriptionContainer.appendChild(countContainer);
-    countContainer.appendChild(priceTitle);
-    countContainer.appendChild(countTitle);
-    countContainer.appendChild(addCartButton);
+    var btnMinus = document.createElement("button");
+    btnMinus.classList.add("btn-count");
+    btnMinus.classList.add("minus");
+    btnMinus.innerHTML = "-";
+    btnMinus.setAttribute("id", product.id);
+
+
+    var btnPlus = document.createElement("button");
+    btnPlus.classList.add("btn-count");
+    btnPlus.classList.add("plus");
+    btnPlus.innerHTML = "+";
+    btnPlus.setAttribute("id", product.id);
+
+
+    var inputCount = document.createElement("input");
+    inputCount.type = "number";
+    inputCount.value = 1;
+    inputCount.min = 1;
+    inputCount.classList.add("product-count");
+    inputCount.setAttribute("count-id", product.id);
+
+
+    var productPrice = document.createElement("p");
+    productPrice.innerHTML = product.cost;
+    productPrice.classList.add("product-price");
+
+    var btnToCart = document.createElement("button");
+    btnToCart.innerHTML = "Añadir al carrito";
+    btnToCart.classList.add("btn-to-cart");
+    btnToCart.setAttribute("id", product.id);
+
     divImage.appendChild(image);
+    countContainer.appendChild(btnMinus);
+    countContainer.appendChild(inputCount);
+    countContainer.appendChild(btnPlus);
+
+    itemContainer.appendChild(divImage);
+    itemContainer.appendChild(productName);
+    itemContainer.appendChild(productDescription);
+    itemContainer.appendChild(countContainer);
+    itemContainer.appendChild(productPrice);
+    itemContainer.appendChild(btnToCart);
 
     document.getElementById("items-list").appendChild(itemContainer);
 }
 
 function eventListener() {
-    var cart = document.getElementsByClassName("btn-cart");
+    var cart = document.getElementsByClassName("btn-to-cart");
 
     for (let i = 0; i < cart.length; i++) {
         cart[i].addEventListener("click", () => {
@@ -160,7 +129,7 @@ function eventListener() {
             console.log(findProductById(productId));
             shoppingCart.push({
                 "item": findProductById(productId),
-                "amount": selectCount.innerHTML
+                "amount": selectCount.value
             });
             console.log(shoppingCart);
         });
@@ -175,9 +144,9 @@ function eventListener() {
         plusBtn[i].addEventListener("click", () => {
             var productId = plusBtn[i].getAttribute("id");
             var selectCount = document.querySelector(`[count-id='${productId}']`);
-            var countNumber = parseInt(selectCount.innerHTML);
+            var countNumber = parseInt(selectCount.value);
             console.log(findProductById(productId));
-            selectCount.innerHTML = countNumber + 1;
+            selectCount.value = countNumber + 1;
         });
     }
 
@@ -187,9 +156,9 @@ function eventListener() {
         minusBtn[i].addEventListener("click", () => {
             var productId = minusBtn[i].getAttribute("id");
             var selectCount = document.querySelector(`[count-id='${productId}']`);
-            var countNumber = parseInt(selectCount.innerHTML);
+            var countNumber = parseInt(selectCount.value);
             console.log(findProductById(productId));
-            selectCount.innerHTML = countNumber - 1;
+            selectCount.value = countNumber - 1;
         });
     }
 }
