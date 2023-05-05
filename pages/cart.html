@@ -6,7 +6,7 @@
     <title>Carrito || Webs-Makers</title>
     <link rel="stylesheet" href="../styles/cart.css">
     <link rel="stylesheet" href="../styles/common.css">
-    <link id="favicon" rel="shortcut icon" href="../images/favicons/cartfavicon.png">
+    <link rel="shortcut icon" href="../images/favicons/cartfavicon.png">
 </head>
 
 <body onload="startCart()">
@@ -30,15 +30,17 @@
         <div id="item-list">
             <span>Lista De Productos:</span>
             <hr>
-            <div id="items"></div>
         </div>
+        <!-- <div id="divisor-line"></div>-->
 
-        <div id="divisor-line"></div>
+        <button id="jii">cli</button>
 
-        <div id="finish">
-            <div>Introduce un nombre para finalizar la compra:</div>
-            <input type="text" id="data" onkeyup="buttonState(this.value)">
-            <button id="submit" onclick="submit()">COMPRAR
+        <div id="finish-container">
+            <div id="finish">
+                <div>Introduce un nombre para finalizar la compra:</div>
+                <input type="text" id="data" onkeyup="buttonState(this.value)">
+                <button id="submit" onclick="submit()">COMPRAR
+            </div>
         </div>
     </div>
 

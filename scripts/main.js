@@ -5,8 +5,8 @@ console.log(`Este es el número total de cosas añadidas al carrito no te asuste
 seeSoon();
 
 function seeSoon(){
+    var favicon = document.querySelector("[rel='shortcut icon']");;
     const title = document.title;
-    var favicon = document.getElementById("favicon");
     const thisFavicon = favicon.href;
     const mainFavicon = "../images/favicons/mainfavicon.png";
 

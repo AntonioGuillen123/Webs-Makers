@@ -23,13 +23,31 @@
     display: none;
     cursor: pointer;
 }
-
+/*
 #divisor-line {
     width: .3vw;
     background-color: rgb(154,154,154);
     border-radius: 15px;
-}
+}*/
 
 hr{
     border-color: red;
+}
+
+#finish-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+#finish {
+    position: relative;
+    padding: 10px;
+    font-weight: var(--bold);
+    font-size: 17px;
 }
