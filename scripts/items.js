@@ -126,10 +126,11 @@ function eventListener() {
                 "amount": selectCount.value
             });
             console.log(shoppingCart);
+        sessionStorage.setItem("items", JSON.stringify(shoppingCart));
+
         });
     }
 
-        sessionStorage.setItem("items", JSON.stringify(shoppingCart));
 
     // DE MOMENTO SE QUEDA ASÍ PERO LUEGO HABRÁ QUE HACER EL CODIGO MÁS EFICIENTE Y LUEGO COMPROBAR
     // QUE A LA HORA DE SUMAR Y RESTAR NI SE PASE PARA ARRIBA NI PARA ABAJO :) | :(
