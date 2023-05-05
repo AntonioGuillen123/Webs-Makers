@@ -18,22 +18,30 @@
                 <li><a href="../index.html" class="options" onclick="setActive(this.innerHTML)">Principal</a></li>
                 <li><a href="about-us.html" class="options" onclick="setActive(this.innerHTML)">Sobre nosotros</a></li>
                 <li><a href="items.html" class="options" onclick="setActive(this.innerHTML)">Catálogo</a></li>
-                <li><a href="" class="active options" onclick="setActive(this.innerHTML)"><img id="cart-image" src="../images/cart.png" alt=""></a></li>
+                <li><a href="" class="active options" onclick="setActive(this.innerHTML)"><img id="cart-image"
+                            src="../images/cart.png" alt=""></a></li>
                 <li><a href="form.html" class="options" onclick="setActive(this.innerHTML)">Contacto</a></li>
                 <li><a href="password.html" class="options" onclick="setActive(this.innerHTML)">Admin</a></li>
             </ul>
         </nav>
     </header>
 
-    <div id="item-list">
-        <span>Lista De Productos:</span>
-        <hr>
-    </div>
+    <div id="main-page">
+        <div id="item-list">
+            <span>Lista De Productos:</span>
+            <hr>
+        </div>
+        <!-- <div id="divisor-line"></div>-->
 
-    <div id="finish">
-        <div>Introduce un nombre para finalizar la compra:</div>
-        <input type="text" id="data" onkeyup="buttonState(this.value)">
-        <button id="submit" onclick="submit()">COMPRAR
+        <button id="jii">cli</button>
+
+        <div id="finish-container">
+            <div id="finish">
+                <div>Introduce un nombre para finalizar la compra:</div>
+                <input type="text" id="data" onkeyup="buttonState(this.value)">
+                <button id="submit" onclick="submit()">COMPRAR
+            </div>
+        </div>
     </div>
 
     <script src="../scripts/main.js"></script>

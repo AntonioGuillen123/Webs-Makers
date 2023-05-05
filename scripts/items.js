@@ -9,14 +9,8 @@ var shoppingCart = [];
 
 var countProduct = 1;
 
-for (var i = 0; i < 3; i++) {
-    shoppingCart.push({
-        "item": `object${i + 1}`,
-        "amount": 3
-    });
-}
 
-sessionStorage.setItem("items", JSON.stringify(shoppingCart));
+
 
 console.log(shoppingCart);
 
@@ -134,6 +128,8 @@ function eventListener() {
             console.log(shoppingCart);
         });
     }
+
+        sessionStorage.setItem("items", JSON.stringify(shoppingCart));
 
     // DE MOMENTO SE QUEDA ASÍ PERO LUEGO HABRÁ QUE HACER EL CODIGO MÁS EFICIENTE Y LUEGO COMPROBAR
     // QUE A LA HORA DE SUMAR Y RESTAR NI SE PASE PARA ARRIBA NI PARA ABAJO :) | :(
