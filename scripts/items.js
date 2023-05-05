@@ -126,8 +126,7 @@ function eventListener() {
                 "amount": selectCount.value
             });
             console.log(shoppingCart);
-        sessionStorage.setItem("items", JSON.stringify(shoppingCart));
-
+            sessionStorage.setItem("items", JSON.stringify(shoppingCart));
         });
     }
 

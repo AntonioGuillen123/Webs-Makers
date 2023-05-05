@@ -42,13 +42,11 @@
 
 #items-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 1050px);
+    grid-template-columns: repeat(auto-fill, 275px);
     gap: 10vw;
     margin: 10vw;
     justify-content: center;
 }
-
-
 
 .product-card {
     display: flex;
@@ -124,8 +122,8 @@
 }
 
 @media only screen and (min-width: 768px) {
-    #item-list {
-        grid-template-columns: repeat(auto-fill, 275px);
+    #items-list { 
+        grid-template-columns: repeat(auto-fill, 1050px);
 
     }
 
