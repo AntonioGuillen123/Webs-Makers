@@ -4,34 +4,51 @@ var count = 3;
 function writePassword() {
     var truePassword = "asdf";
 
-    var input = document.getElementById("data");
+    var formAdmin = document.getElementById("formAdmin");
 
-    var p = document.getElementById("tries");
+    var input = document.getElementById("data");
+    var button = document.getElementById("submit");
+
+    submitPassword(input, button);
+
+    var tries = document.getElementById("tries");
+    var fail = document.getElementById("failPassword");
 
     //if (timeOut()) {
     if (input.value == truePassword) {
         window.location.href = "admin.html";
     }
     else {
-        p.innerHTML = `*Intentos restantes: ${count}*`;
-
+        tries.innerHTML = `Intentos restantes: ${count}`;
+        formAdmin.style.animation = "vibrate 0.5s alternate";
         if (count > 0) {
             if (input.value === "") {
-                alert("No has introducido contraseña");
+                fail.innerHTML = "*No has introducido contraseña*";
+                //alert("No has introducido contraseña");
             } else {
-                alert("Contraseña incorrecta");
+                fail.innerHTML = "*Contraseña incorrecta*";
+                //alert("Contraseña incorrecta");
                 input.value = "";
             }
             count--;
         }
         else {
-            alert("Se ha quedado sin intentos\nNo puede entrar en modo Admin");
+            alert("Ha alcanzado el máximo número de intentos\nNo ha podido entrar en modo Admin");
             window.location.href = "../index.html";
         }
     }
     /*} else {
         alert("Has alcanzado el máximo número de intentos\nPrueba de nuevo en 2 min");
     }*/
+}
+
+function submitPassword(input, button) {
+
+    input.addEventListener("keydown", function (event) {
+        if (event.keyCode === 13) {
+            button.click();
+        }
+    });
 }
 
 /*function timeOut() {
