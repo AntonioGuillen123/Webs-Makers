@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .product-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 10px;
+      margin: 10px;
+      width: 250px;
+    }
+
+    .product-image {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    .product-name {
+      font-size: 1.2em;
+      margin: 10px 0;
+      text-align: center;
+    }
+
+    .product-description {
+      font-size: 0.9em;
+      margin: 0 0 10px;
+      text-align: center;
+    }
+
+    .product-quantity {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .quantity-btn {
+      font-size: 1.2em;
+      width: 30px;
+      height: 30px;
+      border: none;
+      background-color: #eee;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 0 5px;
+    }
+
+    .quantity-input {
+      font-size: 1em;
+      width: 50px;
+      height: 30px;
+      border: none;
+      text-align: center;
+      border-radius: 5px;
+    }
+
+    .product-price {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    .add-to-cart-btn {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      padding: 10px;
+      cursor: pointer;
+      margin-top: 10px;
+      width: 100%;
+    }
+
+    @media only screen and (min-width: 768px) {
+      .product-card {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 600px;
+      }
+
+      .product-image {
+        width: 250px;
+        height: auto;
+      }
+
+      .product-name {
+        text-align: left;
+      }
+
+      .product-description {
+        text-align: left;
+      }
+
+      .product-price {
+        text-align: right;
+      }
+
+      .add-to-cart-btn {
+        width: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="product-card">
+    <img src="product-image.jpg" alt="Product Name" class="product-image">
+    <h3 class="product-name">Product Name</h3>
+    <p class="product-description">Product description goes here</p>
+    <div class="product-quantity">
+      <button class="quantity-btn minus">-</button>
+      <input type="number" class="quantity-input" value="1" min="1">
+      <button class="quantity-btn plus">+</button>
+    </div>
+    <p class="product-price">$9.99</p>
+    <button class="add-to-cart-btn">Add to Cart</button>
+  </div>
+</body>
+
+</html>
