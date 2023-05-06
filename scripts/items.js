@@ -154,7 +154,7 @@ function eventListener() {
             var selectCount = document.querySelector(`[count-id='${productId}']`);
             var countNumber = parseInt(selectCount.value);
             console.log(findProductById(productId));
-            selectCount.value = subtract(countNumber);
+            selectCount.value = subtract(countNumber, 1);
         });
     }
 }
@@ -176,8 +176,6 @@ function findProductById(productId) {
     });
     return result;
 }
-
-const subtract = (countNumber) => countNumber > 1 ? countNumber - 1 : countNumber;
 
 function orderBy(value) {
     var productListPage = document.getElementById("items-list");

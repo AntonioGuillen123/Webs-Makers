@@ -1,4 +1,5 @@
 var giveSession = JSON.parse(sessionStorage.getItem("items"));
+var totalCost;
 /*TODO :)
 document.getElementById("jii").addEventListener("click", () => {
     document.getElementById("finish-container").style.display = "flex";
@@ -24,20 +25,18 @@ function itemList() {
     itemList.appendChild(itemm);
 }
 
-function isEmpty(){
+function isEmpty() {
     const itemsContainer = document.getElementById("items");
     var items = itemsContainer.getElementsByTagName("div");
 
-    if(items.length == 0){
+    if (items.length == 0) {
         itemsContainer.innerHTML = "SU CARRITO ESTÁ VACIO";
     }
 }
 
 function createItems(items, itemsContainer) {
-    var totalCost = 0;
-
     items.forEach(item => {
-        const amountCost = item.item.cost * item.amount;
+        const amountCost = (item.item.cost * parseInt(item.amount)).toFixed(2);
         const id = item.item.id;
 
         var itemContainer = document.createElement("div");
@@ -64,7 +63,7 @@ function createItems(items, itemsContainer) {
         itemAmount.min = 0;
         itemAmount.value = item.amount;
         itemAmount.classList.add("amount");
-        itemAmount.addEventListener("keyup", () => changeAmount(id, itemAmount.innerHTML));
+        itemAmount.addEventListener("input", () => changeAmount(id, itemAmount.value));
 
         var plusButton = document.createElement("button");
         plusButton.innerHTML = "+";
@@ -78,7 +77,7 @@ function createItems(items, itemsContainer) {
 
         var totalItemCost = document.createElement("div");
         totalItemCost.innerHTML = `${amountCost} €`;
-        totalItemCost.classList.add("total-item-cost");
+        totalItemCost.classList.add("total-cost-item");
 
         itemsContainer.appendChild(itemContainer);
         itemContainer.appendChild(imageItem);
@@ -90,34 +89,89 @@ function createItems(items, itemsContainer) {
 
         itemContainer.appendChild(plusButton);
         itemContainer.appendChild(lessButton);
-
-        totalCost += amountCost;
     });
-
-    console.log(totalCost);
 
     return itemsContainer;
 }
 
-async function changeAmount(id, option){
+function changeCost(id) {
+/*TODO
+    Aqui tengo que bindear el actualizar la cantidad con el actualizar el precio total, cuando haya un elemento en el DOM se hará :))))))
+ */
+    var amountCost = 0;
+
+    var allAmountCost = document.getElementsByClassName("total-cost-item");
+    
+    for(var i = 0; i < allAmountCost.length; i++){
+        amountCost += parseFloat(allAmountCost[i].innerHTML.split(" ")[0]).toFixed(2);
+    }
+
+    totalCost = amountCost;
+
+    var item = document.getElementById(id);
+
+    var itemAmount = item.getElementsByClassName("amount")[0].value;
+
+    var itemCost = item.getElementsByClassName("cost-item")[0].innerHTML.split(" ")[0];
+
+    var itemAmountCost = item.getElementsByClassName("total-cost-item")[0];
+    itemAmountCost.innerHTML =  `${(itemCost * itemAmount).toFixed(2)} €`;
+}
+
+async function changeAmount(id, option) {
     const itemId = document.getElementById(id);
     var amount = itemId.getElementsByClassName("amount")[0];
     var value = parseInt(amount.value);
+    var update = true;
 
-    if(option == "plus"){
-        amount.value = value + 1;
-    }else{
-        amount.value = value - 1;
-        
-        if(amount.value == 0){
+    if (amount.value != "" && amount.value >= 0) {
+        if (option == "plus") {
+            amount.value = value + 1;
+
+            totalCart++;
+        } else if (option == "less") {
+            amount.value = subtract(value, 0);
+
+            totalCart--;
+        } else {
+            if (option != "" && option >= 0) {
+                var optionValue = parseInt(option);
+
+                amount.value = optionValue;
+                totalCart = optionValue;
+            } else {
+                update = false;
+            }
+        }
+
+        if (amount.value == 0) {
             await setTimeout(() => {
                 itemId.remove();
                 isEmpty();
             }, 1000);
         }
-    }
 
-    
+        if (update) {
+            updateSessionCart(id, amount.value);
+            changeCost(id);
+        }
+    }
+}
+
+function updateSessionCart(id, amount) {
+    var items = giveSession;
+
+    items.forEach((item, index) => {
+        if (item.item.id == id) {
+            if (amount != 0) {
+                item.amount = amount;
+            } else {
+                items.splice(index, 1);
+            }
+        }
+    });
+
+    sessionStorage.setItem("items", JSON.stringify(items));
 }
 
 function buttonState(text) {
@@ -170,6 +224,7 @@ async function submit() {
     }
 
     await uploadData(JSON.stringify(data));
+    sessionStorage.removeItem("items");
 }
 
 async function uploadData(data) {
