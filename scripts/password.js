@@ -9,7 +9,7 @@ function writePassword() {
     var input = document.getElementById("data");
     var button = document.getElementById("submit");
 
-    submitPassword(input, button);
+    //submitPassword(input, button);
 
     var tries = document.getElementById("tries");
     var fail = document.getElementById("failPassword");
@@ -31,6 +31,7 @@ function writePassword() {
                 input.value = "";
             }
             count--;
+            formAdmin.style.animation = "vibrate 0.5s alternate";
         }
         else {
             alert("Ha alcanzado el máximo número de intentos\nNo ha podido entrar en modo Admin");
@@ -42,14 +43,14 @@ function writePassword() {
     }*/
 }
 
-function submitPassword(input, button) {
+/* function submitPassword(input, button) {
 
     input.addEventListener("keydown", function (event) {
         if (event.keyCode === 13) {
             button.click();
         }
     });
-}
+} */
 
 /*function timeOut() {
     var session = sessionStorage.getItem("timeOut");
