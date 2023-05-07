@@ -27,20 +27,26 @@
     </header>
 
     <div id="main-page">
-        <div id="item-list">
-            <span>Lista De Productos:</span>
-            <hr>
-        </div>
-        <!-- <div id="divisor-line"></div>-->
+        <table id="item-list">
+            <thead>
+                <tr>
+                    <th>Imagen</th>
+                    <th>Nombre</th>
+                    <th>Id</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+        </table>
+        <!--<button id="jii">cli</button>-->
+    </div>
 
-        <button id="jii">cli</button>
-
-        <div id="finish-container">
-            <div id="finish">
-                <div>Introduce un nombre para finalizar la compra:</div>
-                <input type="text" id="data" onkeyup="buttonState(this.value)">
-                <button id="submit" onclick="submit()">COMPRAR
-            </div>
+    <div id="finish-container">
+        <div id="finish">
+            <div>Introduce un nombre para finalizar la compra:</div>
+            <input type="text" id="data" onkeyup="buttonState(this.value)">
+            <button id="submit" onclick="submit()">COMPRAR
         </div>
     </div>
 

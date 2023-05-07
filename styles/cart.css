@@ -1,15 +1,10 @@
-#main-page {
-    display: flex;
-    gap: .6vw;
-}
-
 #finish {
     background-color: rgb(1, 90, 178);
     padding: 4px;
-}
-
-#item-list,#finish{
-    flex: 1;
+    position: relative;
+    padding: 10px;
+    font-weight: var(--bold);
+    font-size: 17px;
 }
 
 #finish,
@@ -23,16 +18,6 @@
     display: none;
     cursor: pointer;
 }
-/*
-#divisor-line {
-    width: .3vw;
-    background-color: rgb(154,154,154);
-    border-radius: 15px;
-}*/
-
-hr{
-    border-color: red;
-}
 
 #finish-container {
     display: none;
@@ -45,9 +30,60 @@ hr{
     align-items: center;
 }
 
-#finish {
-    position: relative;
-    padding: 10px;
-    font-weight: var(--bold);
-    font-size: 17px;
+#main-page {
+    display: flex;
+    justify-content: center;
+}
+
+#item-list {
+    border: 3px black ridge;
+    border-radius: 15px;
+    padding: 2px;
+    max-width: max-content;
+    height: 450px;
+    margin: auto;
+    margin-top: 6%;
+    margin-bottom: 6%;
+}
+
+#items {
+    align-items: start;
+}
+
+li {
+    list-style: none;
+}
+
+.image-container {}
+
+.image-item {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+
+tr{
+}
+
+td {
+    text-align: center;
+    width: 16.6666%;
+    height: 25vh;
+}
+
+.amount{
+    font-size: 1em;
+    width: 50px;
+    height: 30px;
+    border: none;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.plus-button{
+
+}
+
+.less-button{
+    
 }

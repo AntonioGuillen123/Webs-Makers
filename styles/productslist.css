@@ -77,23 +77,6 @@
     text-align: center;
 }
 
-.count-container {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.btn-count {
-    font-size: 1.2em;
-    width: 30px;
-    height: 30px;
-    border: none;
-    background-color: #eee;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 0 5px;
-}
-
 .product-count {
     font-size: 1em;
     width: 50px;

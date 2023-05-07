@@ -13,7 +13,7 @@ function itemList() {
     const itemList = document.getElementById("item-list");
     var items = giveSession;
 
-    var itemm = document.createElement("div");
+    var itemm = document.createElement("tbody");
     itemm.setAttribute("id", "items");
 
     if (items == null || items.length == 0) {
@@ -27,7 +27,7 @@ function itemList() {
 
 function isEmpty() {
     const itemsContainer = document.getElementById("items");
-    var items = itemsContainer.getElementsByTagName("div");
+    var items = itemsContainer.getElementsByTagName("tr");
 
     if (items.length == 0) {
         itemsContainer.innerHTML = "SU CARRITO ESTÁ VACIO";
@@ -39,24 +39,26 @@ function createItems(items, itemsContainer) {
         const amountCost = (item.item.cost * parseInt(item.amount)).toFixed(2);
         const id = item.item.id;
 
-        var itemContainer = document.createElement("div");
+        var itemContainer = document.createElement("tr");
         itemContainer.setAttribute("id", id);
+
+        var imageContainer = document.createElement("td");
+        imageContainer.classList.add("image-container");
 
         var imageItem = document.createElement("img");
         imageItem.src = item.item.imageUrl;
         imageItem.classList.add("image-item");
 
-        var itemName = document.createElement("div");
+        var itemName = document.createElement("td");
         itemName.innerHTML = item.item.name[0].toUpperCase() + item.item.name.slice(1);
         itemName.classList.add("name-item");
 
-        var itemID = document.createElement("div");
+        var itemID = document.createElement("td");
         itemID.innerHTML = id;
         itemID.classList.add("id-item");
 
-        var itemCost = document.createElement("div");
-        itemCost.innerHTML = `${item.item.cost} €`;
-        itemCost.classList.add("cost-item");
+        var amountContainer = document.createElement("td");
+        amountContainer.classList.add("count-container");
 
         var itemAmount = document.createElement("input");
         itemAmount.type = "number";
@@ -67,28 +69,37 @@ function createItems(items, itemsContainer) {
 
         var plusButton = document.createElement("button");
         plusButton.innerHTML = "+";
+        plusButton.classList.add("btn-count");
         plusButton.classList.add("plus-button");
         plusButton.addEventListener("click", () => changeAmount(id, "plus"));
 
         var lessButton = document.createElement("button");
         lessButton.innerHTML = "-";
+        lessButton.classList.add("btn-count");
         lessButton.classList.add("less-button");
         lessButton.addEventListener("click", () => changeAmount(id, "less"));
 
-        var totalItemCost = document.createElement("div");
+        var itemCost = document.createElement("td");
+        itemCost.innerHTML = `${item.item.cost} €`;
+        itemCost.classList.add("cost-item");
+
+        var totalItemCost = document.createElement("td");
         totalItemCost.innerHTML = `${amountCost} €`;
         totalItemCost.classList.add("total-cost-item");
 
         itemsContainer.appendChild(itemContainer);
-        itemContainer.appendChild(imageItem);
+        itemContainer.appendChild(imageContainer);
+        imageContainer.appendChild(imageItem);
         itemContainer.appendChild(itemName);
         itemContainer.appendChild(itemID);
-        itemContainer.appendChild(itemCost);
-        itemContainer.appendChild(itemAmount);
-        itemContainer.appendChild(totalItemCost);
 
-        itemContainer.appendChild(plusButton);
-        itemContainer.appendChild(lessButton);
+        itemContainer.appendChild(amountContainer);
+        amountContainer.appendChild(lessButton);
+        amountContainer.appendChild(itemAmount);
+        amountContainer.appendChild(plusButton);
+        
+        itemContainer.appendChild(itemCost);
+        itemContainer.appendChild(totalItemCost);
     });
 
     return itemsContainer;
