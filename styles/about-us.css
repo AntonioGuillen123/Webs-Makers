@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 #personInfo{
     background: black;
     color:white;
@@ -22,4 +23,18 @@
     border: 2px solid #050eb5;
     border-radius: 6px;
 
+=======
+#box-info{
+    background:black; 
+    color:white; 
+    font-weight:bold;
+    padding:15px;
+    border:3px solid #B34F19; 
+    margin-top:40px;
+    margin-bottom:40px;
+    margin-left: 20px; 
+    text-align:center; 
+    font-size:22px;
+    border-radius:10px;
+>>>>>>> Stashed changes
 }
