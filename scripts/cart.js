@@ -138,10 +138,11 @@ async function changeAmount(id, option) {
     var amount = itemId.getElementsByClassName("amount")[0];
     var value = parseInt(amount.value);
     var update = true;
+    var item = findProductById(id);
 
-    if (amount.value != "" && amount.value >= 0) {
+    if (amount.value != "" && amount.value >= 0 && amount.value <= item.stock) {
         if (option == "plus") {
-            amount.value = value + 1;
+            amount.value = sum(value, item.stock);
 
             totalCart++;
         } else if (option == "less") {
@@ -214,7 +215,7 @@ async function submit() {
     var items = giveSession;
 
     const time = new Date();
-    const dateShop = `${zeroFill(time.getDay())}/${zeroFill(time.getMonth())}/${time.getFullYear()}`;
+    const dateShop = `${zeroFill(time.getDate())}/${zeroFill(time.getMonth() + 1)}/${time.getFullYear()}`;
     const timeShop = `${time.getHours()}:${zeroFill(time.getMinutes())}:${zeroFill(time.getSeconds())}`;
 
     var data =
@@ -230,16 +231,29 @@ async function submit() {
         ]
     };
 
-    for (var i = 0; i < items.length; i++) {
+    items.forEach(item => {
         data.users[0].items.push({
-            "id": items[i].item.id,
-            "name": items[i].item.name,
-            "amount": items[i].amount
+            "id": item.item.id,
+            "name": item.item.name,
+            "amount": item.amount
         });
-    }
+    });
+
+    updateStock(data);
 
     await uploadData(JSON.stringify(data));
     sessionStorage.removeItem("items");
+}
+
+async function updateStock(items) {
+    items.users[0].items.forEach(item => {
+        var itemInfo = findProductById(item.id);
+        var newStock = itemInfo.stock - item.amount;
+
+        itemInfo.stock = newStock > 0 ? newStock : 0;
+    });
+
+    await uploadItems(JSON.stringify(productList));
 }
 
 async function uploadData(data) {
@@ -247,7 +261,17 @@ async function uploadData(data) {
         method: "PUT",
         body: data,
         headers: {
-            "Content-type": "application/json",
+            "Content-type": "application/json"
+        }
+    });
+}
+
+async function uploadItems(items) {
+    await fetch("https://getpantry.cloud/apiv1/pantry/f05c7024-db22-4ef2-9691-d82f3c50cd0e/basket/items", {
+        method: "POST",
+        body: items,
+        headers: {
+            "Content-type": "application/json"
         }
     });
 }
