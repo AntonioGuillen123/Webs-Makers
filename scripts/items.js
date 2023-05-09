@@ -82,6 +82,7 @@ function createProduct(product) {
 
 
     var inputCount = document.createElement("input");
+    inputCount.setAttribute("readonly", "");
     inputCount.type = "number";
     inputCount.value = 1;
     inputCount.min = 1;
@@ -94,9 +95,16 @@ function createProduct(product) {
     productPrice.classList.add("product-price");
 
     var btnToCart = document.createElement("button");
-    btnToCart.innerHTML = "Añadir al carrito";
     btnToCart.classList.add("btn-to-cart");
     btnToCart.setAttribute("id", product.id);
+
+    var path = document.createElement("a");
+    path.classList.add("path-button");
+    path.href = "../pages/cart.html";
+    path.innerHTML = "Añadir al carrito";
+
+
+    btnToCart.appendChild(path);
 
     divImage.appendChild(image);
     countContainer.appendChild(btnMinus);

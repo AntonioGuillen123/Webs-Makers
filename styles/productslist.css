@@ -36,6 +36,12 @@
     transition: width .5s ease-in-out;
 }
 
+.path-button{
+    text-decoration: none;
+    color: #fff;
+}
+
+
 #search-input:focus {
     width: 90%;
 }
