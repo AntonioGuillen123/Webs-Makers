@@ -143,7 +143,7 @@ function eventListener() {
             var countNumber = parseInt(selectCount.value);
             console.log(findProductById(productId));
             var productObject = findProductById(productId);
-            selectCount.value = sum(countNumber, productObject.stock);
+            selectCount.value = sum(countNumber, productObject.stock);   
             console.log(countNumber, productObject.stock);
         });
     }
