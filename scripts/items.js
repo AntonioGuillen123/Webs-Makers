@@ -90,7 +90,7 @@ function createProduct(product) {
 
 
     var productPrice = document.createElement("p");
-    productPrice.innerHTML = product.cost;
+    productPrice.innerHTML = product.price;
     productPrice.classList.add("product-price");
 
     var btnToCart = document.createElement("button");
@@ -186,12 +186,12 @@ function orderBy(value) {
     switch (value) {
         case "opt1":
 
-            copyProductList = copyProductList.sort((a, b) => a.cost - b.cost);
+            copyProductList = copyProductList.sort((a, b) => a.price - b.price);
 
             break;
         case "opt2":
 
-            copyProductList = copyProductList.sort((a, b) => a.cost - b.cost).reverse();
+            copyProductList = copyProductList.sort((a, b) => a.price - b.price).reverse();
 
             break;
         case "opt3":
