@@ -207,7 +207,7 @@ function orderBy(value) {
     }
 
     copyProductList.forEach(product => createProduct(product));
-
+    eventListener();
 }
 
 function alphabeticalOrder(productList) {
