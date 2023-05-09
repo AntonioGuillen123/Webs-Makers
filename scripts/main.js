@@ -1,5 +1,6 @@
 var totalCart = 0;
 
+
 console.log(`Este es el número total de cosas añadidas al carrito no te asustes Fernando xd : ${totalCart}`);
 
 seeSoon();
@@ -28,4 +29,14 @@ async function giveItems() {
     const data = await response.json();
 
     return data;
+}
+
+function findProductById(productId) {
+    var result = null;
+    productList.items.forEach(element => {
+        if (element.id == productId) {
+            result = element;
+        }
+    });
+    return result;
 }

@@ -142,7 +142,9 @@ function eventListener() {
             var selectCount = document.querySelector(`[count-id='${productId}']`);
             var countNumber = parseInt(selectCount.value);
             console.log(findProductById(productId));
-            selectCount.value = countNumber + 1;
+            var productObject = findProductById(productId);
+            selectCount.value = sum(countNumber, productObject.stock);
+            console.log(countNumber, productObject.stock);
         });
     }
 
@@ -167,15 +169,6 @@ function orderItems() {
     console.log(list);
 }
 
-function findProductById(productId) {
-    var result = null;
-    productList.items.forEach(element => {
-        if (element.id == productId) {
-            result = element;
-        }
-    });
-    return result;
-}
 
 function orderBy(value) {
     var productListPage = document.getElementById("items-list");
