@@ -1,11 +1,15 @@
 var giveSession = JSON.parse(sessionStorage.getItem("items"));
-var totalCost;
+var totalPrice;
+var productList;
+
 /*TODO :)
 document.getElementById("jii").addEventListener("click", () => {
     document.getElementById("finish-container").style.display = "flex";
 });*/
 
-function startCart() {
+async function startCart() {
+    productList = await giveItems();
+
     itemList();
 }
 
@@ -36,7 +40,7 @@ function isEmpty() {
 
 function createItems(items, itemsContainer) {
     items.forEach(item => {
-        const amountCost = (item.item.cost * parseInt(item.amount)).toFixed(2);
+        const amountPrice = (item.item.price * parseInt(item.amount)).toFixed(2);
         const id = item.item.id;
 
         var itemContainer = document.createElement("tr");
@@ -79,13 +83,13 @@ function createItems(items, itemsContainer) {
         lessButton.classList.add("less-button");
         lessButton.addEventListener("click", () => changeAmount(id, "less"));
 
-        var itemCost = document.createElement("td");
-        itemCost.innerHTML = `${item.item.cost} €`;
-        itemCost.classList.add("cost-item");
+        var itemPrice = document.createElement("td");
+        itemPrice.innerHTML = `${item.item.price} €`;
+        itemPrice.classList.add("cost-item");
 
-        var totalItemCost = document.createElement("td");
-        totalItemCost.innerHTML = `${amountCost} €`;
-        totalItemCost.classList.add("total-cost-item");
+        var totalItemPrice = document.createElement("td");
+        totalItemPrice.innerHTML = `${amountPrice} €`;
+        totalItemPrice.classList.add("total-cost-item");
 
         itemsContainer.appendChild(itemContainer);
         itemContainer.appendChild(imageContainer);
@@ -97,36 +101,36 @@ function createItems(items, itemsContainer) {
         amountContainer.appendChild(lessButton);
         amountContainer.appendChild(itemAmount);
         amountContainer.appendChild(plusButton);
-        
-        itemContainer.appendChild(itemCost);
-        itemContainer.appendChild(totalItemCost);
+
+        itemContainer.appendChild(itemPrice);
+        itemContainer.appendChild(totalItemPrice);
     });
 
     return itemsContainer;
 }
 
-function changeCost(id) {
-/*TODO
-    Aqui tengo que bindear el actualizar la cantidad con el actualizar el precio total, cuando haya un elemento en el DOM se hará :))))))
- */
-    var amountCost = 0;
+function changePrice(id) {
+    /*TODO
+        Aqui tengo que bindear el actualizar la cantidad con el actualizar el precio total, cuando haya un elemento en el DOM se hará :))))))
+     */
+    var amountPrice = 0;
 
-    var allAmountCost = document.getElementsByClassName("total-cost-item");
-    
-    for(var i = 0; i < allAmountCost.length; i++){
-        amountCost += parseFloat(allAmountCost[i].innerHTML.split(" ")[0]).toFixed(2);
+    var allAmountPrice = document.getElementsByClassName("total-cost-item");
+
+    for (var i = 0; i < allAmountPrice.length; i++) {
+        amountPrice += parseFloat(allAmountPrice[i].innerHTML.split(" ")[0]).toFixed(2);
     }
 
-    totalCost = amountCost;
+    totalPrice = amountPrice;
 
     var item = document.getElementById(id);
 
     var itemAmount = item.getElementsByClassName("amount")[0].value;
 
-    var itemCost = item.getElementsByClassName("cost-item")[0].innerHTML.split(" ")[0];
+    var itemPrice = item.getElementsByClassName("cost-item")[0].innerHTML.split(" ")[0];
 
-    var itemAmountCost = item.getElementsByClassName("total-cost-item")[0];
-    itemAmountCost.innerHTML =  `${(itemCost * itemAmount).toFixed(2)} €`;
+    var itemAmountPrice = item.getElementsByClassName("total-cost-item")[0];
+    itemAmountPrice.innerHTML = `${(itemPrice * itemAmount).toFixed(2)} €`;
 }
 
 async function changeAmount(id, option) {
@@ -164,7 +168,7 @@ async function changeAmount(id, option) {
 
         if (update) {
             updateSessionCart(id, amount.value);
-            changeCost(id);
+            changePrice(id);
         }
     }
 }

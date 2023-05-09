@@ -22,6 +22,7 @@ function seeSoon() {
     })
 }
 
+const sum = (countNumber, stock) => countNumber < stock ? countNumber + 1 : countNumber; 
 const subtract = (countNumber, number) => countNumber > number ? countNumber - 1 : countNumber;
 
 async function giveItems() {
