@@ -1,7 +1,7 @@
 var productList;
 
 /*Esto es una prueba para enviar los items al carrito*/
-// EL JSON TIENE QUE TRAER UN ARRAY DE OBJETOS, EN CADA OBJETO TIENE QUE HABER UNA SINTAXIS COMO LA DE ABAJO, ES DECIR, 
+// EL JSON TIENE QUE TRAER UN ARRAY DE OBJETOS, EN CADA OBJETO TIENE QUE HABER UNA SINTAXIS COMO LA DE ABAJO, ES DECIR,
 // TIENE QUE APARECER UN OBJETO CON EL PRODUCTO Y LA CANTIDAD DE ESTE
 // TAMBIÉN IDEA DE VARIABLE EN EL MAIN PARA TODOS QUE SALGA EL CARRITO DE COMPRA EN TODDAS LAS VISTAS Y CADA VEZ QUE SE LE SUME UNO U SE LE RESTE, SE CAMBIE
 
@@ -99,9 +99,9 @@ function createProduct(product) {
     btnToCart.setAttribute("id", product.id);
 
     var path = document.createElement("a");
-    path.classList.add("path-button");
-    path.href = "../pages/cart.html";
-    path.innerHTML = "Añadir al carrito";
+    // path.classList.add("path-button");
+    // path.href = "../pages/cart.html";
+    // path.innerHTML = "Añadir al carrito";
 
 
     btnToCart.appendChild(path);
@@ -129,11 +129,27 @@ function eventListener() {
             var productId = cart[i].getAttribute("id");
             var selectCount = document.querySelector(`[count-id='${productId}']`);
             console.log(findProductById(productId));
-            shoppingCart.push({
-                "item": findProductById(productId),
-                "amount": selectCount.value
+            var prueba = JSON.parse(sessionStorage.getItem("items"));
+            // if(shoppingCart.length != 0) shoppingCart = JSON.parse(sessionStorage.getItem("items"));
+            if(prueba != null) prueba.forEach(element => {
+                var addProduct = true;
+
+                if (element.item.id === findProductById(productId).id) {
+                    element.amount = parseInt(selectCount.value) + parseInt(element.amount);
+                    addProduct = false;
+                }
+
+                if(addProduct){
+                    shoppingCart.push({
+                        "item": findProductById(productId),
+                        "amount": parseInt(selectCount.value)
+                    });
+                }
             });
+            addProductToShoppingCart(findProductById(productId), selectCount.value);
+
             console.log(shoppingCart);
+            console.log(JSON.parse(sessionStorage.getItem("items")));
             sessionStorage.setItem("items", JSON.stringify(shoppingCart));
         });
     }
@@ -151,7 +167,7 @@ function eventListener() {
             var countNumber = parseInt(selectCount.value);
             console.log(findProductById(productId));
             var productObject = findProductById(productId);
-            selectCount.value = sum(countNumber, productObject.stock);   
+            selectCount.value = sum(countNumber, productObject.stock);
             console.log(countNumber, productObject.stock);
         });
     }
@@ -224,4 +240,33 @@ function alphabeticalOrder(productList) {
     });
 
     return productList;
+}
+
+
+function addProductToShoppingCart(product, selectCount) {
+
+    var addProduct = true;
+
+    if(shoppingCart.length > 0){
+        shoppingCart.forEach(element => {
+            if (element.item === product) {
+                element.amount = parseInt(selectCount) + parseInt(element.amount);
+                addProduct = false;
+            }
+            // else{
+            //     shoppingCart.push(product);
+            // }
+        });
+    }
+    
+
+    if (addProduct) {
+        shoppingCart.push({
+            "item": product,
+            "amount": parseInt(selectCount)
+        });
+    }
+
+
+
 }
