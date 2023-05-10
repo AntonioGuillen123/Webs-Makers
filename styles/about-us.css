@@ -58,4 +58,30 @@ button :active{
     border-radius: 6px;
 }
 
+#contact{
+    height: 10%px;
+    width: 100%;
+    padding: 20px;
+    background-color: black;
+    color: white;
+}
 
+#h1Contact{
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#pContact{
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-left: 10%;
+    
+    
+}
+#imageContact{
+    width: 30px;
+    height: 30px;
+    margin-left: 40%;
+}
+table{
+margin-left: 40%;
+}
