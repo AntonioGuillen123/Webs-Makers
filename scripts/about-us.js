@@ -23,7 +23,9 @@ for (var i = 0; i < botones.length; i++) {
 for (let i = 0; i < botones.length; i++) {
     botones[i].addEventListener("click", () => {
         dontSee(info);
+        quitStyle(botones);
         info[i].style.display = "block";
+        botones[i].classList.add("activeBtn");
 
     })
 
@@ -32,6 +34,11 @@ for (let i = 0; i < botones.length; i++) {
 function dontSee(element) {
     for (let i = 0; i < element.length; i++) {
         info[i].style.display = "none";
+    }
+}
+function quitStyle(element){
+    for (let i = 0; i < element.length; i++) {
+        botones[i].classList.remove("activeBtn")
     }
 }
 
