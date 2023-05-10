@@ -85,3 +85,8 @@ button :active{
 table{
 margin-left: 40%;
 }
+
+.active{
+    background-color: #3554EE;
+    color: black;
+}
