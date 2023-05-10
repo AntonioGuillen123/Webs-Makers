@@ -97,14 +97,8 @@ function createProduct(product) {
     var btnToCart = document.createElement("button");
     btnToCart.classList.add("btn-to-cart");
     btnToCart.setAttribute("id", product.id);
+    btnToCart.innerHTML = "Añadir al carrito";
 
-    var path = document.createElement("a");
-    // path.classList.add("path-button");
-    // path.href = "../pages/cart.html";
-    // path.innerHTML = "Añadir al carrito";
-
-
-    btnToCart.appendChild(path);
 
     divImage.appendChild(image);
     countContainer.appendChild(btnMinus);
@@ -253,9 +247,6 @@ function addProductToShoppingCart(product, selectCount) {
                 element.amount = parseInt(selectCount) + parseInt(element.amount);
                 addProduct = false;
             }
-            // else{
-            //     shoppingCart.push(product);
-            // }
         });
     }
     
