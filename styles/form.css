@@ -38,14 +38,19 @@ textarea{
     max-height: 200px;
 }
 
-#boton{
+#button{
     background-color: rgb(85, 85, 187);
     color: #fff;
     padding: 20px;
 }
-#boton:hover{
+#button:hover{
     cursor: pointer;
 }
+
+input[type="email"]:invalid {
+    border-color: red;
+  }
+
 
 @media(max-width:480px)
 {
