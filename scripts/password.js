@@ -7,7 +7,7 @@ function writePassword() {
     var tries = document.getElementById("tries");
     var fail = document.getElementById("failPassword");
     var formAdmin = document.getElementById("formAdmin");
-    //var button = document.getElementById("submit");
+    var form = document.getElementsByTagName("form");
 
     if (input.value == truePassword) {
         window.location.href = "admin.html";
