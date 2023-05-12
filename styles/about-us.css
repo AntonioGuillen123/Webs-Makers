@@ -73,7 +73,9 @@ button :active{
 #pContact{
     text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    margin-left: 10%;
+    width: 20%;
+    margin: 0;
+
     
     
 }
@@ -82,19 +84,29 @@ button :active{
     height: 30px;
     margin-left: 40%;
 }
-table{
-margin-left: 40%;
-}
 
 .activeBtn{
     background-color: #3554EE;
     color: black;
 }
 
-#contactinfo{
-    
+#contactInfo{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 }
  
 #iframe{
     text-align: center;
+ }
+
+ #MVV{
+    
+    background-color: rgb(75, 208, 238);
+    color: black;
+    width: 70%;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 50px;
+    border: 2px solid black;
  }
