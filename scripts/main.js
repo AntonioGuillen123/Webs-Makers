@@ -1,7 +1,8 @@
 var totalCart = sessionStorage.getItem("cartValue");
+var maxValueCart = (value) => value < 100 ? value : `${99}+`;
 
 const valueCart = document.getElementById("cart-value");
-valueCart.value = totalCart != null ? totalCart : 0;
+valueCart.value = totalCart != null ? maxValueCart(totalCart) : 0;
 
 seeSoon();
 

@@ -46,6 +46,12 @@ function isEmpty() {
 function createFooter(footer){
     var buy = document.createElement("button");
     buy.setAttribute("id", "buy-table");
+    buy.innerHTML = "COMPRAR";
+
+    buy.addEventListener("click", () => {
+        var finishContainer = document.getElementById("finish-container");
+        finishContainer.style.display = "flex";
+    });
 
     var totalContainer = document.createElement("div");
     totalContainer.setAttribute("id", "total-container");
@@ -56,7 +62,7 @@ function createFooter(footer){
 
     var total = document.createElement("p");
     total.setAttribute("id", "total");
-    total.innerHTML = `${totalPrice} €`;
+    total.innerHTML = `${totalPrice.toFixed(2)} €`;
 
     footer.appendChild(buy);
     footer.appendChild(totalContainer);
@@ -69,10 +75,10 @@ function createFooter(footer){
 
 function createItems(items, itemsContainer) {
     items.forEach(item => {
-        const amountPrice = (item.item.price * parseInt(item.amount)).toFixed(2);
+        const amountPrice = (parseFloat(item.item.price) * parseInt(item.amount));
         const id = item.item.id;
 
-        totalPrice += parseFloat(amountPrice);
+        totalPrice += amountPrice;
 
         var itemContainer = document.createElement("tr");
         itemContainer.setAttribute("id", id);
@@ -119,7 +125,7 @@ function createItems(items, itemsContainer) {
         itemPrice.classList.add("cost-item");
 
         var totalItemPrice = document.createElement("td");
-        totalItemPrice.innerHTML = `${amountPrice} €`;
+        totalItemPrice.innerHTML = `${amountPrice.toFixed(2)} €`;
         totalItemPrice.classList.add("total-cost-item");
 
         itemsContainer.appendChild(itemContainer);
@@ -143,14 +149,6 @@ function createItems(items, itemsContainer) {
 function changePrice(id) {
     var amountPrice = 0;
 
-    var allAmountPrice = document.getElementsByClassName("total-cost-item");
-
-    for (var i = 0; i < allAmountPrice.length; i++) {
-        amountPrice += parseFloat(allAmountPrice[i].innerHTML.split(" ")[0]).toFixed(2);
-    }
-
-    totalPrice = amountPrice;
-
     var item = document.getElementById(id);
 
     var itemAmount = item.getElementsByClassName("amount")[0].value;
@@ -158,7 +156,18 @@ function changePrice(id) {
     var itemPrice = item.getElementsByClassName("cost-item")[0].innerHTML.split(" ")[0];
 
     var itemAmountPrice = item.getElementsByClassName("total-cost-item")[0];
-    itemAmountPrice.innerHTML = `${(itemPrice * itemAmount).toFixed(2)} €`;
+    itemAmountPrice.innerHTML = `${(parseFloat(itemPrice) * parseInt(itemAmount)).toFixed(2)} €`;
+
+    var allAmountPrice = document.getElementsByClassName("total-cost-item");
+
+    var total = document.getElementById("total");
+
+    for (var i = 0; i < allAmountPrice.length; i++) {
+        amountPrice += parseFloat(allAmountPrice[i].innerHTML.split(" ")[0]);
+    }
+
+    totalPrice = parseFloat(amountPrice.toFixed(2));
+    total.innerHTML = `${totalPrice} €`;
 }
 
 async function changeAmount(id, option) {
@@ -204,7 +213,7 @@ function changeTotalAmount() {
         totalAmount += parseInt(item.amount);
     });
 
-    valueCart.value = totalAmount < 99 ? totalAmount : 99;
+    valueCart.value = maxValueCart(totalAmount);
 
     sessionStorage.setItem("cartValue", totalAmount);
 }
@@ -277,7 +286,11 @@ async function submit() {
     updateStock(data);
 
     await uploadData(JSON.stringify(data));
+
     sessionStorage.removeItem("items");
+    sessionStorage.removeItem("cartValue");
+
+    window.location.href = "../index.html";
 }
 
 async function updateStock(items) {
