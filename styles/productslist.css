@@ -112,7 +112,7 @@
 
 @media only screen and (min-width: 768px) {
     #items-list { 
-        grid-template-columns: repeat(auto-fill, 1050px);
+        grid-template-columns: repeat(auto-fill, 100%);
 
     }
 
