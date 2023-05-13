@@ -80,7 +80,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 #cart-value{
     text-align: center;
-    position: fixed;
+    position: absolute;
     width: 1rem;
     background-color: red;
     border-radius: 15px;
@@ -88,6 +88,7 @@ input[type=number]::-webkit-outer-spin-button {
     color: white;
     font-weight: bold;
     cursor: pointer;
+    padding: 5px;
 }
 
 #cart-value:focus{

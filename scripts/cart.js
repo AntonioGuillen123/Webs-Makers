@@ -1,5 +1,5 @@
 var giveSession = JSON.parse(sessionStorage.getItem("items"));
-var totalPrice;
+var totalPrice = 0;
 var productList;
 
 /*TODO :)
@@ -17,16 +17,21 @@ function itemList() {
     const itemList = document.getElementById("item-list");
     var items = giveSession;
 
-    var itemm = document.createElement("tbody");
-    itemm.setAttribute("id", "items");
+    var tableBody = document.createElement("tbody");
+    tableBody.setAttribute("id", "items");
+
+    var tableFooter = document.createElement("tfoot");
+    tableFooter.setAttribute("id", "table-footer");
 
     if (items == null || items.length == 0) {
-        itemm.innerHTML = "SU CARRITO ESTÁ VACIO";
+        tableBody.innerHTML = "SU CARRITO ESTÁ VACIO";
     } else {
-        itemm = createItems(items, itemm);
+        tableBody = createItems(items, tableBody);
+        tableFooter = createFooter(tableFooter);
     }
 
-    itemList.appendChild(itemm);
+    itemList.appendChild(tableBody);
+    itemList.appendChild(tableFooter);
 }
 
 function isEmpty() {
@@ -38,10 +43,36 @@ function isEmpty() {
     }
 }
 
+function createFooter(footer){
+    var buy = document.createElement("button");
+    buy.setAttribute("id", "buy-table");
+
+    var totalContainer = document.createElement("div");
+    totalContainer.setAttribute("id", "total-container");
+
+    var totalText = document.createElement("p");
+    totalText.setAttribute("id", "total-text");
+    totalText.innerHTML = "PRECIO TOTAL: ";
+
+    var total = document.createElement("p");
+    total.setAttribute("id", "total");
+    total.innerHTML = `${totalPrice} €`;
+
+    footer.appendChild(buy);
+    footer.appendChild(totalContainer);
+
+    totalContainer.appendChild(totalText);
+    totalContainer.appendChild(total);
+
+    return footer;
+}
+
 function createItems(items, itemsContainer) {
     items.forEach(item => {
         const amountPrice = (item.item.price * parseInt(item.amount)).toFixed(2);
         const id = item.item.id;
+
+        totalPrice += parseFloat(amountPrice);
 
         var itemContainer = document.createElement("tr");
         itemContainer.setAttribute("id", id);
@@ -69,7 +100,7 @@ function createItems(items, itemsContainer) {
         itemAmount.min = 0;
         itemAmount.value = item.amount;
         itemAmount.classList.add("amount");
-        itemAmount.addEventListener("input", () => changeAmount(id, itemAmount.value));
+        itemAmount.addEventListener("change", () => changeAmount(id, itemAmount.value));
 
         var plusButton = document.createElement("button");
         plusButton.innerHTML = "+";
@@ -110,9 +141,6 @@ function createItems(items, itemsContainer) {
 }
 
 function changePrice(id) {
-    /*TODO
-        Aqui tengo que bindear el actualizar la cantidad con el actualizar el precio total, cuando haya un elemento en el DOM se hará :))))))
-     */
     var amountPrice = 0;
 
     var allAmountPrice = document.getElementsByClassName("total-cost-item");
@@ -169,7 +197,7 @@ async function changeAmount(id, option) {
 }
 
 function changeTotalAmount() {
-    const items = JSON.parse(sessionStorage.getItem("items"));
+    const items = giveSession;
     var totalAmount = 0;
 
     items.forEach(item => {

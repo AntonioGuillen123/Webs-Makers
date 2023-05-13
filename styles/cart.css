@@ -75,3 +75,8 @@ td {
     text-align: center;
     border-radius: 5px;
 }
+
+#table-footer{
+    display: flex;
+    border: 3px black solid;
+}
