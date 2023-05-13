@@ -16,7 +16,9 @@
             <ul>
                 <li><a href="about-us.html" class="options" onclick="setActive(this.innerHTML)">Sobre Nosotros</a></li>
                 <li><a href="form.html" class="options" onclick="setActive(this.innerHTML)">Contacto</a></li>
-                <li><a href="../index.html" class="options" onclick="setActive(this.innerHTML)"><h1 id="main-title">WEBS-MAKERS</h1></a></li>
+                <li><a href="../index.html" class="options" onclick="setActive(this.innerHTML)">
+                        <h1 id="main-title">WEBS-MAKERS</h1>
+                    </a></li>
                 <li><a href="" class="options" onclick="setActive(this.innerHTML)">Catálogo Productos</a></li>
                 <li>
                     <a href="cart.html" class="active options" onclick="setActive(this.innerHTML)">
@@ -29,20 +31,23 @@
     </header>
 
     <div class="page">
-        <div class="search-container">
-            <form>
-                <input type="text" placeholder="Buscar Producto..." name="search" id="search-input" autocomplete="off"
-                    onkeyup="searchProducts(this.value)" />
-            </form>
+        <div id="header-container">
+            <div class="search-container">
+                <form>
+                    <input type="text" placeholder="Buscar Producto..." name="search" id="search-input"
+                        autocomplete="off" onkeyup="searchProducts(this.value)" />
+                </form>
+            </div>
+            <div class="filter-container">
+                <select name="options" id="options" onchange="orderBy(this.value)">
+                    <option value="opt1">Ascendentemente</option>
+                    <option value="opt2">Descendentemente</option>
+                    <option value="opt3">A-Z</option>
+                    <option value="opt4">Z-A</option>
+                </select>
+            </div>
         </div>
-        <div class="filter-container">
-            <select name="options" id="options" onchange="orderBy(this.value)">
-                <option value="opt1">Ascendentemente</option>
-                <option value="opt2">Descendentemente</option>
-                <option value="opt3">A-Z</option>
-                <option value="opt4">Z-A</option>
-            </select>
-        </div>
+
 
         <div id="items-list">
 
