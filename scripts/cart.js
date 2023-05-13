@@ -43,36 +43,6 @@ function isEmpty() {
     }
 }
 
-function createFooter(footer){
-    var buy = document.createElement("button");
-    buy.setAttribute("id", "buy-table");
-    buy.innerHTML = "COMPRAR";
-
-    buy.addEventListener("click", () => {
-        var finishContainer = document.getElementById("finish-container");
-        finishContainer.style.display = "flex";
-    });
-
-    var totalContainer = document.createElement("div");
-    totalContainer.setAttribute("id", "total-container");
-
-    var totalText = document.createElement("p");
-    totalText.setAttribute("id", "total-text");
-    totalText.innerHTML = "PRECIO TOTAL: ";
-
-    var total = document.createElement("p");
-    total.setAttribute("id", "total");
-    total.innerHTML = `${totalPrice.toFixed(2)} €`;
-
-    footer.appendChild(buy);
-    footer.appendChild(totalContainer);
-
-    totalContainer.appendChild(totalText);
-    totalContainer.appendChild(total);
-
-    return footer;
-}
-
 function createItems(items, itemsContainer) {
     items.forEach(item => {
         const amountPrice = (parseFloat(item.item.price) * parseInt(item.amount));
@@ -144,6 +114,52 @@ function createItems(items, itemsContainer) {
     });
 
     return itemsContainer;
+}
+
+function createFooter(footer){
+    var buy = document.createElement("button");
+    buy.setAttribute("id", "buy-table");
+    buy.innerHTML = "COMPRAR";
+
+    buy.addEventListener("click", () => {
+        var finishContainer = document.getElementById("finish-container");
+        finishContainer.style.display = "flex";
+
+        closeSubmit(finishContainer);
+    });
+
+    var totalContainer = document.createElement("div");
+    totalContainer.setAttribute("id", "total-container");
+
+    var totalText = document.createElement("p");
+    totalText.setAttribute("id", "total-text");
+    totalText.innerHTML = "PRECIO TOTAL: ";
+
+    var total = document.createElement("p");
+    total.setAttribute("id", "total");
+    total.innerHTML = `${totalPrice.toFixed(2)} €`;
+
+    footer.appendChild(buy);
+    footer.appendChild(totalContainer);
+
+    totalContainer.appendChild(totalText);
+    totalContainer.appendChild(total);
+
+    return footer;
+}
+
+function closeSubmit(finishContainer){
+    var data = document.getElementById("data");
+    var button = document.getElementById("submit");
+    var close = document.getElementById("close");
+
+    data.value = "";
+
+    button.style.display = "none";
+
+    close.addEventListener("click", () => {
+        finishContainer.style.display = "none";
+    });
 }
 
 function changePrice(id) {
@@ -234,7 +250,7 @@ function updateSessionCart(id, amount) {
     sessionStorage.setItem("items", JSON.stringify(items));
 }
 
-function buttonState(text) {
+function buttonState(text) { //TODO CHANGESSSS SUJETO A CAMBIOS COMO LO DEL PAYPAL...
     var button = document.getElementById("submit");
 
     if (text.length != 0) {
