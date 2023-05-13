@@ -141,20 +141,13 @@ async function changeAmount(id, option) {
     var item = findProductById(id);
 
     if (amount.value != "" && amount.value >= 0 && amount.value <= item.stock) {
-        if (option == "plus") {
-            amount.value = sum(value, item.stock);
-
-            totalCart++;
-        } else if (option == "less") {
-            amount.value = subtract(value, 0);
-
-            totalCart--;
-        } else {
+        if (option == "plus") amount.value = sum(value, item.stock);
+        else if (option == "less") amount.value = subtract(value, 0);
+        else {
             if (option != "" && option >= 0) {
                 var optionValue = parseInt(option);
 
                 amount.value = optionValue;
-                totalCart = optionValue;
             } else {
                 update = false;
             }
@@ -170,8 +163,22 @@ async function changeAmount(id, option) {
         if (update) {
             updateSessionCart(id, amount.value);
             changePrice(id);
+            changeTotalAmount();
         }
     }
+}
+
+function changeTotalAmount() {
+    const items = JSON.parse(sessionStorage.getItem("items"));
+    var totalAmount = 0;
+
+    items.forEach(item => {
+        totalAmount += parseInt(item.amount);
+    });
+
+    valueCart.value = totalAmount < 99 ? totalAmount : 99;
+
+    sessionStorage.setItem("cartValue", totalAmount);
 }
 
 function updateSessionCart(id, amount) {

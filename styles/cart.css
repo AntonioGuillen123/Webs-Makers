@@ -61,10 +61,6 @@ li {
     max-width: 100%;
 }
 
-
-tr{
-}
-
 td {
     text-align: center;
     width: 16.6666%;
@@ -78,12 +74,4 @@ td {
     border: none;
     text-align: center;
     border-radius: 5px;
-}
-
-.plus-button{
-
-}
-
-.less-button{
-    
 }

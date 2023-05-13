@@ -11,15 +11,17 @@
 <body>
     <header>
         <nav>
-            <h1 id="main-title">WEBS-MAKERS</h1>
-
             <ul>
-                <li><a href="" class="active options" onclick="setActive(this.innerHTML)">Principal</a></li>
-                <li><a href="pages/about-us.html" class="options" onclick="setActive(this.innerHTML)">Sobre nosotros</a></li>
-                <li><a href="pages/items.html" class="options" onclick="setActive(this.innerHTML)">Catálogo</a></li>
-                <li><a href="pages/cart.html" class="options" onclick="setActive(this.innerHTML)">Carrito de compra</a></li>
+                <li><a href="pages/about-us.html" class="options" onclick="setActive(this.innerHTML)">Sobre Nosotros</a></li>
                 <li><a href="pages/form.html" class="options" onclick="setActive(this.innerHTML)">Contacto</a></li>
-                <li><a href="pages/password.html" class="options" onclick="setActive(this.innerHTML)">Admin</a></li>
+                <li><a href="" class="options" onclick="setActive(this.innerHTML)"><h1 id="main-title">WEBS-MAKERS</h1></a></li>
+                <li><a href="pages/items.html" class="options" onclick="setActive(this.innerHTML)">Catálogo Productos</a></li>
+                <li>
+                    <a href="pages/cart.html" class="active options" onclick="setActive(this.innerHTML)">
+                        <img id="cart-image" src="images/cart.png" alt="">
+                        <input type="number" id="cart-value" readonly>
+                    </a>
+                </li>
             </ul>
         </nav>
     </header>

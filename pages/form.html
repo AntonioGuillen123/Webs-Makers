@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Formulario || Webs-Makers</title>
+    <title>Contacto | Webs-Makers</title>
     <link rel="stylesheet" href="../styles/common.css">
     <link rel="shortcut icon" href="../images/favicons/formfavicon.png">
     <link rel="stylesheet" href="../styles/form.css">
@@ -12,15 +12,17 @@
 <body>
     <header>
         <nav>
-            <h1 id="main-title">WEBS-MAKERS</h1>
-
             <ul>
-                <li><a href="../index.html" class="options" onclick="setActive(this.innerHTML)">Principal</a></li>
-                <li><a href="about-us.html" class="options" onclick="setActive(this.innerHTML)">Sobre nosotros</a></li>
-                <li><a href="items.html" class="options" onclick="setActive(this.innerHTML)">Catálogo</a></li>
-                <li><a href="cart.html" class="options" onclick="setActive(this.innerHTML)">Carrito de compra</a></li>
-                <li><a href="" class="active options" onclick="setActive(this.innerHTML)">Contacto</a></li>
-                <li><a href="password.html" class="options" onclick="setActive(this.innerHTML)">Admin</a></li>
+                <li><a href="about-us.html" class="options" onclick="setActive(this.innerHTML)">Sobre Nosotros</a></li>
+                <li><a href="" class="options" onclick="setActive(this.innerHTML)">Contacto</a></li>
+                <li><a href="../index.html" class="options" onclick="setActive(this.innerHTML)"><h1 id="main-title">WEBS-MAKERS</h1></a></li>
+                <li><a href="items.html" class="options" onclick="setActive(this.innerHTML)">Catálogo Productos</a></li>
+                <li>
+                    <a href="cart.html" class="active options" onclick="setActive(this.innerHTML)">
+                        <img id="cart-image" src="../images/cart.png" alt="">
+                        <input type="number" id="cart-value" readonly>
+                    </a>
+                </li>
             </ul>
         </nav>
     </header>

@@ -1,7 +1,7 @@
-var totalCart = 0;
+var totalCart = sessionStorage.getItem("cartValue");
 
-
-console.log(`Este es el número total de cosas añadidas al carrito no te asustes Fernando xd : ${totalCart}`);
+const valueCart = document.getElementById("cart-value");
+valueCart.value = totalCart != null ? totalCart : 0;
 
 seeSoon();
 
@@ -22,7 +22,7 @@ function seeSoon() {
     })
 }
 
-const sum = (countNumber, stock) => countNumber < stock ? countNumber + 1 : countNumber; 
+const sum = (countNumber, number) => countNumber < number ? countNumber + 1 : countNumber; 
 const subtract = (countNumber, number) => countNumber > number ? countNumber - 1 : countNumber;
 
 async function giveItems() {

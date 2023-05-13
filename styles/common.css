@@ -30,11 +30,9 @@ nav ul {
     justify-content: flex-end;
     align-items: center;
     right: 0;
+    gap: 12vw;
 }
 
-nav li {
-    margin-right: 20px;
-}
 
 nav a {
     color: #fff;
@@ -78,4 +76,20 @@ input[type=number]::-webkit-outer-spin-button {
     border-radius: 5px;
     cursor: pointer;
     margin: 0 5px;
+}
+
+#cart-value{
+    text-align: center;
+    position: fixed;
+    width: 1rem;
+    background-color: red;
+    border-radius: 15px;
+    border: 1.5px black solid;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#cart-value:focus{
+    outline: none;
 }
