@@ -216,22 +216,9 @@ async function changeAmount(id, option) {
         if (update) {
             updateSessionCart(id, amount.value);
             changePrice(id);
-            changeTotalAmount();
+            changeTotalAmount(giveSession);
         }
     }
-}
-
-function changeTotalAmount() {
-    const items = giveSession;
-    var totalAmount = 0;
-
-    items.forEach(item => {
-        totalAmount += parseInt(item.amount);
-    });
-
-    valueCart.value = maxValueCart(totalAmount);
-
-    sessionStorage.setItem("cartValue", totalAmount);
 }
 
 function updateSessionCart(id, amount) {

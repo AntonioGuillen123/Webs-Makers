@@ -42,3 +42,16 @@ function findProductById(productId) {
     });
     return result;
 }
+
+function changeTotalAmount(list) {
+    const items = list;
+    var totalAmount = 0;
+
+    items.forEach(item => {
+        totalAmount += parseInt(item.amount);
+    });
+
+    valueCart.value = maxValueCart(totalAmount);
+
+    sessionStorage.setItem("cartValue", totalAmount);
+}

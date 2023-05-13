@@ -124,7 +124,6 @@ function eventListener() {
             var selectCount = document.querySelector(`[count-id='${productId}']`);
             console.log(findProductById(productId));
             var prueba = JSON.parse(sessionStorage.getItem("items"));
-            // if(shoppingCart.length != 0) shoppingCart = JSON.parse(sessionStorage.getItem("items"));
             if(prueba != null) prueba.forEach(element => {
                 var addProduct = true;
 
@@ -141,7 +140,7 @@ function eventListener() {
                 }
             });
             addProductToShoppingCart(findProductById(productId), selectCount.value);
-
+            changeTotalAmount(shoppingCart);
             console.log(shoppingCart);
             console.log(JSON.parse(sessionStorage.getItem("items")));
             sessionStorage.setItem("items", JSON.stringify(shoppingCart));
