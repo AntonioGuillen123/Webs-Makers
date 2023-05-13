@@ -49,7 +49,7 @@
 #items-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, 275px);
-    gap: 10vw;
+    gap: 3vw;
     margin: 10vw;
     justify-content: center;
 }
@@ -113,7 +113,6 @@
 @media only screen and (min-width: 768px) {
     #items-list { 
         grid-template-columns: repeat(auto-fill, 100%);
-
     }
 
     .product-card {
