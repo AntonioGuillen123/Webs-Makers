@@ -1,22 +1,25 @@
+const truePassword = "asdf";
 var count = 3;
 
 function writePassword() {
-    var truePassword = "asdf";
 
+    submitPassword();
+
+    checkPassword();
+
+}
+
+function checkPassword() {
     var input = document.getElementById("data");
     var tries = document.getElementById("tries");
     var fail = document.getElementById("failPassword");
-    var formAdmin = document.getElementById("formAdmin");
-    var form = document.getElementsByTagName("form")[0];
-
-    submitPassword(form);
 
     if (input.value == truePassword) {
         window.location.href = "admin.html";
     }
     else {
         formAdmin.classList.add("vibration");
-        removeVibration(formAdmin);
+        removeVibration();
         tries.innerHTML = `Intentos restantes: ${count}`;
         if (count > 0) {
             if (input.value === "") {
@@ -34,18 +37,20 @@ function writePassword() {
     }
 }
 
-function removeVibration(formAdmin) {
-    setTimeout(() => {
-        formAdmin.classList.remove("vibration");
-    }, 500);
-}
+function submitPassword() {
+    var form = document.getElementsByTagName("form")[0];
 
-function submitPassword(form){
     form.addEventListener("submit", (event) => {
         event.preventDefault();
         if (input.value == truePassword) {
-            /* form.action = "admin.html"; */
             form.submit();
         }
     })
+}
+
+function removeVibration() {
+    var formAdmin = document.getElementById("formAdmin");
+    setTimeout(() => {
+        formAdmin.classList.remove("vibration");
+    }, 500);
 }
