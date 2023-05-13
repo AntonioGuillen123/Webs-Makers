@@ -42,6 +42,7 @@ function submitPassword() {
 
     form.addEventListener("submit", (event) => {
         event.preventDefault();
+        
         if (input.value == truePassword) {
             form.submit();
         }
