@@ -1,22 +1,44 @@
 
 
-function valideForm() {
+async function validateForm() {
 
     var form = document.getElementById("Form")
     
-    form.addEventListener("submit", function(event){
+    form.addEventListener("submit", async function(event){
         event.preventDefault();
         var email = document.getElementById("email").value;
         var message = document.getElementById("message").value;
-        if(email == "" || message == "" ){
-            alert("Please enter a valid email and message");
-        } else{
-            form.submit();
-        }
-    });
+        var affair = document.getElementById("affair").value;
+        if (email === '' || message === '') {
+            alert('Porfavor introduzca un email y mensaje valido.');
+          } else {
+            var data = {
+              email: email,
+              affair: affair,
+              message: message
+            };
+            await createData(JSON.stringify(data));
+            alert('Se ha subido correctamente.');
+            form.reset();
+            
+          }
+        });
 
 
 };
 
-valideForm();
+validateForm();
+
+
+async function createData(data) {
+    await fetch("https://getpantry.cloud/apiv1/pantry/f05c7024-db22-4ef2-9691-d82f3c50cd0e/basket/form", {
+        method: "POST",
+        body: data,
+        headers: {
+            "Content-type": "application/json"
+        }
+    });
+}
+
+
 
