@@ -32,7 +32,7 @@ validateForm();
 
 async function createData(data) {
     await fetch("https://getpantry.cloud/apiv1/pantry/f05c7024-db22-4ef2-9691-d82f3c50cd0e/basket/form", {
-        method: "POST",
+        method: "PUT",
         body: data,
         headers: {
             "Content-type": "application/json"
