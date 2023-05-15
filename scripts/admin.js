@@ -19,46 +19,54 @@ async function getItems() {
     var request = await fetch(URL);
     var data = await request.json();
 
-    await arrayUsers.push(data);
-
-    console.log(arrayUsers);
+    await arrayUsers.push(data.users);
 
     viewUsers();
 }
 
-function viewUsers()
-{
+function viewUsers() {
 
-    var div1 = document.getElementById("users");
+    //var div1 = document.getElementById("all");
 
-    var div2 = document.createElement("div");
-    var div3 = document.createElement("div");
-    var items = document.createElement("div");
+    var users = document.getElementById("users");
+    var items = document.getElementById("items");
 
-    var itemAmount = document.createElement("div");
+    var userName = document.createElement("div");
+    var userDate = document.createElement("div");
+
+    var item = document.createElement("div");
+    /* var itemAmount = document.createElement("div");
     var itemId = document.createElement("div");
-    var itemName = document.createElement("div");
+    var itemName = document.createElement("div"); */
 
-    div1.innerHTML = `Usuario: ${arrayUsers[0].users[0].user}`;
-    div2.innerHTML = `Fecha y hora: ${arrayUsers[0].users[0].date} - ${arrayUsers[0].users[0].time}`;
+    userName.innerHTML = `Usuario: ${arrayUsers[0][0].user}`;
+    userDate.innerHTML = `Fecha y hora: ${arrayUsers[0][0].date} - ${arrayUsers[0][0].time}`;
 
-    for(var i = 0; i < arrayUsers.length; i++){
-        var div4 = document.createElement("div");
-        arrayItems.push(arrayUsers[i].users[i].items);
-        for(var j = 0; j < arrayItems.length; j++){
+    for (var i = 0; i < arrayUsers.length; i++) {
+        for (var j = 0; j < arrayUsers[i].length; j++) {
+            arrayItems.push(arrayUsers[i][j].items);
+        }
+    }
+
+    for (var i = 0; i < arrayItems.length; i++) {
+        for (var j = 0; j < arrayItems[i].length; j++) {
+            var itemAmount = document.createElement("div");
+            var itemId = document.createElement("div");
+            var itemName = document.createElement("div");
+
             itemId.innerHTML = `ID: ${arrayItems[i][j].id}`;
             itemName.innerHTML = `Nombre: ${arrayItems[i][j].name}`;
             itemAmount.innerHTML = `Cantidad: ${arrayItems[i][j].amount}`;
 
-            div4.appendChild(itemId);
-            div4.appendChild(itemName);
-            div4.appendChild(itemAmount);
+            item.appendChild(itemId);
+            item.appendChild(itemName);
+            item.appendChild(itemAmount);
         }
-
-        div1.appendChild(div2);
-        div1.appendChild(div4);
+        items.appendChild(item);
     }
 
-    console.log(arrayItems[0][0]);
-    console.log(arrayItems[0][1]);
+    users.appendChild(userName);
+    users.appendChild(userDate);
+
+    console.log(arrayItems);
 }
