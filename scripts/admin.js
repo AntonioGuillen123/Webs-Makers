@@ -1,6 +1,7 @@
 const URL = "https://getpantry.cloud/apiv1/pantry/f05c7024-db22-4ef2-9691-d82f3c50cd0e/basket/cart-shopping";
 
 var arrayUsers = [];
+var arrayItems = [];
 
 function youAreAdmin() {
     var session = sessionStorage.getItem("firstTime");
@@ -43,16 +44,21 @@ function viewUsers()
 
     for(var i = 0; i < arrayUsers.length; i++){
         var div4 = document.createElement("div");
-        itemId.innerHTML = `ID: ${arrayUsers[i].users[i].items[i].id}`;
-        itemName.innerHTML = `Nombre: ${arrayUsers[i].users[i].items[i].name}`;
-        itemAmount.innerHTML = `Cantidad: ${arrayUsers[i].users[i].items[i].amount}`;
-        div4.appendChild(itemId);
-        div4.appendChild(itemName);
-        div4.appendChild(itemAmount);
-        
+        arrayItems.push(arrayUsers[i].users[i].items);
+        for(var j = 0; j < arrayItems.length; j++){
+            itemId.innerHTML = `ID: ${arrayItems[i][j].id}`;
+            itemName.innerHTML = `Nombre: ${arrayItems[i][j].name}`;
+            itemAmount.innerHTML = `Cantidad: ${arrayItems[i][j].amount}`;
+
+            div4.appendChild(itemId);
+            div4.appendChild(itemName);
+            div4.appendChild(itemAmount);
+        }
+
         div1.appendChild(div2);
         div1.appendChild(div4);
     }
 
-    
+    console.log(arrayItems[0][0]);
+    console.log(arrayItems[0][1]);
 }
