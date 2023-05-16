@@ -29,44 +29,46 @@ function viewUsers() {
     //var div1 = document.getElementById("all");
 
     var users = document.getElementById("users");
-    var items = document.getElementById("items");
-
-    var userName = document.createElement("div");
-    var userDate = document.createElement("div");
-
-    var item = document.createElement("div");
-    /* var itemAmount = document.createElement("div");
-    var itemId = document.createElement("div");
-    var itemName = document.createElement("div"); */
-
-    userName.innerHTML = `Usuario: ${arrayUsers[0][0].user}`;
-    userDate.innerHTML = `Fecha y hora: ${arrayUsers[0][0].date} - ${arrayUsers[0][0].time}`;
+    //var items = document.getElementById("items");
 
     for (var i = 0; i < arrayUsers.length; i++) {
         for (var j = 0; j < arrayUsers[i].length; j++) {
+            var user = document.createElement("div");
+            var userName = document.createElement("div");
+            var userDate = document.createElement("div");
+            
+
+            userName.innerHTML = `Usuario: ${arrayUsers[i][j].user}`;
+            userDate.innerHTML = `Fecha y hora: ${arrayUsers[i][j].date} - ${arrayUsers[i][j].time}`;
+
             arrayItems.push(arrayUsers[i][j].items);
+
+            users.appendChild(user);
+            user.appendChild(userName);
+            user.appendChild(userDate);
+
+            for (var k = 0; k < arrayItems.length; k++) {
+                var items = document.createElement("div");
+                for (var l = 0; l < arrayItems[k].length; l++) {
+                    var item = document.createElement("div");
+                    var itemAmount = document.createElement("div");
+                    var itemId = document.createElement("div");
+                    var itemName = document.createElement("div");
+        
+                    itemId.innerHTML = `ID: ${arrayItems[k][l].id}`;
+                    itemName.innerHTML = `Nombre: ${arrayItems[k][l].name}`;
+                    itemAmount.innerHTML = `Cantidad: ${arrayItems[k][l].amount}`;
+        
+                    item.appendChild(itemId);
+                    item.appendChild(itemName);
+                    item.appendChild(itemAmount);
+                    items.appendChild(item);
+                }
+            }
+            user.appendChild(items);
         }
     }
 
-    for (var i = 0; i < arrayItems.length; i++) {
-        for (var j = 0; j < arrayItems[i].length; j++) {
-            var itemAmount = document.createElement("div");
-            var itemId = document.createElement("div");
-            var itemName = document.createElement("div");
-
-            itemId.innerHTML = `ID: ${arrayItems[i][j].id}`;
-            itemName.innerHTML = `Nombre: ${arrayItems[i][j].name}`;
-            itemAmount.innerHTML = `Cantidad: ${arrayItems[i][j].amount}`;
-
-            item.appendChild(itemId);
-            item.appendChild(itemName);
-            item.appendChild(itemAmount);
-        }
-        items.appendChild(item);
-    }
-
-    users.appendChild(userName);
-    users.appendChild(userDate);
-
+    console.log(arrayUsers);
     console.log(arrayItems);
 }
