@@ -16,10 +16,14 @@
 }
 @font-face {
     font-family: slogan;
-    src: url(/styles/fonts/Semakin.otf);
+    src: url(fonts/Semakin.otf);
   }
 #slogan{
     font-family: slogan;
+    color: rgb(104, 236, 243);
+    -webkit-text-stroke: 1px black;
+    font-size:250%;
+
 }
 #image{
     float: left;
