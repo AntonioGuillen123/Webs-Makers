@@ -13,9 +13,19 @@ async function validateForm() {
             alert('Porfavor introduzca un email y mensaje valido.');
           } else {
             var data = {
-              email: email,
-              affair: affair,
-              message: message
+              "List": [
+                {
+                  "user": "1",
+                  "items": [
+                    {
+                      "email": email,
+                      "affair": affair,
+                      "message": message
+                    }
+                  
+                  ]
+                }
+              ]
             };
             await createData(JSON.stringify(data));
             alert('Se ha subido correctamente.');
