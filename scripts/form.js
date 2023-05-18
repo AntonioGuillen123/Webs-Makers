@@ -17,7 +17,10 @@ async function validateForm() {
         {
           "email": email,
           "affair": affair,
-          "message": message
+          "message": message,
+
+          "date": date,
+          "time": time
         }
       ]
     };
