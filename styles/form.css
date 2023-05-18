@@ -52,6 +52,22 @@ input[type="email"]:invalid {
   }
 
 
+  #map-button {
+    background-color:  rgb(85, 85, 187);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  #map-container {
+    display: none;
+  }
+
 @media(max-width:480px)
 {
     form{
