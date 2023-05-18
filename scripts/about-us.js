@@ -2,6 +2,8 @@ var botones = document.querySelectorAll('button');
 var info = document.querySelectorAll(".contenido");
 var first = document.getElementById("first");
 
+
+
 info[0].style.display = "block";
 
 
