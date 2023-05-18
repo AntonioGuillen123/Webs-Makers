@@ -100,6 +100,3 @@ function viewFormUsers() {
         }
     }
 }
-
-/* console.log(arrayCartUsers);
-console.log(arrayCartItems); */
