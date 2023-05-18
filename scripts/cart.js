@@ -258,8 +258,8 @@ async function submit() {
                 "user": name,
                 "items": [
                 ],
-                "date": date,
-                "time": time
+                "date": getDate,
+                "time": getTime
             }
         ]
     };
