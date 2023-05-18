@@ -15,7 +15,7 @@ async function validateForm() {
             var data = {
               "List": [
                 {
-                  "user": "1",
+                  
                   "items": [
                     {
                       "email": email,
