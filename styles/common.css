@@ -102,8 +102,17 @@ input[type=number]::-webkit-outer-spin-button {
 }*/
 #main-img{
     transition: transform 0.3s ease;
+    width: 95%;
+    height: 150px;
 }
 #main-img:hover{
     transform: scale(1.2);
     filter: drop-shadow(0px 0px 15px white);
-} 
+}
+
+@media only screen and (min-width: 768px) {
+    #main-img{
+        width: 300px;
+        height: 150px;
+    }
+}
