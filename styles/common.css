@@ -94,3 +94,17 @@ input[type=number]::-webkit-outer-spin-button {
 #cart-value:focus{
     outline: none;
 }
+header{
+    margin-bottom: 50px;
+}
+.container-fluid{
+    height: 100px;
+}
+#main-img{
+    margin-top: 75px;
+    transition: transform 0.3s ease;
+
+}
+#main-img:hover{
+    transform: scale(1.2);
+}
