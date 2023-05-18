@@ -24,8 +24,8 @@ function seeSoon() {
     })
 }
 
-var getDate = () => `${zeroFill(time.getDate())}/${zeroFill(time.getMonth() + 1)}/${time.getFullYear()}`;
-var getTime = () => `${time.getHours()}:${zeroFill(time.getMinutes())}:${zeroFill(time.getSeconds())}`;
+var getDate = `${zeroFill(time.getDate())}/${zeroFill(time.getMonth() + 1)}/${time.getFullYear()}`;
+var getTime = `${time.getHours()}:${zeroFill(time.getMinutes())}:${zeroFill(time.getSeconds())}`;
 
 const sum = (countNumber, number) => countNumber < number ? countNumber + 1 : countNumber; 
 const subtract = (countNumber, number) => countNumber > number ? countNumber - 1 : countNumber;
