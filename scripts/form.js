@@ -8,6 +8,9 @@ async function validateForm() {
     var email = document.getElementById("email").value;
     var message = document.getElementById("message").value;
     var affair = document.getElementById("affair").value;
+    if (email === '' || message === '') {
+      alert('Porfavor introduzca un email y mensaje valido.');
+    } else {
 
     var data = {
       "users": [
@@ -22,6 +25,8 @@ async function validateForm() {
     await createData(JSON.stringify(data));
     alert('Se ha subido correctamente.');
     form.reset();
+
+  }
   });
 }
 
