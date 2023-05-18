@@ -133,6 +133,10 @@
     box-shadow: 0 0 4px #888;
 }
 
+#main-img{
+    width: 95%;
+    height: 150px;
+}
 @media only screen and (min-width: 768px) {
     #items-list {
         grid-template-columns: repeat(auto-fill, 100%);
@@ -168,5 +172,9 @@
 
     .btn-to-cart {
         width: auto;
+    }
+    #main-img{
+        width: 300px;
+        height: 150px;
     }
 }
