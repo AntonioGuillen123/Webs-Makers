@@ -6,11 +6,11 @@
 }
 
 #logoImg{
-    width: 150px;
-    height: 150px;
+    /* width: 50px; */
+    height: 200px;
     margin-left: 10%;
-    margin-top: 140px;
-    padding-left: 150%;
+    margin-top: 100px;
+    padding-left: 100%;
 
    
 }
@@ -39,6 +39,7 @@
     height: 500px;
     margin-top:100px ;
     background: black;
+    
   }
 
   #title{
