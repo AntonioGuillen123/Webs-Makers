@@ -82,13 +82,21 @@ function viewFormUsers() {
     var users = document.getElementById("usersContact");
 
     for (var i = 0; i < arrayFormUsers.length; i++) {
-        for(var j = 0; j < arrayFormUsers.length; j++){
-            console.log(arrayFormUsers[j]);
+        for(var j = 0; j < arrayFormUsers[i].length; j++){
+            var userEmail = document.createElement("div");
+            var userAffair = document.createElement("div");
+            var userMessage = document.createElement("div");
+
+            userEmail.innerHTML = `Email: ${arrayFormUsers[i][j].email}`;
+            userAffair.innerHTML = `Asunto: ${arrayFormUsers[i][j].affair}`
+            userMessage.innerHTML = `Mensaje: ${arrayFormUsers[i][j].message}`;
+
+            users.appendChild(userEmail);
+            users.appendChild(userAffair);
+            users.appendChild(userMessage);
         }
     }
-
-    /* console.log(arrayFormUsers); */
 }
 
-console.log(arrayCartUsers);
-console.log(arrayCartItems);
+/* console.log(arrayCartUsers);
+console.log(arrayCartItems); */
