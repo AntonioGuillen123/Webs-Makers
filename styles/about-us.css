@@ -44,69 +44,31 @@ button :active{
     display: none;
     background:black;
     color:white;
-    
     font-size: large;
     text-align: center;
     width: 80%;
     margin-left: 10%;
-    
-    /* border-collapse: collapse; */
-    /* margin-left: 120px;
-    margin-right:75%;
-    margin-top: 80px; */
+    margin-bottom: 70px;
+    margin-top: 30px;
     border: 2px solid #050eb5;
     border-radius: 6px;
 }
 
-#contact{
-    height: 10%px;
-    width: 100%;
-    padding: 20px;
-    background-color: black;
-    color: white;
-}
 
-#h1Contact{
-    text-align: center;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-#pContact{
-    text-align: center;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    width: 20%;
-    margin: 0;
-
-    
-    
-}
-#imageContact{
-    width: 30px;
-    height: 30px;
-    margin-left: 40%;
-}
 
 .activeBtn{
     background-color: #3554EE;
     color: black;
 }
 
-#contactInfo{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-}
- 
-#iframe{
-    text-align: center;
- }
+
 
  #MVV{
     
-    background-color: rgb(75, 208, 238);
+    background: linear-gradient(to bottom right, rgb(178, 237, 248), rgb(53, 111, 238));
     color: black;
-    width: 70%;
+    width: 100%;
     text-align: center;
     margin: 0 auto;
-    border-radius: 50px;
-    border: 2px solid black;
+    padding-top: 40px;
  }

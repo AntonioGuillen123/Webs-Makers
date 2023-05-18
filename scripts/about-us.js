@@ -1,6 +1,5 @@
 var botones = document.querySelectorAll('button');
 var info = document.querySelectorAll(".contenido");
-var first = document.getElementById("first");
 
 
 
@@ -26,7 +25,7 @@ for (let i = 0; i < botones.length; i++) {
     botones[i].addEventListener("click", () => {
         dontSee(info);
         quitStyle(botones);
-        info[i].style.display = "block";
+        info[i-1].style.display = "block";
         botones[i].classList.add("activeBtn");
 
     })
