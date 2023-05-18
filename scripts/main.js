@@ -23,6 +23,9 @@ function seeSoon() {
     })
 }
 
+var date = () => `${zeroFill(time.getDate())}/${zeroFill(time.getMonth() + 1)}/${time.getFullYear()}`;
+var time = () => `${time.getHours()}:${zeroFill(time.getMinutes())}:${zeroFill(time.getSeconds())}`;
+
 const sum = (countNumber, number) => countNumber < number ? countNumber + 1 : countNumber; 
 const subtract = (countNumber, number) => countNumber > number ? countNumber - 1 : countNumber;
 
@@ -54,4 +57,14 @@ function changeTotalAmount(list) {
     valueCart.value = maxValueCart(totalAmount);
 
     sessionStorage.setItem("cartValue", totalAmount);
+}
+
+function zeroFill(text) {
+    text = text.toString();
+
+    if (text.length == 1) {
+        text = text.padStart(2, 0);
+    }
+
+    return text;
 }

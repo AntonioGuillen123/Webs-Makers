@@ -247,23 +247,9 @@ function buttonState(text) { //TODO CHANGESSSS SUJETO A CAMBIOS COMO LO DEL PAYP
     }
 }
 
-function zeroFill(text) {
-    text = text.toString();
-
-    if (text.length == 1) {
-        text = text.padStart(2, 0);
-    }
-
-    return text;
-}
-
 async function submit() {
     var name = document.getElementById("data").value;
     var items = giveSession;
-
-    const time = new Date();
-    const dateShop = `${zeroFill(time.getDate())}/${zeroFill(time.getMonth() + 1)}/${time.getFullYear()}`;
-    const timeShop = `${time.getHours()}:${zeroFill(time.getMinutes())}:${zeroFill(time.getSeconds())}`;
 
     var data =
     {
@@ -272,8 +258,8 @@ async function submit() {
                 "user": name,
                 "items": [
                 ],
-                "date": dateShop,
-                "time": timeShop
+                "date": date,
+                "time": time
             }
         ]
     };
