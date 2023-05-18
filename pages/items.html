@@ -2,75 +2,90 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo Productos | Webs-Makers</title>
-    <link rel="stylesheet" href="../styles/common.css">
-    <link rel="stylesheet" href="../styles/productslist.css">
-    <link rel="shortcut icon" href="../images/favicons/itemsfavicon.png">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo Productos | Webs-Makers</title>
+  <link rel="stylesheet" href="../styles/common.css">
+  <link rel="stylesheet" href="../styles/productslist.css">
+  <link rel="shortcut icon" href="../images/favicons/itemsfavicon.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 </head>
 
 <body onload="startItems()">
-    <header>
-        <nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
-            <div class="container-fluid fade-scale-hover">
-              <a class="navbar-brand" href="../index.html">
-                <img src="../images/logo.png" alt="logo" id="main-img" class="fade-scale-hover">
+  <header>
+    <nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+      <div class="container-fluid fade-scale-hover">
+        <a class="navbar-brand" href="../index.html">
+          <img src="../images/logo.png" alt="logo" id="main-img" class="fade-scale-hover">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent"
+          style="flex-wrap: wrap; align-content: center; flex-direction: column;">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="about-us.html">Sobre Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="form.html">Contacto</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="items.html">Catálogo Productos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="cart.html">
+                <img src="../images/cart.png" alt="" id="cart-image">
+                <input type="text" id="cart-value" readonly>
               </a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent" style="flex-wrap: wrap; align-content: center; flex-direction: column;">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="about-us.html">Sobre Nosotros</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="form.html">Contacto</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" href="items.html">Catálogo Productos</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="cart.html">
-                        <img src="../images/cart.png" alt="" id="cart-image" >
-                        <input type="text" id="cart-value" readonly>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
-    </header>
-
-    <div class="page">
-        <div id="header-container">
-            <div class="search-container">
-                <form>
-                    <input type="text" placeholder="Buscar Producto..." name="search" id="search-input"
-                        autocomplete="off" onkeyup="searchProducts(this.value)" />
-                </form>
-            </div>
-            <div class="filter-container">
-                <select name="options" id="options" onchange="orderBy(this.value)">
-                    <option value="opt1">Ascendentemente</option>
-                    <option value="opt2">Descendentemente</option>
-                    <option value="opt3">A-Z</option>
-                    <option value="opt4">Z-A</option>
-                </select>
-            </div>
+            </li>
+          </ul>
         </div>
+      </div>
+    </nav>
+  </header>
 
-
-        <div id="items-list">
-
-        </div>
+  <div class="page">
+    <div id="header-container">
+      <div class="search-container">
+        <form>
+          <div class="input-group">
+            <span class="input-group-text" id="basic-addon1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+                viewBox="0 0 16 16">
+                <path
+                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z">
+                </path>
+              </svg>
+            </span>
+            <input type="text" placeholder="Buscar Producto..." name="search" id="search-input" autocomplete="off"
+              onkeyup="searchProducts(this.value)" />
+          </div>
+        </form>
+      </div>
+      <div class="filter-container">
+        <select name="options" id="options" onchange="orderBy(this.value)">
+          <option value="opt1">Ascendentemente</option>
+          <option value="opt2">Descendentemente</option>
+          <option value="opt3">A-Z</option>
+          <option value="opt4">Z-A</option>
+        </select>
+      </div>
     </div>
 
-    <script src="../scripts/main.js"></script>
-    <script src="../scripts/items.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+    <div id="items-list">
+
+    </div>
+  </div>
+
+  <script src="../scripts/main.js"></script>
+  <script src="../scripts/items.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
