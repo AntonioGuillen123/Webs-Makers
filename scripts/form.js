@@ -49,6 +49,17 @@ async function createData(data) {
         }
     });
 }
-
+ 
+function showMap(){
+  document.getElementById("map-button").addEventListener("click", function() {
+    var mapContainer = document.getElementById("map-container");
+    if (mapContainer.style.display === "none") {
+      mapContainer.style.display = "block";
+    } else {
+      mapContainer.style.display = "none";
+    }
+  });
+}
+showMap();
 
 
