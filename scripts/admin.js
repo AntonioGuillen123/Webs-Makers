@@ -83,7 +83,7 @@ function viewFormUsers() {
 
     for (var i = 0; i < arrayFormUsers.length; i++) {
         for(var j = 0; j < arrayFormUsers.length; j++){
-            console.log(arrayFormUsers[i]);
+            console.log(arrayFormUsers[j]);
         }
     }
 
