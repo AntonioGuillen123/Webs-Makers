@@ -1,41 +1,33 @@
 
 
 async function validateForm() {
-
-    var form = document.getElementById("Form")
+  var form = document.getElementById("Form");
+  
+  form.addEventListener("submit", async function(event){
+    event.preventDefault();
+    var email = document.getElementById("email").value;
+    var message = document.getElementById("message").value;
+    var affair = document.getElementById("affair").value;
     
-    form.addEventListener("submit", async function(event){
-        event.preventDefault();
-        var email = document.getElementById("email").value;
-        var message = document.getElementById("message").value;
-        var affair = document.getElementById("affair").value;
-        if (email === '' || message === '') {
-            alert('Porfavor introduzca un email y mensaje valido.');
-          } else {
-            var data = {
-              "List": [
-                {
-                  
-                  "items": [
-                    {
-                      "email": email,
-                      "affair": affair,
-                      "message": message
-                    }
-                  
-                  ]
-                }
-              ]
-            };
-            await createData(JSON.stringify(data));
-            alert('Se ha subido correctamente.');
-            form.reset();
-            
-          }
-        });
-
-
-};
+    var data = {
+      "List": [
+        {
+          "items": [
+            {
+              "email": email,
+              "affair": affair,
+              "message": message
+            }
+          ]
+        }
+      ]
+    };
+    
+    await createData(JSON.stringify(data));
+    alert('Se ha subido correctamente.');
+    form.reset();
+  });
+}
 
 validateForm();
 
