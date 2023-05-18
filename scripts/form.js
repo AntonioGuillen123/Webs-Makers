@@ -10,7 +10,7 @@ async function validateForm() {
     var affair = document.getElementById("affair").value;
     
     var data = {
-      "List": [
+      "user": [
         {
           "items": [
             {
