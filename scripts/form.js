@@ -8,13 +8,19 @@ async function validateForm() {
     var email = document.getElementById("email").value;
     var message = document.getElementById("message").value;
     var affair = document.getElementById("affair").value;
+    if (email === '' || message === '') {
+      alert('Porfavor introduzca un email y mensaje valido.');
+    } else {
 
     var data = {
       "users": [
         {
           "email": email,
           "affair": affair,
-          "message": message
+          "message": message,
+
+          "date": date,
+          "time": time
         }
       ]
     };
@@ -22,6 +28,8 @@ async function validateForm() {
     await createData(JSON.stringify(data));
     alert('Se ha subido correctamente.');
     form.reset();
+
+  }
   });
 }
 
@@ -41,10 +49,13 @@ async function createData(data) {
 function showMap() {
   document.getElementById("map-button").addEventListener("click", function () {
     var mapContainer = document.getElementById("map-container");
+    var mapButton = document.getElementById("map-button");
     if (mapContainer.style.display === "none") {
       mapContainer.style.display = "block";
+      mapButton.textContent = "Ocultar mapa";
     } else {
       mapContainer.style.display = "none";
+      mapButton.textContent = "Mostrar mapa";
     }
   });
 }
