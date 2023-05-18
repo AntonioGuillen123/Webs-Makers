@@ -19,8 +19,8 @@ async function validateForm() {
           "affair": affair,
           "message": message,
 
-          "date": date,
-          "time": time
+          "date": getDate,
+          "time": getTime
         }
       ]
     };

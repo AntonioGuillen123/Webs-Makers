@@ -1,5 +1,6 @@
 var totalCart = sessionStorage.getItem("cartValue");
 var maxValueCart = (value) => value < 100 ? value : `${99}+`;
+var time = new Date();
 
 const valueCart = document.getElementById("cart-value");
 valueCart.value = totalCart != null ? maxValueCart(totalCart) : 0;
@@ -23,8 +24,8 @@ function seeSoon() {
     })
 }
 
-var date = () => `${zeroFill(time.getDate())}/${zeroFill(time.getMonth() + 1)}/${time.getFullYear()}`;
-var time = () => `${time.getHours()}:${zeroFill(time.getMinutes())}:${zeroFill(time.getSeconds())}`;
+var getDate = () => `${zeroFill(time.getDate())}/${zeroFill(time.getMonth() + 1)}/${time.getFullYear()}`;
+var getTime = () => `${time.getHours()}:${zeroFill(time.getMinutes())}:${zeroFill(time.getSeconds())}`;
 
 const sum = (countNumber, number) => countNumber < number ? countNumber + 1 : countNumber; 
 const subtract = (countNumber, number) => countNumber > number ? countNumber - 1 : countNumber;
