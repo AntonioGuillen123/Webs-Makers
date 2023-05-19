@@ -44,7 +44,6 @@ textarea {
     background-color: rgb(85, 85, 187);
     color: #fff;
     padding: 20px;
-    
 }
 
 #button:hover {
@@ -68,15 +67,24 @@ input[type="email"]:invalid {
     cursor: pointer;
     
 }
+
+
 #button-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 60vh;
+  }
+  #button-container-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
   }
 
 #map-container {
     display: none;
+    
 }
 
 @media(max-width:480px) {
