@@ -9,6 +9,8 @@
   height: 300px;
   /* overflow: hidden; */
   margin-top: 10vh;
+  display: flex;
+  align-content: center;
 }
 
 #logoImg {
