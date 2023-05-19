@@ -47,18 +47,25 @@ async function createData(data) {
 }
 
 function showMap() {
-  document.getElementById("map-button").addEventListener("click", function () {
-    var mapContainer = document.getElementById("map-container");
-    var mapButton = document.getElementById("map-button");
-    if (mapContainer.style.display === "none") {
-      mapContainer.style.display = "block";
-      mapButton.textContent = "Ocultar mapa";
-    } else {
+  var mapContainer = document.getElementById("map-container");
+  var mapButton = document.getElementById("map-button");
+  var isMapVisible = false;
+
+  mapButton.addEventListener("click", function () {
+    if (isMapVisible) {
       mapContainer.style.display = "none";
       mapButton.textContent = "Mostrar mapa";
+    } else {
+      mapContainer.style.display = "block";
+      mapButton.textContent = "Ocultar mapa";
     }
+    isMapVisible = !isMapVisible;
   });
 }
-showMap();
+
+  showMap();
+
+
+
 
 

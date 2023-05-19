@@ -87,6 +87,31 @@ input[type="email"]:invalid {
     
 }
 
+.phone-number {
+    display: flex;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+    padding: 20px 20px 20px;
+  }
+  
+  .icon {
+    margin-right: 10px;
+    font-size: 20px;
+  }
+  
+  #phone-label {
+    margin-right: 5px;
+  }
+  
+  #phone-number {
+    font-weight: bold;
+    color: #007bff;
+  }
+
+  
+
 @media(max-width:480px) {
     form {
         width: 100%;
