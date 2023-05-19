@@ -123,23 +123,9 @@ function eventListener() {
             var productId = cart[i].getAttribute("id");
             var selectCount = document.querySelector(`[count-id='${productId}']`);
             console.log(findProductById(productId));
-            var prueba = JSON.parse(sessionStorage.getItem("items"));
-            if(prueba != null) prueba.forEach(element => {
-                var addProduct = true;
-
-                if (element.item.id === findProductById(productId).id) {
-                    element.amount = parseInt(selectCount.value) + parseInt(element.amount);
-                    addProduct = false;
-                }
-
-                if(addProduct){
-                    shoppingCart.push({
-                        "item": findProductById(productId),
-                        "amount": parseInt(selectCount.value)
-                    });
-                }
-            });
-            addProductToShoppingCart(findProductById(productId), selectCount.value);
+            var sessionItems = JSON.parse(sessionStorage.getItem("items"));
+            if (sessionItems != null) sessionItems.forEach(element => addProductToShoppingCart(element.item, 0, element.amount));
+            addProductToShoppingCart(findProductById(productId), parseInt(selectCount.value), null);
             changeTotalAmount(shoppingCart);
             console.log(shoppingCart);
             console.log(JSON.parse(sessionStorage.getItem("items")));
@@ -236,24 +222,35 @@ function alphabeticalOrder(productList) {
 }
 
 
-function addProductToShoppingCart(product, selectCount) {
+function addProductToShoppingCart(product, selectCount, actualAmount) {
 
     var addProduct = true;
+    var amount = 0;
 
-    if(shoppingCart.length > 0){
+    if (shoppingCart.length > 0) {
         shoppingCart.forEach(element => {
-            if (element.item === product) {
-                element.amount = parseInt(selectCount) + parseInt(element.amount);
+            if (element.item.id === product.id) {
+                if (actualAmount != null) {
+                    element.amount = parseInt(selectCount) + parseInt(actualAmount);
+                } else {
+                    element.amount = parseInt(selectCount) + parseInt(element.amount);
+                }
                 addProduct = false;
             }
         });
     }
-    
+
+    if (actualAmount != null) {
+        amount = actualAmount;
+    }
+    else {
+        amount = selectCount;
+    }
 
     if (addProduct) {
         shoppingCart.push({
             "item": product,
-            "amount": parseInt(selectCount)
+            "amount": parseInt(amount)
         });
     }
 
