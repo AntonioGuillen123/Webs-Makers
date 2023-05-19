@@ -86,17 +86,17 @@ function viewFormUsers() {
             var userEmail = document.createElement("div");
             var userAffair = document.createElement("div");
             var userMessage = document.createElement("div");
+            var userDateTime = document.createElement("div");
 
             userEmail.innerHTML = `Email: ${arrayFormUsers[i][j].email}`;
             userAffair.innerHTML = `Asunto: ${arrayFormUsers[i][j].affair}`
             userMessage.innerHTML = `Mensaje: ${arrayFormUsers[i][j].message}`;
+            userDateTime.innerHTML = `Fecha y Hora: ${arrayFormUsers[i][j].date} - ${arrayFormUsers[i][j].time}`;
 
             users.appendChild(userEmail);
             users.appendChild(userAffair);
             users.appendChild(userMessage);
+            users.appendChild(userDateTime);
         }
     }
 }
-
-/* console.log(arrayCartUsers);
-console.log(arrayCartItems); */
