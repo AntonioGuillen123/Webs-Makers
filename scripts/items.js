@@ -123,8 +123,8 @@ function eventListener() {
             var productId = cart[i].getAttribute("id");
             var selectCount = document.querySelector(`[count-id='${productId}']`);
             console.log(findProductById(productId));
-            var prueba = JSON.parse(sessionStorage.getItem("items"));
-            if (prueba != null) prueba.forEach(element => addProductToShoppingCart(element.item, 0, element.amount));
+            var sessionItems = JSON.parse(sessionStorage.getItem("items"));
+            if (sessionItems != null) sessionItems.forEach(element => addProductToShoppingCart(element.item, 0, element.amount));
             addProductToShoppingCart(findProductById(productId), parseInt(selectCount.value), null);
             changeTotalAmount(shoppingCart);
             console.log(shoppingCart);
