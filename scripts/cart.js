@@ -128,17 +128,19 @@ function createFooter(footer){
 
     var buy = document.createElement("button");
     buy.setAttribute("id", "buy-table");
+    buy.setAttribute("data-bs-toggle", "modal");
+    buy.setAttribute("data-bs-target", "#exampleModal");
     buy.classList.add("btn");
     buy.classList.add("btn-outline-primary");
     buy.classList.add("btn-lg");
     buy.innerHTML = "COMPRAR";
 
-    buy.addEventListener("click", () => {
-        var finishContainer = document.getElementById("finish-container");
-        finishContainer.style.display = "flex";
+    // buy.addEventListener("click", () => {
+    //     var finishContainer = document.getElementById("finish-container");
+    //     finishContainer.style.display = "flex";
 
-        closeSubmit(finishContainer);
-    });
+    //     closeSubmit(finishContainer);
+    // });
 
     var totalContainer = document.createElement("div");
     totalContainer.setAttribute("id", "total-container");
@@ -259,9 +261,9 @@ function buttonState(text) { //TODO CHANGESSSS SUJETO A CAMBIOS COMO LO DEL PAYP
     var button = document.getElementById("submit");
 
     if (text.length != 0) {
-        button.style.display = "inline";
+        button.removeAttribute("disabled");
     } else {
-        button.style.display = "";
+        button.setAttribute("disabled");
     }
 }
 
