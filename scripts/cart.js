@@ -255,6 +255,7 @@ async function submit() {
     {
         "users": [
             {
+                "id": "",
                 "user": name,
                 "items": [
                 ],

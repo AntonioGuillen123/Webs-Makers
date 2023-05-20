@@ -15,10 +15,10 @@ async function validateForm() {
     var data = {
       "users": [
         {
+          "id": "",
           "email": email,
           "affair": affair,
           "message": message,
-
           "date": getDate,
           "time": getTime
         }
