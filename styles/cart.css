@@ -81,9 +81,13 @@ td {
     border-radius: 5px;
 }
 
-#table-footer div{
+#footer-container{
     display: flex;
-    border: 3px black solid;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
 }
 
 #close {
