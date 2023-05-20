@@ -60,8 +60,11 @@
                 </path>
               </svg>
             </span>
-            <input type="text" placeholder="Buscar Producto..." name="search" id="search-input" autocomplete="off"
-              onkeyup="searchProducts(this.value)" />
+            <div class="form-floating">
+              <input type="text" class="form-control" placeholder="Buscar Producto..." name="search" autocomplete="off"
+                onkeyup="searchProducts(this.value)" />
+              <label for="search-input">Buscar Producto</label>
+            </div>
           </div>
         </form>
       </div>
