@@ -50,11 +50,6 @@ nav a:hover {
     color: #939393;
 }
 
-#cart-image{
-    max-width: 3vw;
-    
-}
-
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
   -webkit-appearance: none; 
@@ -129,4 +124,12 @@ input[type=number]::-webkit-outer-spin-button {
 
 #liveAlert{
     margin: 2vh 2vw;
+}
+#cart-image{
+    max-width: 10vw;
+}
+@media only screen and (min-width: 768px) {
+    #cart-image{
+        max-width: 5vw;
+    }
 }
