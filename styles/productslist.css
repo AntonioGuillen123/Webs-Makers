@@ -36,7 +36,7 @@
     border: white;
     font-size: 17px;
     border-radius: 5px 0 0 5px;
-    width: 60%;
+    width: 90%;
     background-color: #f1f1f1;
     border-radius: 10px;
     transition: width .5s ease-in-out;
@@ -177,4 +177,15 @@
         width: 300px;
         height: 150px;
     }
+}
+
+#header-container{
+    margin-top: 5vh;
+    margin-left: 5vw;
+}
+.form-floating{
+    border: 2px solid #ccc;
+}
+#basic-addon1{
+    border: 2px solid #ccc;
 }
