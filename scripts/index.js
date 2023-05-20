@@ -31,11 +31,17 @@ async function startIndex() {
 fetch("https://getpantry.cloud/apiv1/pantry/f05c7024-db22-4ef2-9691-d82f3c50cd0e/basket/items")
             .then((response) => response.json())
             .then(response =>{
-                var divContainer = document.getElementById("fewUnits")
+                var divContainer = document.getElementById("fewUnits");
+                var title = document.createElement("h3");
+                title.innerHTML = "¡Quedan pocas unidades!";
+                title.classList.add("title");
+                divContainer.appendChild(title);
+                
                 for(var i = 0; i < response.items.length; i++){
                     var stock = response.items[i].stock;
                     var id = response.items[i].id;
                     if(stock < 300){
+                        
                         var a = document.createElement("a");
                         a.setAttribute("href", `pages/items.html#${id}`);
                         var divProduct = document.createElement("div");
