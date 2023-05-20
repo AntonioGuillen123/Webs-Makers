@@ -69,7 +69,8 @@ function createItems(items, itemsContainer) {
         itemID.classList.add("id-item");
 
         var amountContainer = document.createElement("td");
-        amountContainer.classList.add("count-container");
+        var amountDiv = document.createElement("div");
+        amountDiv.classList.add("count-container");
 
         var itemAmount = document.createElement("input");
         itemAmount.type = "number";
@@ -105,9 +106,10 @@ function createItems(items, itemsContainer) {
         itemContainer.appendChild(itemID);
 
         itemContainer.appendChild(amountContainer);
-        amountContainer.appendChild(lessButton);
-        amountContainer.appendChild(itemAmount);
-        amountContainer.appendChild(plusButton);
+        amountContainer.appendChild(amountDiv);
+        amountDiv.appendChild(lessButton);
+        amountDiv.appendChild(itemAmount);
+        amountDiv.appendChild(plusButton);
 
         itemContainer.appendChild(itemPrice);
         itemContainer.appendChild(totalItemPrice);
