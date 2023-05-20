@@ -88,6 +88,7 @@ td {
     align-content: center;
     justify-content: space-between;
     align-items: center;
+    margin: 0 5vw;
 }
 
 #close {
@@ -98,4 +99,8 @@ td {
     width: 26px;
     height: 26px;
     cursor: pointer;
+}
+
+#buy-table{
+    width: 30vw;
 }

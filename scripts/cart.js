@@ -130,6 +130,7 @@ function createFooter(footer){
     buy.setAttribute("id", "buy-table");
     buy.classList.add("btn");
     buy.classList.add("btn-outline-primary");
+    buy.classList.add("btn-lg");
     buy.innerHTML = "COMPRAR";
 
     buy.addEventListener("click", () => {
