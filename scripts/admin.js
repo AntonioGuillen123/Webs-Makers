@@ -109,6 +109,5 @@ function viewFormUsers() {
             user.appendChild(userMessage);
             user.appendChild(userDateTime);
         }
-        
     }
 }
