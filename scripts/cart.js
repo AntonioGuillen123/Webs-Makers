@@ -121,6 +121,8 @@ function createItems(items, itemsContainer) {
 function createFooter(footer){
     var buy = document.createElement("button");
     buy.setAttribute("id", "buy-table");
+    buy.classList.add("btn");
+    buy.classList.add("btn-outline-primary");
     buy.innerHTML = "COMPRAR";
 
     buy.addEventListener("click", () => {
