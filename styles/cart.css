@@ -81,7 +81,7 @@ td {
     border-radius: 5px;
 }
 
-#table-footer {
+#table-footer div{
     display: flex;
     border: 3px black solid;
 }

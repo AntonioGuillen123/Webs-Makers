@@ -119,6 +119,13 @@ function createItems(items, itemsContainer) {
 }
 
 function createFooter(footer){
+    var row = document.createElement("tr");
+    var column = document.createElement("td");
+    column.setAttribute("colspan", 6)
+    var columnDiv = document.createElement("div");
+    columnDiv.setAttribute("id", "footer-container");
+
+
     var buy = document.createElement("button");
     buy.setAttribute("id", "buy-table");
     buy.classList.add("btn");
@@ -143,11 +150,17 @@ function createFooter(footer){
     total.setAttribute("id", "total");
     total.innerHTML = `${totalPrice.toFixed(2)} €`;
 
-    footer.appendChild(buy);
-    footer.appendChild(totalContainer);
 
     totalContainer.appendChild(totalText);
     totalContainer.appendChild(total);
+
+    columnDiv.appendChild(buy);
+    columnDiv.appendChild(totalContainer);
+
+    column.appendChild(columnDiv);
+    row.appendChild(column);
+
+    footer.appendChild(row);
 
     return footer;
 }
