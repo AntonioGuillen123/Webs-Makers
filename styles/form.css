@@ -70,7 +70,7 @@ input[type="email"]:invalid {
 
 
 #button-container {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     height: 60vh;

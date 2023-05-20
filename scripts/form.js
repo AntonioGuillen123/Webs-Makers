@@ -48,15 +48,18 @@ async function createData(data) {
 
 function showMap() {
   var mapContainer = document.getElementById("map-container");
+  var buttonContainer = document.getElementById("button-container");
   var mapButton = document.getElementById("map-button");
   var isMapVisible = false;
 
   mapButton.addEventListener("click", function () {
     if (isMapVisible) {
       mapContainer.style.display = "none";
+      buttonContainer.style.display = "none";
       mapButton.textContent = "Mostrar mapa";
     } else {
       mapContainer.style.display = "block";
+      buttonContainer.style.display = "flex";
       mapButton.textContent = "Ocultar mapa";
     }
     isMapVisible = !isMapVisible;
