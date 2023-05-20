@@ -96,10 +96,16 @@ button :active {
 #img-container {
     transition: all 0.3s;
     border-radius: 10px;
-    margin-bottom: 2vh;
+    margin-bottom: 10vh;
+    width: 90%;
+
 }
 
 #img-container:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     transform: scale(1.05);
+}
+
+#logoImg{
+    width: 100%;
 }
