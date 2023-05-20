@@ -1,49 +1,51 @@
-h1{
+h1 {
     text-align: center;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
-p{
-    
+
+p {
+
     font-family: Georgia, 'Times New Roman', Times, serif;
     margin-left: 10%;
     margin-right: 10%;
     font-size: large;
 }
 
-#botones{
+#botones {
     text-align: center;
     margin-top: 20px;
 }
-button{
+
+button {
     background: rgb(75, 208, 238);
-    color:white;
+    color: white;
     font-weight: bold;
     padding: 15px;
-    
+
     text-align: center;
     border-collapse: collapse;
     border: 2px solid #717575;
     border-radius: 6px;
-    
+
 }
 
-button :active{
+button :active {
     background: #3554EE;
-    color:black;
+    color: black;
     font-weight: bold;
     padding: 15px;
-    
+
     text-align: center;
     border-collapse: collapse;
     border: 2px solid #717575;
     border-radius: 6px;
-  
+
 }
 
-.contenido{
+.contenido {
     display: none;
-    background:black;
-    color:white;
+    background: black;
+    color: white;
     font-size: large;
     text-align: center;
     width: 80%;
@@ -56,19 +58,48 @@ button :active{
 
 
 
-.activeBtn{
+.activeBtn {
     background-color: #3554EE;
     color: black;
 }
 
 
 
- #MVV{
-    
+#MVV {
+
     background: linear-gradient(to bottom right, rgb(178, 237, 248), rgb(53, 111, 238));
     color: black;
     width: 100%;
     text-align: center;
     margin: 0 auto;
     padding-top: 40px;
- }
+}
+
+.transition {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.fade-in {
+    opacity: 1;
+}
+
+#banner {
+    padding: 20px;
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#img-container {
+    transition: all 0.3s;
+    border-radius: 10px;
+    margin-bottom: 2vh;
+}
+
+#img-container:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}

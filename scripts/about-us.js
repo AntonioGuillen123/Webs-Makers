@@ -25,7 +25,7 @@ for (let i = 0; i < botones.length; i++) {
     botones[i].addEventListener("click", () => {
         dontSee(info);
         quitStyle(botones);
-        info[i-1].style.display = "block";
+        info[i - 1].style.display = "block";
         botones[i].classList.add("activeBtn");
 
     })
@@ -37,7 +37,7 @@ function dontSee(element) {
         info[i].style.display = "none";
     }
 }
-function quitStyle(element){
+function quitStyle(element) {
     for (let i = 0; i < element.length; i++) {
         botones[i].classList.remove("activeBtn")
     }
@@ -45,8 +45,22 @@ function quitStyle(element){
 
 
 
+window.addEventListener('scroll', () => {
+    var transitionElement = document.querySelectorAll('.transition');
+    var windowHeight = window.innerHeight;
 
+    transitionElement.forEach((container) => {
 
+        // Esto obtiene la posicion vertical del elemento con respecto a la parte superior de la ventana del navegador. 
+        // Devuelve un DOMRect y el .top es una propiedad para saber la distancia en píxeles entre la parte superior del elemento y
+        // la parte superior visible del área de contenido de la ventana del navegador. 
+        var position = container.getBoundingClientRect().top;
+
+        if (position - windowHeight + 200 < 0) {
+            container.classList.add('fade-in');
+        }
+    });
+});
 
 
 

@@ -116,3 +116,13 @@ input[type=number]::-webkit-outer-spin-button {
         height: 150px;
     }
 }
+
+.image-text h1{
+    font-family: cursive;
+    font-size: 1.2rem
+}   
+
+.image-text div{
+    display: flex;
+    align-items: center;
+}
