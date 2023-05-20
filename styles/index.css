@@ -106,10 +106,9 @@
 #fewUnits{
   width: 800px;
   height: auto;
-  border: 1px solid black;
   margin: auto;
   padding: 20px;
-  border-radius: 10px;
+  
 }
 
 .divProduct{
@@ -122,24 +121,27 @@
 }
 
 .productImage{
-  width: 50px;
-  height: 50px;
+  width: 80px;
+  height: 80px;
+  margin-left: 20px;
+  margin-bottom: 20px;
   
 }
 .productName {
-  font-size: 1.2em;
-  margin: 10px 0;
+  font-size: 1.4em;
+  font-weight: bold;
+  margin-left: 20px;
   
 }
 
 .productDescription {
   font-size: 0.9em;
-  margin: 0 0 10px;
+  margin-left: 20px;
   
 }
 
 .productPrice {
-  font-size: 1.2em;
+  font-size: 1.0em;
   font-weight: bold;
-  margin: 0;
+  margin-left: 20px;
 }

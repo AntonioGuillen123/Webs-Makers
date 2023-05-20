@@ -34,10 +34,14 @@ fetch("https://getpantry.cloud/apiv1/pantry/f05c7024-db22-4ef2-9691-d82f3c50cd0e
                 var divContainer = document.getElementById("fewUnits")
                 for(var i = 0; i < response.items.length; i++){
                     var stock = response.items[i].stock;
+                    var id = response.items[i].id;
                     if(stock < 1000){
+                        var a = document.createElement("a");
+                        a.setAttribute("href", `pages/items.html#${id}`);
                         var divProduct = document.createElement("div");
                         divProduct.classList.add("divProduct");
-                        divContainer.appendChild(divProduct);
+                        a.appendChild(divProduct);
+                        divContainer.appendChild(a);
 
 
                         var productName = response.items[i].name;
