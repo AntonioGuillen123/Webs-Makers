@@ -46,6 +46,7 @@ function createProduct(product) {
     var itemContainer = document.createElement("div");
     itemContainer.classList.add("product-card");
     itemContainer.classList.add(product.id);
+    itemContainer.setAttribute("id", product.id);
 
     var divImage = document.createElement("div");
     divImage.classList.add("image");
