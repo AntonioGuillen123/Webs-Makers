@@ -35,11 +35,12 @@ fetch("https://getpantry.cloud/apiv1/pantry/f05c7024-db22-4ef2-9691-d82f3c50cd0e
                 for(var i = 0; i < response.items.length; i++){
                     var stock = response.items[i].stock;
                     var id = response.items[i].id;
-                    if(stock < 1000){
+                    if(stock < 300){
                         var a = document.createElement("a");
                         a.setAttribute("href", `pages/items.html#${id}`);
                         var divProduct = document.createElement("div");
                         divProduct.classList.add("divProduct");
+                        a.classList.add("a");
                         a.appendChild(divProduct);
                         divContainer.appendChild(a);
 
@@ -70,8 +71,17 @@ fetch("https://getpantry.cloud/apiv1/pantry/f05c7024-db22-4ef2-9691-d82f3c50cd0e
 
 
                     }
+                    else{
+                        while(divContainer.firstChild){
+                            divContainer.removeChild(divContainer.firstChild);
+                        }
+                        var fullProducts = document.createElement("h3");
+                        fullProducts.innerHTML = "¡Qué suerte! Tenemos el stock lleno de todos los productos";
+                        fullProducts.classList.add("fullProducts");
+                        divContainer.appendChild(fullProducts);
+                        
+
+                    }
                 }
 
-              var stock = response.items[0].stock;
-              console.log(stock);
             })

@@ -145,3 +145,12 @@
   font-weight: bold;
   margin-left: 20px;
 }
+
+.a{
+  text-decoration: none;
+  color: black;
+}
+.fullProducts{
+  text-align: center;
+  font-weight: bold;
+}
