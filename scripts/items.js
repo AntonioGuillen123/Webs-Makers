@@ -11,7 +11,6 @@ var countProduct = 1;
 
 
 
-
 console.log(shoppingCart);
 
 /*FIN :)*/

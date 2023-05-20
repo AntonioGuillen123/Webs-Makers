@@ -27,7 +27,7 @@ function seeSoon() {
 var getDate = `${zeroFill(time.getDate())}/${zeroFill(time.getMonth() + 1)}/${time.getFullYear()}`;
 var getTime = `${time.getHours()}:${zeroFill(time.getMinutes())}:${zeroFill(time.getSeconds())}`;
 
-const sum = (countNumber, number) => countNumber < number ? countNumber + 1 : countNumber; 
+const sum = (countNumber, number) => countNumber < number ? countNumber + 1 : maxStock(countNumber);
 const subtract = (countNumber, number) => countNumber > number ? countNumber - 1 : countNumber;
 
 async function giveItems() {
@@ -68,4 +68,37 @@ function zeroFill(text) {
     }
 
     return text;
+}
+
+
+var alertPlaceholder = document.getElementById('liveAlert');
+
+function maxStock(countNumber) {
+    if (alertPlaceholder.innerHTML.length == 0) {
+        alert('<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill" /></svg> NO QUEDA STOCK DISPONIBLE.', 'danger');
+        var myAlert = document.getElementById('alert-content');
+
+        myAlert.addEventListener('closed.bs.alert', () => {
+            var removeElement = document.getElementById("alert");
+            alertPlaceholder.removeChild(removeElement);
+        });
+    }
+
+
+    var btnToCart = document.getElementById("420").childNodes[5];
+    btnToCart.setAttribute("disabled", "");
+    btnToCart.classList.remove("btn-to-cart");
+    btnToCart.classList.add("btn");
+    // btnToCart.classList.add("btn-sm");
+    btnToCart.classList.add("btn-primary");
+
+    return countNumber;
+}
+
+function alert(message, type) {
+    var wrapper = document.createElement('div');
+    wrapper.setAttribute("id", "alert");
+    wrapper.innerHTML = '<div class="fade show alert alert-' + type + ' alert-dismissible" role="alert" id="alert-content">' + message + '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+
+    alertPlaceholder.append(wrapper);
 }
