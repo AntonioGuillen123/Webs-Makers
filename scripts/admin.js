@@ -41,17 +41,21 @@ function viewCartUsers() {
 
     for (var i = 0; i < arrayCartUsers.length; i++) {
         for (var j = 0; j < arrayCartUsers[i].length; j++) {
+            arrayCartUsers[i][j].id = j + 1;
+
             var user = document.createElement("div");
             var userName = document.createElement("div");
             var userDate = document.createElement("div");
+            var userId = document.createElement("div");
 
-
+            userId.innerHTML = `ID de Usuario: ${arrayCartUsers[i][j].id}`;
             userName.innerHTML = `Usuario: ${arrayCartUsers[i][j].user}`;
             userDate.innerHTML = `Fecha y hora: ${arrayCartUsers[i][j].date} - ${arrayCartUsers[i][j].time}`;
 
             arrayCartItems.push(arrayCartUsers[i][j].items);
 
             users.appendChild(user);
+            user.appendChild(userId);
             user.appendChild(userName);
             user.appendChild(userDate);
 
@@ -83,20 +87,28 @@ function viewFormUsers() {
 
     for (var i = 0; i < arrayFormUsers.length; i++) {
         for(var j = 0; j < arrayFormUsers[i].length; j++){
+            arrayFormUsers[i][j].id = j + 1;
+
+            var user = document.createElement("div");
             var userEmail = document.createElement("div");
             var userAffair = document.createElement("div");
             var userMessage = document.createElement("div");
             var userDateTime = document.createElement("div");
+            var userId = document.createElement("div");
 
+            userId.innerHTML = `ID de Usuario: ${arrayFormUsers[i][j].id}`;
             userEmail.innerHTML = `Email: ${arrayFormUsers[i][j].email}`;
             userAffair.innerHTML = `Asunto: ${arrayFormUsers[i][j].affair}`
             userMessage.innerHTML = `Mensaje: ${arrayFormUsers[i][j].message}`;
             userDateTime.innerHTML = `Fecha y Hora: ${arrayFormUsers[i][j].date} - ${arrayFormUsers[i][j].time}`;
 
-            users.appendChild(userEmail);
-            users.appendChild(userAffair);
-            users.appendChild(userMessage);
-            users.appendChild(userDateTime);
+            users.appendChild(user);
+            user.appendChild(userId);
+            user.appendChild(userEmail);
+            user.appendChild(userAffair);
+            user.appendChild(userMessage);
+            user.appendChild(userDateTime);
         }
+        
     }
 }
