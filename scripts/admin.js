@@ -4,16 +4,18 @@ const formURL = "https://getpantry.cloud/apiv1/pantry/f05c7024-db22-4ef2-9691-d8
 var arrayCartUsers = [];
 var arrayCartItems = [];
 var arrayFormUsers = [];
+var newArrayCartUsers = [];
+var newArrayFormUsers = [];
 
 async function youAreAdmin() {
     var session = sessionStorage.getItem("firstTime");
 
-    if (session == "true") {
+    if (session != "true") {
         alert("Has entrado en modo admin\nAhora tienes privilegios");
 
-        sessionStorage.setItem("firstTime", false);
+        sessionStorage.setItem("firstTime", true);
     }
-    
+
     /* window.addEventListener("beforeunload", () => {
         var currentUrl = window.location.href;
         var splitUrl = currentUrl.split('/');
@@ -119,4 +121,54 @@ function viewFormUsers() {
             user.appendChild(userDateTime);
         }
     }
+}
+
+function deleteAllShop() {
+    var users = document.getElementById("usersItems");
+
+    //arrayCartItems = [];
+    users.innerHTML = "";
+}
+
+function deleteAllMessages() {
+    var users = document.getElementById("usersContact");
+
+    //arrayFormItems = [];
+    users.innerHTML = "";
+}
+
+function deleteUserShop() {
+    var form = document.getElementById("delete-shop");
+    var input = document.getElementById("user-id-shop");
+
+    if (input.value == "") {
+        alert("Debes introducir el ID de un Usuario");
+    }
+
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        if (input.value != "") {
+            form.submit();
+            input.value = "";
+        }
+    })
+}
+
+function deleteUserMessage() {
+    var form = document.getElementById("delete-message");
+    var input = document.getElementById("user-id-message");
+
+    if (input.value == "") {
+        alert("Debes introducir el ID de un Usuario");
+    }
+
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        if (input.value != "") {
+            form.submit();
+            input.value = "";
+        }
+    })
 }

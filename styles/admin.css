@@ -6,3 +6,13 @@
 #usersItems div, #usersContact div{
     padding: 3px;
 }
+
+.user-id, .submit{
+    margin-top: 25px;
+}
+
+.delete, #delete-shop, #delete-message{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

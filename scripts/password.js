@@ -39,6 +39,7 @@ function checkPassword() {
 
 function submitPassword() {
     var form = document.getElementsByTagName("form")[0];
+    var input = document.getElementById("data");
 
     form.addEventListener("submit", (event) => {
         event.preventDefault();
