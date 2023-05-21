@@ -6,3 +6,7 @@
 #usersItems div, #usersContact div{
     padding: 3px;
 }
+
+.user-id, .delete{
+    margin-top: 25px;
+}

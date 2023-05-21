@@ -4,7 +4,10 @@ const formURL = "https://getpantry.cloud/apiv1/pantry/f05c7024-db22-4ef2-9691-d8
 var arrayCartUsers = [];
 var arrayCartItems = [];
 var arrayFormUsers = [];
-var deleteArrayCartItems = [];
+var newArrayCartUsers = [];
+var newArrayFormUsers = [];
+var deleteArrayCartUsers = [];
+var deleteArrayFormUsers = [];
 
 async function youAreAdmin() {
     var session = sessionStorage.getItem("firstTime");
@@ -14,7 +17,7 @@ async function youAreAdmin() {
 
         sessionStorage.setItem("firstTime", true);
     }
-    
+
     /* window.addEventListener("beforeunload", () => {
         var currentUrl = window.location.href;
         var splitUrl = currentUrl.split('/');
@@ -121,3 +124,22 @@ function viewFormUsers() {
         }
     }
 }
+
+function deleteAllShop() {
+    var users = document.getElementById("usersItems");
+
+    //arrayCartItems = [];
+    users.innerHTML = "";
+}
+
+function deleteAllMessages() {
+    var users = document.getElementById("usersContact");
+
+    //arrayFormItems = [];
+    users.innerHTML = "";
+}
+
+console.log(arrayCartItems);
+console.log(arrayFormUsers);
+console.log(deleteArrayCartUsers);
+console.log(deleteArrayFormUsers);
