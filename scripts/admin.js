@@ -32,18 +32,18 @@ async function youAreAdmin() {
 async function getItems() {
     var request = await fetch(cartURL);
     var data = await request.json();
+    var arrayContent = data.users;
 
-    await arrayCartUsers.push(data.users);
-
+    await arrayCartUsers.push(arrayContent);
     viewCartUsers();
 }
 
 async function getUsers() {
     var request = await fetch(formURL);
     var data = await request.json();
+    var arrayContent = data.users;
 
-    await arrayFormUsers.push(data.users);
-
+    await arrayFormUsers.push(arrayContent);
     viewFormUsers();
 }
 
@@ -149,10 +149,16 @@ function deleteUserShop() {
         event.preventDefault();
 
         if (input.value != "") {
-            form.submit();
+            for (var i = 0; i < arrayCartUsers[0].length; i++) {
+                if (input.value != arrayCartUsers[0][i].id && !newArrayCartUsers.includes(arrayCartUsers[0][i])) {
+                    newArrayCartUsers.push(arrayCartUsers[0][i]);
+                }
+            }
             input.value = "";
         }
     })
+
+    console.log(newArrayCartUsers);
 }
 
 function deleteUserMessage() {
@@ -167,8 +173,14 @@ function deleteUserMessage() {
         event.preventDefault();
 
         if (input.value != "") {
-            form.submit();
+            for (var i = 0; i < arrayFormUsers[0].length; i++) {
+                if (input.value != arrayFormUsers[0][i].id && !newArrayFormUsers.includes(arrayFormUsers[0][i])) {
+                    newArrayFormUsers.push(arrayFormUsers[0][i]);
+                }
+            }
             input.value = "";
         }
     })
+
+    console.log(newArrayFormUsers);
 }
