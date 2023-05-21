@@ -4,14 +4,15 @@ const formURL = "https://getpantry.cloud/apiv1/pantry/f05c7024-db22-4ef2-9691-d8
 var arrayCartUsers = [];
 var arrayCartItems = [];
 var arrayFormUsers = [];
+var deleteArrayCartItems = [];
 
 async function youAreAdmin() {
     var session = sessionStorage.getItem("firstTime");
 
-    if (session == "true") {
+    if (session != "true") {
         alert("Has entrado en modo admin\nAhora tienes privilegios");
 
-        sessionStorage.setItem("firstTime", false);
+        sessionStorage.setItem("firstTime", true);
     }
     
     /* window.addEventListener("beforeunload", () => {
