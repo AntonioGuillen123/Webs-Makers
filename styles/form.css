@@ -5,6 +5,10 @@ body {
     background-attachment: fixed;
 }
 
+
+
+
+
 h2 {
     color: #fff !important;
     text-align: center;
@@ -40,6 +44,8 @@ textarea {
     max-height: 200px;
 }
 
+
+
 #button {
     background-color: rgb(85, 85, 187);
     color: #fff;
@@ -63,6 +69,9 @@ input[type="email"]:invalid {
 #map-container {
     display: none;
     
+    width: 500px;
+    position:relative;
+    
 }
 
 
@@ -70,9 +79,11 @@ input[type="email"]:invalid {
     background-color: #f2f2f2;
     padding: 20px;
     border-radius: 5px;
-    width: 360px;
+    width: 320px;
+    height: 100%;
     text-align: left;
     margin: 20px 20px 20px;
+    
   }
   
   .contact-info p {
