@@ -172,6 +172,3 @@ function deleteUserMessage() {
         }
     })
 }
-
-console.log(arrayCartItems);
-console.log(arrayFormUsers);
