@@ -55,59 +55,31 @@ input[type="email"]:invalid {
 }
 
 
-#map-button {
-    background-color: rgb(85, 85, 187);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-    
-}
 
 
-#button-container {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    height: 60vh;
-  }
-  #button-container-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 20vh;
-  }
+
+
 
 #map-container {
     display: none;
     
 }
 
-.phone-number {
-    display: flex;
-    align-items: center;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    color: #ffffff;
-    padding: 20px 20px 20px;
+
+  .contact-info {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 5px;
+    width: 360px;
+    text-align: left;
   }
   
-  .icon {
-    margin-right: 10px;
-    font-size: 20px;
+  .contact-info p {
+    margin: 0 0 10px 0;
   }
   
-  #phone-label {
-    margin-right: 5px;
-  }
-  
-  #phone-number {
+  .contact-info strong {
     font-weight: bold;
-    color: #007bff;
   }
 
   

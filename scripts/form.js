@@ -56,11 +56,11 @@ function showMap() {
     if (isMapVisible) {
       mapContainer.style.display = "none";
       buttonContainer.style.display = "none";
-      mapButton.textContent = "Mostrar mapa";
+     
     } else {
       mapContainer.style.display = "block";
       buttonContainer.style.display = "flex";
-      mapButton.textContent = "Ocultar mapa";
+      
     }
     isMapVisible = !isMapVisible;
   });
