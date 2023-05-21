@@ -40,6 +40,11 @@ fetch("https://getpantry.cloud/apiv1/pantry/f05c7024-db22-4ef2-9691-d82f3c50cd0e
                 for(var i = 0; i < response.items.length; i++){
                     var stock = response.items[i].stock;
                     var id = response.items[i].id;
+
+                    // Te lo he cambiado porque antes basicamente lo que hacía es
+                    // que si el último era menor o mayor a 300 hacia lo que sea pero solo el último
+                    // de la coleccion porque se sobreescribía
+                    // Y este método es como el All de LINQ C#
                     if(!(response.items.every(x => x.stock > 50))){
                         
                         var a = document.createElement("a");
