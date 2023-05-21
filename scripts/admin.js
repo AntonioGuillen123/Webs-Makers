@@ -6,8 +6,6 @@ var arrayCartItems = [];
 var arrayFormUsers = [];
 var newArrayCartUsers = [];
 var newArrayFormUsers = [];
-var deleteArrayCartUsers = [];
-var deleteArrayFormUsers = [];
 
 async function youAreAdmin() {
     var session = sessionStorage.getItem("firstTime");
@@ -139,7 +137,41 @@ function deleteAllMessages() {
     users.innerHTML = "";
 }
 
+function deleteUserShop() {
+    var form = document.getElementById("delete-shop");
+    var input = document.getElementById("user-id-shop");
+
+    if (input.value == "") {
+        alert("Debes introducir el ID de un Usuario");
+    }
+
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        if (input.value != "") {
+            form.submit();
+            input.value = "";
+        }
+    })
+}
+
+function deleteUserMessage() {
+    var form = document.getElementById("delete-message");
+    var input = document.getElementById("user-id-message");
+
+    if (input.value == "") {
+        alert("Debes introducir el ID de un Usuario");
+    }
+
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        if (input.value != "") {
+            form.submit();
+            input.value = "";
+        }
+    })
+}
+
 console.log(arrayCartItems);
 console.log(arrayFormUsers);
-console.log(deleteArrayCartUsers);
-console.log(deleteArrayFormUsers);

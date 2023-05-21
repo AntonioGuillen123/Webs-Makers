@@ -7,6 +7,12 @@
     padding: 3px;
 }
 
-.user-id, .delete{
+.user-id, .submit{
     margin-top: 25px;
+}
+
+.delete, #delete-shop, #delete-message{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
