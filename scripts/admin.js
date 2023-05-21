@@ -8,11 +8,20 @@ var arrayFormUsers = [];
 async function youAreAdmin() {
     var session = sessionStorage.getItem("firstTime");
 
-    if (session != "true") {
-        sessionStorage.setItem("firstTime", true);
-
+    if (session == "true") {
         alert("Has entrado en modo admin\nAhora tienes privilegios");
+
+        sessionStorage.setItem("firstTime", false);
     }
+    
+    /* window.addEventListener("beforeunload", () => {
+        var currentUrl = window.location.href;
+        var splitUrl = currentUrl.split('/');
+
+        if (splitUrl[4] != "admin.html") {
+            sessionStorage.setItem("firstTime", true);
+        }
+    }); */
 
     await getItems();
     await getUsers();
@@ -86,7 +95,7 @@ function viewFormUsers() {
     var users = document.getElementById("usersContact");
 
     for (var i = 0; i < arrayFormUsers.length; i++) {
-        for(var j = 0; j < arrayFormUsers[i].length; j++){
+        for (var j = 0; j < arrayFormUsers[i].length; j++) {
             arrayFormUsers[i][j].id = j + 1;
 
             var user = document.createElement("div");
