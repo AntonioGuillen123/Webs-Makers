@@ -40,7 +40,7 @@ fetch("https://getpantry.cloud/apiv1/pantry/f05c7024-db22-4ef2-9691-d82f3c50cd0e
                 for(var i = 0; i < response.items.length; i++){
                     var stock = response.items[i].stock;
                     var id = response.items[i].id;
-                    if(stock < 300){
+                    if(!(response.items.every(x => x.stock > 50))){
                         
                         var a = document.createElement("a");
                         a.setAttribute("href", `pages/items.html#${id}`);
