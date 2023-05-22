@@ -20,7 +20,7 @@ function enterAdmin() {
                     window.location.href = "pages/password.html";
                 }, 1000);
             }
-        }, 10000);
+        }, 8000);
     });
 
     logo.addEventListener("mouseleave", () => {
