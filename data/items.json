@@ -3,13 +3,85 @@
       {
         "id": 420,
         "price": 3.99,
-        "name": "banana",
+        "name": "PLAN  HOSTING DE 1 AÑO",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
         "description": "Esto es una fruta amarilla, rica en potasio y original de canarias",
         "stock": 0
       },
       {
-        "id": 420,
+        "id": 421,
+        "price": 3.99,
+        "name": "PLAN  HOSTING DE 6 MESES",
+        "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
+        "description": "Esto es una fruta amarilla, rica en potasio y original de canarias",
+        "stock": 0
+      },
+      {
+        "id": 422,
+        "price": 3.99,
+        "name": "PLAN  HOSTING DE 3 MESES",
+        "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
+        "description": "Esto es una fruta amarilla, rica en potasio y original de canarias",
+        "stock": 0
+      },
+      {
+        "id": 423,
+        "price": 3.99,
+        "name": "PLAN  DOMINIO DE 1 AÑO",
+        "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
+        "description": "Esto es una fruta amarilla, rica en potasio y original de canarias",
+        "stock": 0
+      },
+      {
+        "id": 424,
+        "price": 3.99,
+        "name": "PLAN  DOMINIO DE 6 MESES",
+        "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
+        "description": "Esto es una fruta amarilla, rica en potasio y original de canarias",
+        "stock": 0
+      },
+      {
+        "id": 425,
+        "price": 3.99,
+        "name": "PLAN  DOMINIO DE 3 MESES",
+        "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
+        "description": "Esto es una fruta amarilla, rica en potasio y original de canarias",
+        "stock": 0
+      },
+      {
+        "id": 426,
+        "price": 3.99,
+        "name": "PLAN  MANTENIMIENTO DE 1 AÑO",
+        "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
+        "description": "Esto es una fruta amarilla, rica en potasio y original de canarias",
+        "stock": 0
+      },
+      {
+        "id": 427,
+        "price": 3.99,
+        "name": "PLAN  MANTENIMIENTO DE 6 MESES",
+        "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
+        "description": "Esto es una fruta amarilla, rica en potasio y original de canarias",
+        "stock": 0
+      },
+      {
+        "id": 428,
+        "price": 3.99,
+        "name": "PLAN  MANTENIMIENTO DE 3 MESES",
+        "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
+        "description": "Esto es una fruta amarilla, rica en potasio y original de canarias",
+        "stock": 0
+      },
+      {
+        "id": 429,
+        "price": 3.99,
+        "name": "PACK PAGI",
+        "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
+        "description": "Esto es una fruta amarilla, rica en potasio y original de canarias",
+        "stock": 0
+      },
+      {
+        "id": 430,
         "price": 3.99,
         "name": "banana",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
@@ -17,7 +89,7 @@
         "stock": 0
       },
       {
-        "id": 420,
+        "id": 431,
         "price": 3.99,
         "name": "banana",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
@@ -25,7 +97,7 @@
         "stock": 0
       },
       {
-        "id": 420,
+        "id": 432,
         "price": 3.99,
         "name": "banana",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
@@ -33,7 +105,7 @@
         "stock": 0
       },
       {
-        "id": 420,
+        "id": 433,
         "price": 3.99,
         "name": "banana",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
@@ -41,7 +113,7 @@
         "stock": 0
       },
       {
-        "id": 420,
+        "id": 434,
         "price": 3.99,
         "name": "banana",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
@@ -49,7 +121,7 @@
         "stock": 0
       },
       {
-        "id": 420,
+        "id": 435,
         "price": 3.99,
         "name": "banana",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
@@ -57,79 +129,7 @@
         "stock": 0
       },
       {
-        "id": 420,
-        "price": 3.99,
-        "name": "banana",
-        "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
-        "description": "Esto es una fruta amarilla, rica en potasio y original de canarias",
-        "stock": 0
-      },
-      {
-        "id": 420,
-        "price": 3.99,
-        "name": "banana",
-        "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
-        "description": "Esto es una fruta amarilla, rica en potasio y original de canarias",
-        "stock": 0
-      },
-      {
-        "id": 420,
-        "price": 3.99,
-        "name": "banana",
-        "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
-        "description": "Esto es una fruta amarilla, rica en potasio y original de canarias",
-        "stock": 0
-      },
-      {
-        "id": 420,
-        "price": 3.99,
-        "name": "banana",
-        "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
-        "description": "Esto es una fruta amarilla, rica en potasio y original de canarias",
-        "stock": 0
-      },
-      {
-        "id": 420,
-        "price": 3.99,
-        "name": "banana",
-        "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
-        "description": "Esto es una fruta amarilla, rica en potasio y original de canarias",
-        "stock": 0
-      },
-      {
-        "id": 420,
-        "price": 3.99,
-        "name": "banana",
-        "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
-        "description": "Esto es una fruta amarilla, rica en potasio y original de canarias",
-        "stock": 0
-      },
-      {
-        "id": 420,
-        "price": 3.99,
-        "name": "banana",
-        "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
-        "description": "Esto es una fruta amarilla, rica en potasio y original de canarias",
-        "stock": 0
-      },
-      {
-        "id": 420,
-        "price": 3.99,
-        "name": "banana",
-        "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
-        "description": "Esto es una fruta amarilla, rica en potasio y original de canarias",
-        "stock": 0
-      },
-      {
-        "id": 420,
-        "price": 3.99,
-        "name": "banana",
-        "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
-        "description": "Esto es una fruta amarilla, rica en potasio y original de canarias",
-        "stock": 0
-      },
-      {
-        "id": 420,
+        "id": 436,
         "price": 3.99,
         "name": "banana",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
@@ -138,7 +138,7 @@
       },
 
       {
-        "id": 420,
+        "id": 437,
         "price": 3.99,
         "name": "banana",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
@@ -146,7 +146,7 @@
         "stock": 0
       },
       {
-        "id": 420,
+        "id": 438,
         "price": 3.99,
         "name": "banana",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
@@ -154,7 +154,7 @@
         "stock": 0
       },
       {
-        "id": 420,
+        "id": 439,
         "price": 3.99,
         "name": "banana",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
@@ -162,7 +162,7 @@
         "stock": 0
       },
       {
-        "id": 420,
+        "id": 440,
         "price": 3.99,
         "name": "banana",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
@@ -170,7 +170,7 @@
         "stock": 0
       },
       {
-        "id": 420,
+        "id": 441,
         "price": 3.99,
         "name": "banana",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
@@ -178,7 +178,7 @@
         "stock": 0
       },
       {
-        "id": 421,
+        "id": 442,
         "price": 5.96,
         "name": "manzana",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
@@ -186,7 +186,7 @@
         "stock": 0
       },
       {
-        "id": 422,
+        "id": 443,
         "price": 7.45,
         "name": "naranja",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
