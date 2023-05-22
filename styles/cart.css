@@ -60,11 +60,20 @@ td{
     max-height: 100%;
     max-width: 100%;
 }
+tr{
+    text-align: center;
+}
 
 td {
     /* text-align: center; */
     width: 16.6666%;
     /* height: 25vh; */
+}
+
+#empty{
+    margin: auto;
+    text-align: center;
+    font-size: 50px;
 }
 
 .amount {
@@ -74,6 +83,10 @@ td {
     border: none;
     text-align: center;
     border-radius: 5px;
+}
+
+#total-text{
+    font-weight: bold;
 }
 
 #footer-container{

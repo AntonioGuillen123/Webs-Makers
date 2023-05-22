@@ -24,7 +24,7 @@ function itemList() {
     tableFooter.setAttribute("id", "table-footer");
 
     if (items == null || items.length == 0) {
-        tableBody.innerHTML = "SU CARRITO ESTÁ VACIO";
+        tableBody.appendChild(makeEmpty());
     } else {
         tableBody = createItems(items, tableBody);
         tableFooter = createFooter(tableFooter);
@@ -37,10 +37,21 @@ function itemList() {
 function isEmpty() {
     const itemsContainer = document.getElementById("items");
     var items = itemsContainer.getElementsByTagName("tr");
+    var footer = document.getElementById("footer-container");
 
     if (items.length == 0) {
-        itemsContainer.innerHTML = "SU CARRITO ESTÁ VACIO";
+        itemsContainer.appendChild(makeEmpty());
+        footer.remove();
     }
+}
+
+function makeEmpty(){
+    var empty = document.createElement("td");
+    empty.setAttribute("id", "empty");
+    empty.setAttribute("colspan", 6);
+    empty.innerHTML = "SU CARRITO ESTÁ VACIO :(";
+    
+    return empty;
 }
 
 function createItems(items, itemsContainer) {
@@ -214,7 +225,7 @@ async function changeAmount(id, option) {
     var item = findProductById(id);
 
     if (amount.value != "" && amount.value >= 0 && amount.value <= item.stock) {
-        if (option == "plus") amount.value = sum(value, item.stock);
+        if (option == "plus") amount.value = sum(value, item.stock, false);
         else if (option == "less") amount.value = subtract(value, 0);
         else {
             if (option != "" && option >= 0) {
@@ -257,7 +268,7 @@ function updateSessionCart(id, amount) {
     sessionStorage.setItem("items", JSON.stringify(items));
 }
 
-function buttonState(text) { //TODO CHANGESSSS SUJETO A CAMBIOS COMO LO DEL PAYPAL...
+function buttonState(text) {
     var button = document.getElementById("submit");
 
     if (text.length != 0) {

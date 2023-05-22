@@ -27,7 +27,7 @@ function seeSoon() {
 var getDate = `${zeroFill(time.getDate())}/${zeroFill(time.getMonth() + 1)}/${time.getFullYear()}`;
 var getTime = `${time.getHours()}:${zeroFill(time.getMinutes())}:${zeroFill(time.getSeconds())}`;
 
-const sum = (countNumber, number) => countNumber < number ? countNumber + 1 : maxStock(countNumber);
+const sum = (countNumber, number, avaliable) => countNumber < number ? countNumber + 1 : maxStock(countNumber, avaliable);
 const subtract = (countNumber, number) => countNumber > number ? countNumber - 1 : countNumber;
 
 async function giveItems() {
@@ -73,7 +73,7 @@ function zeroFill(text) {
 
 var alertPlaceholder = document.getElementById('liveAlert');
 
-function maxStock(countNumber) {
+function maxStock(countNumber, avaliable) {
     if (alertPlaceholder.innerHTML.length == 0) {
         alertPersonalized('<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill" /></svg> NO QUEDA STOCK DISPONIBLE.', 'danger');
         var myAlert = document.getElementById('alert-content');
@@ -85,12 +85,14 @@ function maxStock(countNumber) {
     }
 
 
-    var btnToCart = document.getElementById("420").childNodes[5];
-    btnToCart.setAttribute("disabled", "");
-    btnToCart.classList.remove("btn-to-cart");
-    btnToCart.classList.add("btn");
-    // btnToCart.classList.add("btn-sm");
-    btnToCart.classList.add("btn-primary");
+    if (avaliable) {
+        var btnToCart = document.getElementById("420").childNodes[5];
+        btnToCart.setAttribute("disabled", "");
+        btnToCart.classList.remove("btn-to-cart");
+        btnToCart.classList.add("btn");
+        // btnToCart.classList.add("btn-sm");
+        btnToCart.classList.add("btn-primary");
+    }
 
     return countNumber;
 }
