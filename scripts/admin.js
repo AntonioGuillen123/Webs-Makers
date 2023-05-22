@@ -174,6 +174,20 @@ async function deleteUserShop() {
         }
     })
 
+    /* var data =
+    {
+        "users": [
+            {
+                "id": "",
+                "user": name,
+                "items": [
+                ],
+                "date": getDate,
+                "time": getTime
+            }
+        ]
+    }; */
+
     console.log(newArrayCartUsers);
 
     await uploadUserShop(JSON.stringify(newArrayCartUsers));
