@@ -32,20 +32,20 @@ fetch("https://getpantry.cloud/apiv1/pantry/f05c7024-db22-4ef2-9691-d82f3c50cd0e
             .then((response) => response.json())
             .then(response =>{
                 var divContainer = document.getElementById("fewUnits");
-                var title = document.createElement("h3");
-                title.innerHTML = "¡Quedan pocas unidades!";
-                title.classList.add("title");
-                divContainer.appendChild(title);
-                
+                var title = document.getElementById("pocas");
+                var cont = 0;
                 for(var i = 0; i < response.items.length; i++){
-                    var stock = response.items[i].stock;
+                    
                     var id = response.items[i].id;
 
                     // Te lo he cambiado porque antes basicamente lo que hacía es
                     // que si el último era menor o mayor a 300 hacia lo que sea pero solo el último
                     // de la coleccion porque se sobreescribía
                     // Y este método es como el All de LINQ C#
-                    if(!(response.items.every(x => x.stock > 50))){
+                    if(response.items[i].stock < 1000){
+                        title.classList.add("title");
+                        title.innerHTML = "¡Quedan pocas unidades!";
+
                         
                         var a = document.createElement("a");
                         a.setAttribute("href", `pages/items.html#${id}`);
@@ -80,19 +80,17 @@ fetch("https://getpantry.cloud/apiv1/pantry/f05c7024-db22-4ef2-9691-d82f3c50cd0e
                         pPrice.classList.add("productPrice");
                         divProduct.appendChild(pPrice);
 
+                        cont++;
+
 
                     }
-                    else{
-                        while(divContainer.firstChild){
-                            divContainer.removeChild(divContainer.firstChild);
-                        }
-                        var fullProducts = document.createElement("h3");
+                    
+                }
+                if(cont === 0){
+                    var fullProducts = document.createElement("h3");
                         fullProducts.innerHTML = "¡Qué suerte! Tenemos el stock lleno de todos los productos";
                         fullProducts.classList.add("fullProducts");
                         divContainer.appendChild(fullProducts);
-                        
-
-                    }
                 }
 
             })
