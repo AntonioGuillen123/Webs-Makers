@@ -21,12 +21,10 @@ button {
     color: white;
     font-weight: bold;
     padding: 15px;
-
     text-align: center;
     border-collapse: collapse;
     border: 2px solid #717575;
-    border-radius: 6px;
-
+    border-radius: 15px !important;
 }
 
 button :active {
