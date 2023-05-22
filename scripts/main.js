@@ -75,7 +75,7 @@ var alertPlaceholder = document.getElementById('liveAlert');
 
 function maxStock(countNumber) {
     if (alertPlaceholder.innerHTML.length == 0) {
-        alert('<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill" /></svg> NO QUEDA STOCK DISPONIBLE.', 'danger');
+        alertPersonalized('<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill" /></svg> NO QUEDA STOCK DISPONIBLE.', 'danger');
         var myAlert = document.getElementById('alert-content');
 
         myAlert.addEventListener('closed.bs.alert', () => {
@@ -95,7 +95,7 @@ function maxStock(countNumber) {
     return countNumber;
 }
 
-function alert(message, type) {
+function alertPersonalized(message, type) {
     var wrapper = document.createElement('div');
     wrapper.setAttribute("id", "alert");
     wrapper.innerHTML = '<div class="fade show alert alert-' + type + ' alert-dismissible" role="alert" id="alert-content">' + message + '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
