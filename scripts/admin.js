@@ -176,7 +176,7 @@ async function deleteUserShop() {
 
     console.log(newArrayCartUsers);
 
-    await uploadUserShop("hola"/* JSON.stringify(newArrayCartUsers) */);
+    await uploadUserShop(JSON.stringify(newArrayCartUsers));
 }
 
 async function deleteUserMessage() {
