@@ -149,12 +149,24 @@ function deleteUserShop() {
         event.preventDefault();
 
         if (input.value != "") {
-            for (var i = 0; i < arrayCartUsers[0].length; i++) {
-                if (input.value != arrayCartUsers[0][i].id && !newArrayCartUsers.includes(arrayCartUsers[0][i])) {
-                    newArrayCartUsers.push(arrayCartUsers[0][i]);
+            if (input.value < 1 || input.value > arrayCartUsers[0].length) {
+                alert("El ID introducido no es válido");
+            }
+            else {
+                for (var i = 0; i < arrayCartUsers[0].length; i++) {
+                    if (input.value != arrayCartUsers[0][i].id && !newArrayCartUsers.includes(arrayCartUsers[0][i])) {
+                        newArrayCartUsers.push(arrayCartUsers[0][i]);
+                    }
                 }
             }
+
             input.value = "";
+        }
+
+        for (var i = 0; i < newArrayCartUsers.length; i++) {
+            if (i + 1 != newArrayCartUsers[i].id) {
+                newArrayCartUsers[i].id = i + 1;
+            }
         }
     })
 
@@ -173,11 +185,23 @@ function deleteUserMessage() {
         event.preventDefault();
 
         if (input.value != "") {
-            for (var i = 0; i < arrayFormUsers[0].length; i++) {
-                if (input.value != arrayFormUsers[0][i].id && !newArrayFormUsers.includes(arrayFormUsers[0][i])) {
-                    newArrayFormUsers.push(arrayFormUsers[0][i]);
+            if (input.value < 1 || input.value > arrayCartUsers[0].length) {
+                alert("El ID introducido no es válido");
+            }
+            else {
+                for (var i = 0; i < arrayFormUsers[0].length; i++) {
+                    if (input.value != arrayFormUsers[0][i].id && !newArrayFormUsers.includes(arrayFormUsers[0][i])) {
+                        newArrayFormUsers.push(arrayFormUsers[0][i]);
+                    }
                 }
             }
+
+            for (var i = 0; i < newArrayFormUsers.length; i++) {
+                if (i + 1 != newArrayFormUsers[i].id) {
+                    newArrayFormUsers[i].id = i + 1;
+                }
+            }
+
             input.value = "";
         }
     })

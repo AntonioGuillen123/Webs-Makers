@@ -8,11 +8,11 @@
 }
 
 .user-id, .submit{
-    margin-top: 25px;
+    width: 100%;
+    margin: 15px;
 }
 
-.delete, #delete-shop, #delete-message{
+.delete {
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
