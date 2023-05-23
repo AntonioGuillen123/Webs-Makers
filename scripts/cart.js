@@ -225,7 +225,7 @@ async function changeAmount(id, option) {
     var item = findProductById(id);
 
     if (amount.value != "" && amount.value >= 0 && amount.value <= item.stock) {
-        if (option == "plus") amount.value = sum(value, item.stock, false);
+        if (option == "plus") amount.value = sum(value, item.stock, false); // SUpongo que tendras que añadirle el nuevo parametro como 0
         else if (option == "less") amount.value = subtract(value, 0);
         else {
             if (option != "" && option >= 0) {
