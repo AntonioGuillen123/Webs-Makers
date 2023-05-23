@@ -18,6 +18,8 @@ async function startItems() {
     eventListener();
 
     orderBy("opt1");
+
+    await checkButtons();
 }
 
 
@@ -273,4 +275,14 @@ function takeAmountProduct(productId) {
     });
 
     return amountProductInCart;
+}
+
+function checkButtons() {
+    productList.items.forEach(item => {
+        if(item.stock === 0){
+            var productId = item.id;
+            var productBtn = document.querySelector(`[id='${productId}'].btn-to-cart`);
+            productBtn.setAttribute("disabled", "");
+        }
+    });
 }
