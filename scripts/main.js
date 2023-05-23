@@ -27,7 +27,7 @@ function seeSoon() {
 var getDate = `${zeroFill(time.getDate())}/${zeroFill(time.getMonth() + 1)}/${time.getFullYear()}`;
 var getTime = `${time.getHours()}:${zeroFill(time.getMinutes())}:${zeroFill(time.getSeconds())}`;
 
-const sum = (countNumber, number, avaliable) => countNumber < number ? countNumber + 1 : maxStock(countNumber, avaliable);
+const sum = (countNumber, productStockInJson, productAmountCartList, avaliable) => countNumber + productAmountCartList < productStockInJson ? countNumber + 1 : maxStock(countNumber, avaliable);
 const subtract = (countNumber, number) => countNumber > number ? countNumber - 1 : countNumber;
 
 function findProductById(productId) {
@@ -86,6 +86,8 @@ function maxStock(countNumber, avaliable) {
         // btnToCart.classList.add("btn-sm");
         btnToCart.classList.add("btn-primary");
     }
+
+    console.log("a funcionado!!")
 
     return countNumber;
 }

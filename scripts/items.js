@@ -155,7 +155,7 @@ function eventListener() {
             console.log(findProductById(productId));
             var productObject = findProductById(productId);
             var productAmountCartList = takeAmountProduct(productId);
-            selectCount.value = sum(countNumber, productObject.stock, , true);
+            selectCount.value = sum(countNumber, productObject.stock, productAmountCartList, true);
             console.log(countNumber, productObject.stock);
         });
     }
