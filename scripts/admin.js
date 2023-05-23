@@ -187,8 +187,6 @@ async function deleteUserShop() {
         awaitUploadUserShop(arrayCartUsers[0]);
 
         users.innerHTML = "";
-
-
     })
 }
 
@@ -250,27 +248,22 @@ async function uploadUserMessage(data) {
     });
 }
 
-async function fillEmpty(upload) {
-    upload.users.forEach(user => user.id = "");
-
-    return upload;
-}
+var fillEmpty = async (upload) => upload == "" ? upload : upload.users.forEach(user => user.id = "");
 
 async function awaitUploadUserShop(upload) {
 
-    await fillEmpty(upload);
+    var a = await fillEmpty(upload);
 
-    await uploadUserShop(JSON.stringify(upload));
+    await uploadUserShop(a);
 
     viewCartUsers();
-    //await uploadUserShop(JSON.stringify(emptyId(upload)));
 }
 
 async function awaitUploadUserMessage(upload) {
 
-    await fillEmpty(upload);
+    var a = await fillEmpty(upload);
 
-    await uploadUserMessage(JSON.stringify(upload));
+    await uploadUserMessage(a);
 
     viewFormUsers();
 }
