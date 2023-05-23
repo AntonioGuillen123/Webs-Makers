@@ -261,20 +261,34 @@ function fillEmpty(upload){
 
 async function awaitUploadUserShop(upload) {
 
-    var a = JSON.stringify(await fillEmpty(upload));
+    if (upload != "") {
+        var a = JSON.stringify(await fillEmpty(upload));
+    }
+    else{
+        var a = await fillEmpty(upload);
+    }
 
     await uploadUserShop(a);
 
-    viewCartUsers();
+    if (a != "") {
+        viewCartUsers();
+    }
 }
 
 async function awaitUploadUserMessage(upload) {
 
-    var a = JSON.stringify(await fillEmpty(upload));
+    if (upload != "") {
+        var a = JSON.stringify(await fillEmpty(upload));
+    }
+    else{
+        var a = await fillEmpty(upload);
+    }
 
     await uploadUserMessage(a);
 
-    viewFormUsers();
+    if (a != "") {
+        viewFormUsers();
+    }
 }
 
 async function restock() {
