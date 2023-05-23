@@ -140,6 +140,7 @@ function eventListener() {
             addProductToShoppingCart(findProductById(productId), parseInt(selectCount.value), null);
             changeTotalAmount(shoppingCart);
             sessionStorage.setItem("items", JSON.stringify(shoppingCart));
+            checkButtons();
         });
     }
 
