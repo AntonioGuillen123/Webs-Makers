@@ -75,7 +75,7 @@ var alertPlaceholder = document.getElementById('liveAlert');
 
 function maxStock(countNumber, avaliable) {
     if (alertPlaceholder.innerHTML.length == 0) {
-        alertPersonalized('<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill" /></svg> NO QUEDA STOCK DISPONIBLE.', 'danger');
+        alertPersonalized('<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill" /></svg> LÍMITE DE STOCK ALCANZADO...', 'danger');
         var myAlert = document.getElementById('alert-content');
 
         myAlert.addEventListener('closed.bs.alert', () => {
