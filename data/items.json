@@ -125,7 +125,7 @@
         "price": 349.99,
         "name": "PACK DESARROLLO WEB JUNIOR",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
-        "description": "Página web intermedia: Creación de una página web con características adicionales y personalización.\nHosting 6 meses: Servicio de alojamiento web confiable durante 6 meses.\nDominio 6 meses: Registro de dominio por 6 meses.\nMantenimiento 6 meses: Servicio de mantenimiento web en general por 6 meses.",
+        "description": "Página web intermedia: Creación de una página web con características adicionales y personalización. Hosting 6 meses: Servicio de alojamiento web confiable durante 6 meses. Dominio 6 meses: Registro de dominio por 6 meses. Mantenimiento 6 meses: Servicio de mantenimiento web en general por 6 meses.",
         "stock": 200
       },
       {
@@ -133,7 +133,7 @@
         "price": 619.99,
         "name": "PACK DESARROLLO WEB SEMI-SENIOR",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
-        "description": "Página web avanzada: Desarrollo de una página web con funcionalidades avanzadas y diseño personalizado.\nHosting 1 año: Servicio de alojamiento web confiable durante 1 año.\nDominio 1 año: Registro de dominio por 1 año.\nMantenimiento 1 año: Servicio de mantenimiento web en general durante 1 año.",
+        "description": "Página web avanzada: Desarrollo de una página web con funcionalidades avanzadas y diseño personalizado. Hosting 1 año: Servicio de alojamiento web confiable durante 1 año. Dominio 1 año: Registro de dominio por 1 año. Mantenimiento 1 año: Servicio de mantenimiento web en general durante 1 año.",
         "stock": 200
       },
       {
@@ -141,7 +141,7 @@
         "price": 899.99,
         "name": "PACK DESARROLLO WEB SENIOR",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
-        "description": "Página web premium: Creación de una página web de alta gama y totalmente personalizada.\nHosting 2 años: Servicio de alojamiento web confiable durante 2 años.\nDominio 2 años: Registro de dominio por 2 años.\nMantenimiento 2 años: Servicio de mantenimiento web completo durante 2 años.",
+        "description": "Página web premium: Creación de una página web de alta gama y totalmente personalizada. Hosting 2 años: Servicio de alojamiento web confiable durante 2 años. Dominio 2 años: Registro de dominio por 2 años. Mantenimiento 2 años: Servicio de mantenimiento web completo durante 2 años.",
         "stock": 200
       },
       {
@@ -149,7 +149,7 @@
         "price": 449.99,
         "name": "PACK DESARROLLO TIENDA ONLINE JUNIOR",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
-        "description": "Tienda online intermedia: Creación de una tienda online con características adicionales y personalización.\nHosting 6 meses: Servicio de alojamiento web confiable durante 6 meses.\nDominio 6 meses: Registro de dominio por 6 meses.\nMantenimiento 6 meses: Servicio de mantenimiento web en general por 6 meses.",
+        "description": "Tienda online intermedia: Creación de una tienda online con características adicionales y personalización. Hosting 6 meses: Servicio de alojamiento web confiable durante 6 meses. Dominio 6 meses: Registro de dominio por 6 meses. Mantenimiento 6 meses: Servicio de mantenimiento web en general por 6 meses.",
         "stock": 200
       },
       {
@@ -157,7 +157,7 @@
         "price": 719.99,
         "name": "PACK DESARROLLO TIENDA ONLINE SEMI-SENIOR",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
-        "description": "Tienda online avanzada: Desarrollo de una tienda online con funcionalidades avanzadas y diseño personalizado.\nHosting 1 año: Servicio de alojamiento web confiable durante 1 año.\nDominio 1 año: Registro de dominio por 1 año.\nMantenimiento 1 año: Servicio de mantenimiento web en general durante 1 año.",
+        "description": "Tienda online avanzada: Desarrollo de una tienda online con funcionalidades avanzadas y diseño personalizado. Hosting 1 año: Servicio de alojamiento web confiable durante 1 año. Dominio 1 año: Registro de dominio por 1 año. Mantenimiento 1 año: Servicio de mantenimiento web en general durante 1 año.",
         "stock": 200
       },
       {
@@ -165,7 +165,7 @@
         "price": 999.99,
         "name": "PACK DESARROLLO TIENDA ONLINE SENIOR",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
-        "description": "Tienda online premium: Creación de una tienda online de alta gama y totalmente personalizada.\nHosting 2 años: Servicio de alojamiento web confiable durante 2 años.\nDominio 2 años: Registro de dominio por 2 años.\nMantenimiento 2 años: Servicio de mantenimiento web en general durante 2 años.",
+        "description": "Tienda online premium: Creación de una tienda online de alta gama y totalmente personalizada. Hosting 2 años: Servicio de alojamiento web confiable durante 2 años. Dominio 2 años: Registro de dominio por 2 años. Mantenimiento 2 años: Servicio de mantenimiento web en general durante 2 años.",
         "stock": 200
       }
     ]
