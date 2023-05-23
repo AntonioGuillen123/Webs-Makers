@@ -243,4 +243,5 @@
 
 #textImg {
   display: flex;
+  align-items: center;
 }
