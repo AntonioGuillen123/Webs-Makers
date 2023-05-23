@@ -47,13 +47,13 @@ textarea {
 
 
 #button {
-    background-color: rgb(85, 85, 187);
     color: #fff;
     padding: 20px;
 }
 
 #button:hover {
     cursor: pointer;
+    background-color: rgb(85, 85, 187);
 }
 
 input[type="email"]:invalid {
