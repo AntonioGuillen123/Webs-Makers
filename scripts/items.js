@@ -7,8 +7,7 @@ var productList;
 
 var shoppingCart = [];
 
-var countProduct = 1;
-
+const countProduct = 1;
 
 
 console.log(shoppingCart);
@@ -99,8 +98,8 @@ function createProduct(product) {
     var inputCount = document.createElement("input");
     inputCount.setAttribute("readonly", "");
     inputCount.type = "number";
-    inputCount.value = 1;
-    inputCount.min = 1;
+    inputCount.value = countProduct;
+    inputCount.min = countProduct;
     inputCount.classList.add("product-count");
     inputCount.setAttribute("count-id", product.id);
 
