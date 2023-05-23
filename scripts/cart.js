@@ -276,7 +276,7 @@ function buttonState(text) {
     if (text.length != 0) {
         button.removeAttribute("disabled");
     } else {
-        button.setAttribute("disabled");
+        button.setAttribute("disabled", "");
     }
 }
 
