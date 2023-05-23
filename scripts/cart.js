@@ -35,24 +35,30 @@ function itemList() {
     itemList.appendChild(tableFooter);
 }
 
-function isEmpty() {
-    const itemsContainer = document.getElementById("items");
-    var items = itemsContainer.getElementsByTagName("tr");
+function isEmpty(clearAll) {
+    var itemsContainer = document.getElementById("items");
+    var items = itemsContainer.getElementsByTagName("tr").length;
     var footer = document.getElementById("footer-container");
 
-    if (items.length == 0) {
-        if(canDelete) itemsContainer.appendChild(makeEmpty());
+    if ((clearAll || items == 0) && canDelete) {
+        sessionStorage.removeItem("items");
+        sessionStorage.setItem("cartValue", 0);
+
+        itemsContainer.innerHTML = "";
+        itemsContainer.appendChild(makeEmpty());
+
+        valueCart.value = 0;
         footer.remove();
     }
 }
 
-function makeEmpty(){
+function makeEmpty() {
     var empty = document.createElement("td");
     empty.setAttribute("id", "empty");
     empty.setAttribute("colspan", 6);
     empty.innerHTML = "SU CARRITO ESTÁ VACIO :(";
     canDelete = false;
-    
+
     return empty;
 }
 
@@ -131,7 +137,7 @@ function createItems(items, itemsContainer) {
     return itemsContainer;
 }
 
-function createFooter(footer){
+function createFooter(footer) {
     var row = document.createElement("tr");
     var column = document.createElement("td");
     column.setAttribute("colspan", 6)
@@ -148,12 +154,12 @@ function createFooter(footer){
     buy.classList.add("btn-lg");
     buy.innerHTML = "COMPRAR";
 
-    // buy.addEventListener("click", () => {
-    //     var finishContainer = document.getElementById("finish-container");
-    //     finishContainer.style.display = "flex";
-
-    //     closeSubmit(finishContainer);
-    // });
+    var clear = document.createElement("button");
+    clear.classList.add("btn");
+    clear.classList.add("btn-outline-primary");
+    clear.classList.add("btn-lg");
+    clear.innerHTML = "VACIAR";
+    clear.addEventListener("click", () => isEmpty(true));
 
     var totalContainer = document.createElement("div");
     totalContainer.setAttribute("id", "total-container");
@@ -171,6 +177,7 @@ function createFooter(footer){
     totalContainer.appendChild(total);
 
     columnDiv.appendChild(buy);
+    columnDiv.appendChild(clear);
     columnDiv.appendChild(totalContainer);
 
     column.appendChild(columnDiv);
@@ -179,20 +186,6 @@ function createFooter(footer){
     footer.appendChild(row);
 
     return footer;
-}
-
-function closeSubmit(finishContainer){
-    var data = document.getElementById("data");
-    var button = document.getElementById("submit");
-    var close = document.getElementById("close");
-
-    data.value = "";
-
-    button.style.display = "none";
-
-    close.addEventListener("click", () => {
-        finishContainer.style.display = "none";
-    });
 }
 
 function changePrice(id) {
@@ -227,7 +220,7 @@ async function changeAmount(id, option) {
     var item = findProductById(id);
 
     if (amount.value != "" && amount.value >= 0 && amount.value <= item.stock) {
-        if (option == "plus") amount.value = sum(value, item.stock, false); // SUpongo que tendras que añadirle el nuevo parametro como 0
+        if (option == "plus") amount.value = sum(value, item.stock, 0, false);
         else if (option == "less") amount.value = subtract(value, 0);
         else {
             if (option != "" && option >= 0) {
@@ -242,7 +235,7 @@ async function changeAmount(id, option) {
         if (amount.value == 0) {
             await setTimeout(() => {
                 itemId.remove();
-                isEmpty();
+                isEmpty(false);
             }, 1000);
         }
 
