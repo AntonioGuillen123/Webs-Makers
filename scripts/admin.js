@@ -46,6 +46,7 @@ async function getUsers() {
 function viewCartUsers() {
     var users = document.getElementById("usersItems");
     users.style.marginTop = "2%";
+    users.style.marginLeft = "2%";
 
     if (arrayCartUsers[0].users != undefined) {
         for (var i = 0; i < arrayCartUsers[0].users.length; i++) {
@@ -101,6 +102,7 @@ function viewCartUsers() {
 function viewFormUsers() {
     var users = document.getElementById("usersContact");
     users.style.marginTop = "2%";
+    users.style.marginRight = "2%";
 
     if (arrayFormUsers[0].users != undefined) {
         for (var i = 0; i < arrayFormUsers[0].users.length; i++) {
