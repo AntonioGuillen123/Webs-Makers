@@ -106,6 +106,8 @@ function createProduct(product) {
 
     var btnToCart = document.createElement("button");
     btnToCart.classList.add("btn-to-cart");
+    btnToCart.classList.add("btn");
+    btnToCart.classList.add("btn-primary");
     btnToCart.setAttribute("id", product.id);
     btnToCart.innerHTML = "Añadir al carrito";
 
