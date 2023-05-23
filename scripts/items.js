@@ -32,7 +32,7 @@ function addProducts() {
     });
 }
 
-function searchProducts(value) {
+async function searchProducts(value) {
     var itemList = document.getElementById("items-list");
     itemList.innerHTML = "";
 
@@ -47,6 +47,7 @@ function searchProducts(value) {
     } else {
         eventListener();
     }
+    await checkButtons();
 }
 
 function createProduct(product) {
