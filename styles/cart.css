@@ -132,8 +132,17 @@ td {
     flex-wrap: wrap;
     align-content: center;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
     margin: 0 5vw;
+}
+
+.modal-title{
+    font-weight: bold !important;
+}
+
+.modal-content{
+    background-color: rgb(28,63,96) !important;
+    color: white !important;
 }
 
 #close {
@@ -148,4 +157,12 @@ td {
 
 #buy-table{
     width: 30vw;
+    display: flex;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 768px) {
+    .name-item{
+        font-size: 10px;
+    }
 }

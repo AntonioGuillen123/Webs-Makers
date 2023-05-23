@@ -104,7 +104,7 @@ function createProduct(product) {
 
 
     var productPrice = document.createElement("p");
-    productPrice.innerHTML = product.price;
+    productPrice.innerHTML = `${product.price}€`;
     productPrice.classList.add("product-price");
 
     var btnToCart = document.createElement("button");
@@ -112,7 +112,7 @@ function createProduct(product) {
     btnToCart.classList.add("btn");
     btnToCart.classList.add("btn-outline-primary");
     btnToCart.setAttribute("id", product.id);
-    btnToCart.innerHTML = "Añadir al carrito";
+    btnToCart.innerHTML = "AÑADIR";
 
     abreviature.appendChild(image);
     divImage.appendChild(abreviature);
