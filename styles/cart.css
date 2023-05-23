@@ -90,7 +90,7 @@ td {
     text-align: center;
     font-size: 50px;
     font-weight: bold ;
-    animation: fade-in 1.5s ease-in-out;
+    animation: fade-in 1.5s ease-in-out;  /* si te gusta pues borra el comentario, sino pues borra esta linea y el keyframes */
 }
 
 @keyframes fade-in {
