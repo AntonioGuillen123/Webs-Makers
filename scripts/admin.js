@@ -47,7 +47,7 @@ function viewCartUsers() {
     var users = document.getElementById("usersItems");
     users.style.border = "2px solid black";
     users.style.borderRadius = "8px";
-    users.style.backgroundColor = "#374652";
+    users.style.backgroundColor = "rgb(28, 63, 96)";
     users.style.color = "white";
     users.style.marginTop = "2%";
 
@@ -98,7 +98,7 @@ function viewFormUsers() {
     var users = document.getElementById("usersContact");
     users.style.border = "2px solid black";
     users.style.borderRadius = "8px";
-    users.style.backgroundColor = "#374652";
+    users.style.backgroundColor = "rgb(28, 63, 96)";
     users.style.color = "white";
     users.style.marginTop = "2%";
 
@@ -150,7 +150,6 @@ function deleteAllMessages() {
 async function deleteUserShop() {
     var form = document.getElementById("delete-shop");
     var input = document.getElementById("user-id-shop");
-    var upload = "";
     var users = document.getElementById("usersItems");
 
     if (input.value == "") {
@@ -181,7 +180,6 @@ async function deleteUserShop() {
         }
 
         awaitUploadUserShop(arrayCartUsers[0]);
-        //awaitUploadUserShop(arrayCartUsers[0].users);
 
         users.innerHTML = "";
 
