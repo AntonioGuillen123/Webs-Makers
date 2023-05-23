@@ -60,6 +60,9 @@ function createProduct(product) {
     var divImage = document.createElement("div");
     divImage.classList.add("image");
 
+    var abreviature = document.createElement("abbr");
+    abreviature.title = product.id;
+
     var image = document.createElement("img");
     image.src = product.imageUrl;
     image.alt = "Lo siento, este producto no se ha encontrado :(";
@@ -111,8 +114,8 @@ function createProduct(product) {
     btnToCart.setAttribute("id", product.id);
     btnToCart.innerHTML = "Añadir al carrito";
 
-
-    divImage.appendChild(image);
+    abreviature.appendChild(image);
+    divImage.appendChild(abreviature);
     countContainer.appendChild(btnMinus);
     countContainer.appendChild(inputCount);
     countContainer.appendChild(btnPlus);
