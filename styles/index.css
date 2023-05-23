@@ -185,6 +185,12 @@
   font-weight: bold;
   
 }
+.a2{
+  text-decoration: underline;
+  color: white;
+  font-weight: bold;
+  
+}
 .fullProducts{
   text-align: center;
   font-weight: bold;
@@ -197,6 +203,8 @@
   height: auto;
   margin-top: 100px;
 }
+
+
 .image{
   width: 500px;
   height: 300px;
