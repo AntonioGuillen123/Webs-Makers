@@ -9,11 +9,11 @@
     padding: 7px;
 }
 
-#usersItems{
+#usersItems {
     margin-left: 2%;
 }
 
-#usersContact{
+#usersContact {
     margin-right: 2%;
 }
 
@@ -41,7 +41,7 @@
     justify-content: center;
 }
 
-#restock button{
+#restock button {
     background-color: rgb(0, 74, 173);
     color: #fff;
     padding: 10px;
@@ -52,12 +52,28 @@
     border: 5px solid black;
 }
 
-.delete-all button{
+.delete-all button {
     color: rgb(0, 255, 30);
     cursor: pointer;
     text-shadow: 0 0 10px black;
 }
 
-.delete-all{
+.delete-all {
     display: flex;
+}
+
+#shop-and-messages {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#shops,
+#messages {
+    margin-top: 2%;
+    background: rgb(75, 208, 238);
+    color: white;
+    font-weight: bold;
+    padding: 15px;
+    border: 2px solid #717575;
+    border-radius: 15px !important;
 }
