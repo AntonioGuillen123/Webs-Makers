@@ -140,7 +140,7 @@ function deleteAllShops() {
     var users = document.getElementById("usersItems");
     var upload = "";
 
-    awaitAllUploadUserShop(upload);
+    awaitUploadUserShop(upload);
 
     users.innerHTML = "";
 }
@@ -149,7 +149,7 @@ function deleteAllMessages() {
     var users = document.getElementById("usersContact");
     var upload = "";
 
-    awaitAllUploadUserMessage(upload);
+    awaitUploadUserMessage(upload);
 
     users.innerHTML = "";
 }
@@ -268,20 +268,6 @@ async function awaitUploadUserMessage(upload) {
     await uploadUserMessage(a);
 
     viewFormUsers();
-}
-
-async function awaitAllUploadUserShop(upload) {
-
-    var a = await fillEmpty(upload);
-
-    await uploadUserShop(a);
-}
-
-async function awaitAllUploadUserMessage(upload) {
-
-    var a = await fillEmpty(upload);
-
-    await uploadUserMessage(a);
 }
 
 async function restock() {
