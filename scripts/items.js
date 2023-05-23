@@ -270,9 +270,9 @@ function addProductToShoppingCart(product, selectCount, actualAmount) {
 function takeAmountProduct(productId){
     var amountProductInCart = 0;
 
-    shoppingCart.forEach(product => {
-        if(product.id == productId){
-            amountProductInCart = product.amount;
+    shoppingCart.forEach(item => {
+        if(item.item.id == productId){
+            amountProductInCart = item.amount;
         }
     });
 
