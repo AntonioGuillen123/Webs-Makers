@@ -170,14 +170,12 @@ async function deleteUserShop() {
             input.value = "";
         }
 
-        upload = JSON.stringify(arrayCartUsers[0]);
-
-        awaitUploadUserShop(upload);
+        awaitUploadUserShop(arrayCartUsers[0]);
         //awaitUploadUserShop(arrayCartUsers[0].users);
 
         users.innerHTML = "";
 
-        viewCartUsers();
+        
     })
 }
 
@@ -216,8 +214,6 @@ async function deleteUserMessage() {
         awaitUploadUserMessage(arrayFormUsers[0]);
 
         users.innerHTML = "";
-
-        viewFormUsers();
     })
 }
 
@@ -241,15 +237,29 @@ async function uploadUserMessage(data) {
     });
 }
 
+async function fillEmpty(upload){
+    upload.users.forEach(user => user.id = "");
+
+    return upload;
+}
+
 async function awaitUploadUserShop(upload) {
-    await uploadUserShop(upload);
+
+    await fillEmpty(upload);
+
+    await uploadUserShop(JSON.stringify(upload));
+
+    viewCartUsers();
     //await uploadUserShop(JSON.stringify(emptyId(upload)));
 }
 
 async function awaitUploadUserMessage(upload) {
-    upload.forEach(user => user.id = "");
+    
+    await fillEmpty(upload);
 
     await uploadUserMessage(JSON.stringify(upload));
+
+    viewFormUsers();
 }
 
 //var emptyId = (values) => values.forEach(value => value.id = "");
