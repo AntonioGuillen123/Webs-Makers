@@ -280,8 +280,13 @@ function takeAmountProduct(productId) {
 
 function checkButtons() {
     productList.items.forEach(item => {
-        if(item.stock === 0){
-            var productId = item.id;
+        var productId = item.id;
+        var productInputCount = document.querySelector(`[count-id='${productId}']`);
+
+        if (item.stock === 0) {
+            var productBtn = document.querySelector(`[id='${productId}'].btn-to-cart`);
+            productBtn.setAttribute("disabled", "");
+        } else if(takeAmountProduct(productId) + productInputCount.value >= item.stock ){
             var productBtn = document.querySelector(`[id='${productId}'].btn-to-cart`);
             productBtn.setAttribute("disabled", "");
         }
