@@ -37,10 +37,13 @@
 
 #slogan {
   font-family: slogan;
-  color: rgb(104, 236, 243);
+  color: rgb(0,74,173);
   -webkit-text-stroke: 1px black;
   font-size: 250%;
+}
 
+#slogan-name{
+  color: rgb(28,63,96);
 }
 
 #image {
