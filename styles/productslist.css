@@ -148,6 +148,7 @@
         align-items: center;
         width: auto;
         justify-content: space-between;
+        gap: 10px;
     }
 
     .product-image {
