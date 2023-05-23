@@ -1,6 +1,7 @@
 #all {
     display: flex;
-    align-items: flex-start
+    align-items: flex-start;
+    justify-content: center;
 }
 
 #usersItems div,
