@@ -90,7 +90,26 @@ td {
     text-align: center;
     font-size: 50px;
     font-weight: bold ;
+    animation: fade-in 1.5s ease-in-out;
 }
+
+@keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    25%{
+        opacity: .25;
+    }
+    50%{
+        opacity: .5;
+    }
+    75%{
+        opacity: .75;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 
 .amount {
     font-size: 1em;
