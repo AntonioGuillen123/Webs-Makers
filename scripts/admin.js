@@ -4,8 +4,6 @@ const formURL = "https://getpantry.cloud/apiv1/pantry/f05c7024-db22-4ef2-9691-d8
 var arrayCartUsers = [];
 var arrayCartItems = [];
 var arrayFormUsers = [];
-var newArrayCartUsers = [];
-var newArrayFormUsers = [];
 
 async function youAreAdmin() {
     var session = sessionStorage.getItem("firstTime");
@@ -32,65 +30,61 @@ async function youAreAdmin() {
 async function getItems() {
     var request = await fetch(cartURL);
     var data = await request.json();
-    var arrayContent = data.users;
 
-    await arrayCartUsers.push(arrayContent);
+    await arrayCartUsers.push(data);
     viewCartUsers();
 }
 
 async function getUsers() {
     var request = await fetch(formURL);
     var data = await request.json();
-    var arrayContent = data.users;
 
-    await arrayFormUsers.push(arrayContent);
+    await arrayFormUsers.push(data);
     viewFormUsers();
 }
 
 function viewCartUsers() {
     var users = document.getElementById("usersItems");
 
-    if (arrayCartUsers[0] != undefined) {
-        for (var i = 0; i < arrayCartUsers.length; i++) {
-            for (var j = 0; j < arrayCartUsers[i].length; j++) {
-                arrayCartUsers[i][j].id = j + 1;
+    if (arrayCartUsers[0].users != undefined) {
+        for (var i = 0; i < arrayCartUsers[0].users.length; i++) {
+            arrayCartUsers[0].users[i].id = i + 1;
 
-                var user = document.createElement("div");
-                var userName = document.createElement("div");
-                var userDate = document.createElement("div");
-                var userId = document.createElement("div");
+            var user = document.createElement("div");
+            var userName = document.createElement("div");
+            var userDate = document.createElement("div");
+            var userId = document.createElement("div");
 
-                userId.innerHTML = `ID de Usuario: ${arrayCartUsers[i][j].id}`;
-                userName.innerHTML = `Usuario: ${arrayCartUsers[i][j].user}`;
-                userDate.innerHTML = `Fecha y hora: ${arrayCartUsers[i][j].date} - ${arrayCartUsers[i][j].time}`;
+            userId.innerHTML = `ID de Usuario: ${arrayCartUsers[0].users[i].id}`;
+            userName.innerHTML = `Usuario: ${arrayCartUsers[0].users[i].user}`;
+            userDate.innerHTML = `Fecha y hora: ${arrayCartUsers[0].users[i].date} - ${arrayCartUsers[0].users[i].time}`;
 
-                arrayCartItems.push(arrayCartUsers[i][j].items);
+            arrayCartItems.push(arrayCartUsers[0].users[i].items);
 
-                users.appendChild(user);
-                user.appendChild(userId);
-                user.appendChild(userName);
-                user.appendChild(userDate);
+            users.appendChild(user);
+            user.appendChild(userId);
+            user.appendChild(userName);
+            user.appendChild(userDate);
 
-                for (var k = 0; k < arrayCartItems.length; k++) {
-                    var items = document.createElement("div");
-                    for (var l = 0; l < arrayCartItems[k].length; l++) {
-                        var item = document.createElement("div");
-                        var itemAmount = document.createElement("div");
-                        var itemId = document.createElement("div");
-                        var itemName = document.createElement("div");
+            for (var j = 0; j < arrayCartItems.length; j++) {
+                var items = document.createElement("div");
+                for (var k = 0; k < arrayCartItems[j].length; k++) {
+                    var item = document.createElement("div");
+                    var itemAmount = document.createElement("div");
+                    var itemId = document.createElement("div");
+                    var itemName = document.createElement("div");
 
-                        itemId.innerHTML = `ID: ${arrayCartItems[k][l].id}`;
-                        itemName.innerHTML = `Nombre: ${arrayCartItems[k][l].name}`;
-                        itemAmount.innerHTML = `Cantidad: ${arrayCartItems[k][l].amount}`;
+                    itemId.innerHTML = `ID: ${arrayCartItems[j][k].id}`;
+                    itemName.innerHTML = `Nombre: ${arrayCartItems[j][k].name}`;
+                    itemAmount.innerHTML = `Cantidad: ${arrayCartItems[j][k].amount}`;
 
-                        item.appendChild(itemId);
-                        item.appendChild(itemName);
-                        item.appendChild(itemAmount);
-                        items.appendChild(item);
-                    }
+                    item.appendChild(itemId);
+                    item.appendChild(itemName);
+                    item.appendChild(itemAmount);
+                    items.appendChild(item);
                 }
-                user.appendChild(items);
             }
+            user.appendChild(items);
         }
     }
 }
@@ -98,52 +92,56 @@ function viewCartUsers() {
 function viewFormUsers() {
     var users = document.getElementById("usersContact");
 
-    if (arrayFormUsers[0] != undefined) {
-        for (var i = 0; i < arrayFormUsers.length; i++) {
-            for (var j = 0; j < arrayFormUsers[i].length; j++) {
-                arrayFormUsers[i][j].id = j + 1;
-    
-                var user = document.createElement("div");
-                var userEmail = document.createElement("div");
-                var userAffair = document.createElement("div");
-                var userMessage = document.createElement("div");
-                var userDateTime = document.createElement("div");
-                var userId = document.createElement("div");
-    
-                userId.innerHTML = `ID de Usuario: ${arrayFormUsers[i][j].id}`;
-                userEmail.innerHTML = `Email: ${arrayFormUsers[i][j].email}`;
-                userAffair.innerHTML = `Asunto: ${arrayFormUsers[i][j].affair}`
-                userMessage.innerHTML = `Mensaje: ${arrayFormUsers[i][j].message}`;
-                userDateTime.innerHTML = `Fecha y Hora: ${arrayFormUsers[i][j].date} - ${arrayFormUsers[i][j].time}`;
-    
-                users.appendChild(user);
-                user.appendChild(userId);
-                user.appendChild(userEmail);
-                user.appendChild(userAffair);
-                user.appendChild(userMessage);
-                user.appendChild(userDateTime);
-            }
+    if (arrayFormUsers[0].users != undefined) {
+        for (var i = 0; i < arrayFormUsers[0].users.length; i++) {
+            arrayFormUsers[0].users[i].id = i + 1;
+
+            var user = document.createElement("div");
+            var userEmail = document.createElement("div");
+            var userAffair = document.createElement("div");
+            var userMessage = document.createElement("div");
+            var userDateTime = document.createElement("div");
+            var userId = document.createElement("div");
+
+            userId.innerHTML = `ID de Usuario: ${arrayFormUsers[0].users[i].id}`;
+            userEmail.innerHTML = `Email: ${arrayFormUsers[0].users[i].email}`;
+            userAffair.innerHTML = `Asunto: ${arrayFormUsers[0].users[i].affair}`
+            userMessage.innerHTML = `Mensaje: ${arrayFormUsers[0].users[i].message}`;
+            userDateTime.innerHTML = `Fecha y Hora: ${arrayFormUsers[0].users[i].date} - ${arrayFormUsers[0].users[i].time}`;
+
+            users.appendChild(user);
+            user.appendChild(userId);
+            user.appendChild(userEmail);
+            user.appendChild(userAffair);
+            user.appendChild(userMessage);
+            user.appendChild(userDateTime);
         }
     }
 }
 
-function deleteAllShop() {
+function deleteAllShops() {
     var users = document.getElementById("usersItems");
+    var upload = "";
 
-    //arrayCartItems = [];
+    awaitUploadUserShop(upload);
+
     users.innerHTML = "";
 }
 
 function deleteAllMessages() {
     var users = document.getElementById("usersContact");
+    var upload = "";
 
-    //arrayFormItems = [];
+    awaitUploadUserMessage(upload);
+
     users.innerHTML = "";
 }
 
 async function deleteUserShop() {
     var form = document.getElementById("delete-shop");
     var input = document.getElementById("user-id-shop");
+    var upload = "";
+    var users = document.getElementById("usersItems");
 
     if (input.value == "") {
         alert("Debes introducir el ID de un Usuario");
@@ -153,13 +151,18 @@ async function deleteUserShop() {
         event.preventDefault();
 
         if (input.value != "") {
-            if (input.value < 1 || input.value > arrayCartUsers[0].length) {
+            if (input.value < 1 || input.value > arrayCartUsers[0].users.length) {
                 alert("El ID introducido no es válido");
             }
             else {
-                for (var i = 0; i < arrayCartUsers[0].length; i++) {
-                    if (input.value != arrayCartUsers[0][i].id && !newArrayCartUsers.includes(arrayCartUsers[0][i])) {
-                        newArrayCartUsers.push(arrayCartUsers[0][i]);
+                for (var i = 0; i < arrayCartUsers[0].users.length; i++) {
+                    if (input.value == arrayCartUsers[0].users[i].id) {
+                        arrayCartUsers[0].users.splice(i, 1);
+                    }
+                }
+                for (var i = 0; i < arrayCartUsers[0].users.length; i++) {
+                    if (i + 1 != arrayCartUsers[0].users[i].id) {
+                        arrayCartUsers[0].users[i].id = i + 1;
                     }
                 }
             }
@@ -167,35 +170,21 @@ async function deleteUserShop() {
             input.value = "";
         }
 
-        for (var i = 0; i < newArrayCartUsers.length; i++) {
-            if (i + 1 != newArrayCartUsers[i].id) {
-                newArrayCartUsers[i].id = i + 1;
-            }
-        }
+        upload = JSON.stringify(arrayCartUsers[0]);
+
+        awaitUploadUserShop(upload);
+
+        users.innerHTML = "";
+
+        viewCartUsers();
     })
-
-    /* var data =
-    {
-        "users": [
-            {
-                "id": "",
-                "user": name,
-                "items": [
-                ],
-                "date": getDate,
-                "time": getTime
-            }
-        ]
-    }; */
-
-    console.log(newArrayCartUsers);
-
-    await uploadUserShop(JSON.stringify(newArrayCartUsers));
 }
 
 async function deleteUserMessage() {
     var form = document.getElementById("delete-message");
     var input = document.getElementById("user-id-message");
+    var upload = "";
+    var users = document.getElementById("usersContact");
 
     if (input.value == "") {
         alert("Debes introducir el ID de un Usuario");
@@ -205,30 +194,33 @@ async function deleteUserMessage() {
         event.preventDefault();
 
         if (input.value != "") {
-            if (input.value < 1 || input.value > arrayCartUsers[0].length) {
+            if (input.value < 1 || input.value > arrayFormUsers[0].users.length) {
                 alert("El ID introducido no es válido");
             }
             else {
-                for (var i = 0; i < arrayFormUsers[0].length; i++) {
-                    if (input.value != arrayFormUsers[0][i].id && !newArrayFormUsers.includes(arrayFormUsers[0][i])) {
-                        newArrayFormUsers.push(arrayFormUsers[0][i]);
+                for (var i = 0; i < arrayFormUsers[0].users.length; i++) {
+                    if (input.value == arrayFormUsers[0].users[i].id) {
+                        arrayFormUsers[0].users.splice(i, 1);
                     }
                 }
-            }
-
-            for (var i = 0; i < newArrayFormUsers.length; i++) {
-                if (i + 1 != newArrayFormUsers[i].id) {
-                    newArrayFormUsers[i].id = i + 1;
+                for (var i = 0; i < arrayFormUsers[0].users.length; i++) {
+                    if (i + 1 != arrayFormUsers[0].users[i].id) {
+                        arrayFormUsers[0].users[i].id = i + 1;
+                    }
                 }
             }
 
             input.value = "";
         }
+
+        upload = JSON.stringify(arrayFormUsers[0]);
+
+        awaitUploadUserMessage(upload);
+
+        users.innerHTML = "";
+
+        viewFormUsers();
     })
-
-    console.log(newArrayFormUsers);
-
-    await uploadUsermessage(JSON.stringify(newArrayFormUsers));
 }
 
 async function uploadUserShop(data) {
@@ -241,7 +233,7 @@ async function uploadUserShop(data) {
     });
 }
 
-async function uploadUsermessage(data) {
+async function uploadUserMessage(data) {
     await fetch("https://getpantry.cloud/apiv1/pantry/f05c7024-db22-4ef2-9691-d82f3c50cd0e/basket/form", {
         method: "POST",
         body: data,
@@ -249,4 +241,12 @@ async function uploadUsermessage(data) {
             "Content-type": "application/json"
         }
     });
+}
+
+async function awaitUploadUserShop(upload) {
+    await uploadUserShop(upload);
+}
+
+async function awaitUploadUserMessage(upload) {
+    await uploadUserMessage(upload);
 }
