@@ -50,8 +50,8 @@
 
 #background {
   width: 100%;
-  height: 1200px;
   margin-top: 100px;
+  margin-bottom: 100px;
   background: black;
 
 }
@@ -88,10 +88,6 @@
   height: 80px;
 }
 
-.tools {
-  padding-left: 100px;
-
-}
 
 .toolsInfo {
 
@@ -101,20 +97,23 @@
 }
 
 .toolsContainer {
-  width: 40%;
-  height: 300px;
-  display: inline-block;
-  padding-top: 50px;
-  border: 1px solid white;
-  padding-bottom: 50px;
-  margin-bottom: 50px;
-  
-
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
+
 .toolsContainer:hover {
   box-shadow: 0 0 20px white;
   transform: scale(1.05);
   background-color: rgb(3, 3, 62);
+}
+
+@media only screen and (max-width: 600px) {
+  .toolsContainer {
+    width: 100%;
+  }
 }
 #move{
   margin-left: 140px;
@@ -227,4 +226,14 @@
   text-align: center;
   font-size: larger;
   margin-left: 100px;
+}
+
+#prueba {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 5vh;
+}
+
+#textImg {
+  display: flex;
 }
