@@ -191,8 +191,10 @@ function orderItems() {
 
 function orderBy(value) {
     var productListPage = document.getElementById("items-list");
+    var searchBar = document.getElementById("search-bar");
     var copyProductList = productList.items.slice();
 
+    searchBar.value = "";
     productListPage.innerHTML = "";
 
     switch (value) {
