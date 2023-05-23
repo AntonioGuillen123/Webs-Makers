@@ -30,13 +30,6 @@ var getTime = `${time.getHours()}:${zeroFill(time.getMinutes())}:${zeroFill(time
 const sum = (countNumber, number, avaliable) => countNumber < number ? countNumber + 1 : maxStock(countNumber, avaliable);
 const subtract = (countNumber, number) => countNumber > number ? countNumber - 1 : countNumber;
 
-async function giveItems() {
-    const response = await fetch("https://getpantry.cloud/apiv1/pantry/f05c7024-db22-4ef2-9691-d82f3c50cd0e/basket/items");
-    const data = await response.json();
-
-    return data;
-}
-
 function findProductById(productId) {
     var result = null;
     productList.items.forEach(element => {
@@ -75,7 +68,7 @@ var alertPlaceholder = document.getElementById('liveAlert');
 
 function maxStock(countNumber, avaliable) {
     if (alertPlaceholder.innerHTML.length == 0) {
-        alertPersonalized('<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill" /></svg> NO QUEDA STOCK DISPONIBLE.', 'danger');
+        alertPersonalized('<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill" /></svg> LÍMITE DE STOCK ALCANZADO...', 'danger');
         var myAlert = document.getElementById('alert-content');
 
         myAlert.addEventListener('closed.bs.alert', () => {
@@ -103,4 +96,21 @@ function alertPersonalized(message, type) {
     wrapper.innerHTML = '<div class="fade show alert alert-' + type + ' alert-dismissible" role="alert" id="alert-content">' + message + '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
 
     alertPlaceholder.append(wrapper);
+}
+
+async function giveItems() {
+    const response = await fetch("https://getpantry.cloud/apiv1/pantry/f05c7024-db22-4ef2-9691-d82f3c50cd0e/basket/items");
+    const data = await response.json();
+
+    return data;
+}
+
+async function uploadItems(items) {
+    await fetch("https://getpantry.cloud/apiv1/pantry/f05c7024-db22-4ef2-9691-d82f3c50cd0e/basket/items", {
+        method: "POST",
+        body: items,
+        headers: {
+            "Content-type": "application/json"
+        }
+    });
 }

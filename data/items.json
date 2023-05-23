@@ -2,7 +2,7 @@
     "items": [
       {
         "id": 420,
-        "price": 200,
+        "price": 199.99,
         "name": "DESARROLLO WEB BÁSICO",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
         "description": "Creamos una página web sencilla y funcional con características esenciales como páginas informativas, formularios de contacto y compatibilidad móvil. Ideal para establecer una presencia en línea rápida.",
@@ -10,7 +10,7 @@
       },
       {
         "id": 421,
-        "price": 300,
+        "price": 299.99,
         "name": "DESARROLLO WEB INTERMEDIO",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
         "description": " Creamos una página web personalizada con funcionalidades avanzadas y diseño atractivo. Perfecta si deseas una presencia en línea más robusta y adaptada a tus necesidades específicas.",
@@ -18,7 +18,7 @@
       },
       {
         "id": 422,
-        "price": 400,
+        "price": 399.99,
         "name": "DESARROLLO WEB AVANZADO",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
         "description": "Creamos una página web altamente funcional y personalizada con características y funcionalidades avanzadas, como integraciones complejas y soluciones escalables. Ideal para una presencia en línea sofisticada y altamente personalizada.",
@@ -26,7 +26,7 @@
       },
       {
         "id": 423,
-        "price": 300,
+        "price": 299.99,
         "name": "DESARROLLO TIENDA ONLINE BÁSICA",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
         "description": "Creamos una tienda online funcional con características esenciales como catálogo de productos, carrito de compras y opciones de pago. Ideal para establecer rápidamente una presencia de comercio electrónico.",
@@ -34,7 +34,7 @@
       },
       {
         "id": 424,
-        "price": 400,
+        "price": 399.99,
         "name": "DESARROLLO TIENDA ONLINE INTERMEDIA",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
         "description": "Creamos una tienda online personalizada con funcionalidades avanzadas, como gestión de inventario, opciones de envío y pago seguro. Perfecta si buscas una presencia de comercio electrónico más completa y adaptada a tus necesidades específicas.",
@@ -42,7 +42,7 @@
       },
       {
         "id": 425,
-        "price": 500,
+        "price": 499.99,
         "name": "DESARROLLO TIENDA ONLINE AVANZADA",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
         "description": "Creamos una tienda online altamente funcional y personalizada que cumple con tus requisitos a largo plazo. Incluye características como gestión de pedidos, integración con pasarelas de pago y diseño personalizado para atraer a tus clientes. Ideal para una presencia de comercio electrónico sofisticada y altamente personalizada.",
@@ -50,7 +50,7 @@
       },
       {
         "id": 426,
-        "price": 50,
+        "price": 49.99,
         "name": "PLAN DE HOSTING DE 3 MESES",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
         "description": "Brindamos un servicio de alojamiento web por 3 meses. Almacena y publica tu sitio web en internet durante un trimestre. Una opción flexible para proyectos a corto plazo que requieren una presencia en línea.",
@@ -58,7 +58,7 @@
       },
       {
         "id": 427,
-        "price": 100,
+        "price": 99.99,
         "name": "PLAN DE HOSTING DE 6 MESES",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
         "description": "Ofrecemos un servicio de alojamiento web confiable durante 6 meses. Obtén espacio de almacenamiento y recursos necesarios para tu sitio web durante medio año. Garantizamos estabilidad y continuidad para tu presencia en línea.",
@@ -66,7 +66,7 @@
       },
       {
         "id": 428,
-        "price": 150,
+        "price": 149.99,
         "name": "PLAN DE HOSTING DE 1 AÑO",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
         "description": "Obtén un servicio de alojamiento web confiable por 12 meses. Con nuestro plan de hosting de un año, disfrutarás de espacio de almacenamiento y recursos necesarios para tu sitio web durante todo el año. Mantén tu presencia en línea de manera estable y continua con nuestra solución de hosting a largo plazo.",
@@ -74,7 +74,7 @@
       },
       {
         "id": 429,
-        "price": 30,
+        "price": 29.99,
         "name": "PLAN DE DOMINIO DE 3 MESES",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
         "description": "Registra tu dominio por 3 meses. Obtén una dirección web por un trimestre. Perfecto para proyectos a corto plazo o pruebas antes de comprometerse a largo plazo.",
@@ -82,7 +82,7 @@
       },
       {
         "id": 430,
-        "price": 60,
+        "price": 59.99,
         "name": "PLAN DE DOMINIO DE 6 MESES",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
         "description": "Obtén un registro de dominio por 6 meses. Disfruta del control de tu dirección web durante medio año. Ideal para proyectos temporales o en desarrollo.",
@@ -90,7 +90,7 @@
       },
       {
         "id": 431,
-        "price": 90,
+        "price": 89.99,
         "name": "PLAN DE DOMINIO DE 1 AÑO",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
         "description": "Registra tu nombre de dominio por un año. Asegura una dirección web única y exclusiva para tu sitio durante todo el año. Establece una identidad sólida en línea y facilita que los usuarios te encuentren.",
@@ -98,7 +98,7 @@
       },
       {
         "id": 432,
-        "price": 100,
+        "price": 99.99,
         "name": "SOPORTE DE 3 MESES",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
         "description": "Proporcionamos servicios de mantenimiento web por 3 meses. Nuestro equipo se encargará de mantener tu sitio web actualizado, realizar mejoras y brindar soporte técnico durante un trimestre. Nos aseguraremos de que tu sitio esté en óptimas condiciones y funcione sin problemas.",
@@ -106,7 +106,7 @@
       },
       {
         "id": 433,
-        "price": 200,
+        "price": 199.99,
         "name": "SOPORTE DE 6 MESES",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
         "description": "Brindamos servicios de mantenimiento web por 6 meses. Nuestro equipo se ocupará de mantener tu sitio web actualizado, realizar mejoras y proporcionar soporte técnico durante medio año. Aseguraremos que tu sitio funcione de manera óptima y esté protegido contra posibles problemas.",
@@ -114,7 +114,7 @@
       },
       {
         "id": 434,
-        "price": 300,
+        "price": 299.99,
         "name": "SOPORTE DE 1 AÑO",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
         "description": "Ofrecemos un servicio completo de mantenimiento web por 1 año. Nuestro equipo se encargará de mantener tu sitio actualizado, seguro y funcional durante todo el año. Realizaremos actualizaciones, mejoras y brindaremos soporte técnico para garantizar el rendimiento óptimo de tu sitio web.",
@@ -122,50 +122,50 @@
       },
       {
         "id": 435,
-        "price": 350,
+        "price": 349.99,
         "name": "PACK DESARROLLO WEB JUNIOR",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
-        "description": "Página web intermedia: Creación de una página web con características adicionales y personalización.\nHosting 6 meses: Servicio de alojamiento web confiable durante 6 meses.\nDominio 6 meses: Registro de dominio por 6 meses.\nMantenimiento 6 meses: Servicio de mantenimiento web en general por 6 meses.",
+        "description": "Página web intermedia: Creación de una página web con características adicionales y personalización. Hosting 6 meses: Servicio de alojamiento web confiable durante 6 meses. Dominio 6 meses: Registro de dominio por 6 meses. Mantenimiento 6 meses: Servicio de mantenimiento web en general por 6 meses.",
         "stock": 200
       },
       {
         "id": 436,
-        "price": 620,
+        "price": 619.99,
         "name": "PACK DESARROLLO WEB SEMI-SENIOR",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
-        "description": "Página web avanzada: Desarrollo de una página web con funcionalidades avanzadas y diseño personalizado.\nHosting 1 año: Servicio de alojamiento web confiable durante 1 año.\nDominio 1 año: Registro de dominio por 1 año.\nMantenimiento 1 año: Servicio de mantenimiento web en general durante 1 año.",
+        "description": "Página web avanzada: Desarrollo de una página web con funcionalidades avanzadas y diseño personalizado. Hosting 1 año: Servicio de alojamiento web confiable durante 1 año. Dominio 1 año: Registro de dominio por 1 año. Mantenimiento 1 año: Servicio de mantenimiento web en general durante 1 año.",
         "stock": 200
       },
       {
-        "id": 432,
-        "price": 900,
+        "id": 437,
+        "price": 899.99,
         "name": "PACK DESARROLLO WEB SENIOR",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
-        "description": "Página web premium: Creación de una página web de alta gama y totalmente personalizada.\nHosting 2 años: Servicio de alojamiento web confiable durante 2 años.\nDominio 2 años: Registro de dominio por 2 años.\nMantenimiento 2 años: Servicio de mantenimiento web completo durante 2 años.",
+        "description": "Página web premium: Creación de una página web de alta gama y totalmente personalizada. Hosting 2 años: Servicio de alojamiento web confiable durante 2 años. Dominio 2 años: Registro de dominio por 2 años. Mantenimiento 2 años: Servicio de mantenimiento web completo durante 2 años.",
         "stock": 200
       },
       {
-        "id": 434,
-        "price": 450,
+        "id": 438,
+        "price": 449.99,
         "name": "PACK DESARROLLO TIENDA ONLINE JUNIOR",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
-        "description": "Tienda online intermedia: Creación de una tienda online con características adicionales y personalización.\nHosting 6 meses: Servicio de alojamiento web confiable durante 6 meses.\nDominio 6 meses: Registro de dominio por 6 meses.\nMantenimiento 6 meses: Servicio de mantenimiento web en general por 6 meses.",
+        "description": "Tienda online intermedia: Creación de una tienda online con características adicionales y personalización. Hosting 6 meses: Servicio de alojamiento web confiable durante 6 meses. Dominio 6 meses: Registro de dominio por 6 meses. Mantenimiento 6 meses: Servicio de mantenimiento web en general por 6 meses.",
         "stock": 200
       },
       {
-        "id": 435,
-        "price": 720,
+        "id": 439,
+        "price": 719.99,
         "name": "PACK DESARROLLO TIENDA ONLINE SEMI-SENIOR",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
-        "description": "Tienda online avanzada: Desarrollo de una tienda online con funcionalidades avanzadas y diseño personalizado.\nHosting 1 año: Servicio de alojamiento web confiable durante 1 año.\nDominio 1 año: Registro de dominio por 1 año.\nMantenimiento 1 año: Servicio de mantenimiento web en general durante 1 año.",
+        "description": "Tienda online avanzada: Desarrollo de una tienda online con funcionalidades avanzadas y diseño personalizado. Hosting 1 año: Servicio de alojamiento web confiable durante 1 año. Dominio 1 año: Registro de dominio por 1 año. Mantenimiento 1 año: Servicio de mantenimiento web en general durante 1 año.",
         "stock": 200
       },
       {
-        "id": 436,
-        "price": 1000,
+        "id": 440,
+        "price": 999.99,
         "name": "PACK DESARROLLO TIENDA ONLINE SENIOR",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
-        "description": "Tienda online premium: Creación de una tienda online de alta gama y totalmente personalizada.\nHosting 2 años: Servicio de alojamiento web confiable durante 2 años.\nDominio 2 años: Registro de dominio por 2 años.\nMantenimiento 2 años: Servicio de mantenimiento web en general durante 2 años.",
+        "description": "Tienda online premium: Creación de una tienda online de alta gama y totalmente personalizada. Hosting 2 años: Servicio de alojamiento web confiable durante 2 años. Dominio 2 años: Registro de dominio por 2 años. Mantenimiento 2 años: Servicio de mantenimiento web en general durante 2 años.",
         "stock": 200
       }
     ]
