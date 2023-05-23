@@ -106,10 +106,12 @@ td {
 #total-container{
     display: flex;
     gap: 4rem;
+    align-items: baseline;
 }
 
 #total-text{
     font-weight: bold;
+    font-size: 21px;
 }
 
 #total{
