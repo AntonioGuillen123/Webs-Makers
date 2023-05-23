@@ -61,7 +61,7 @@ function createProduct(product) {
     abreviature.title = product.id;
 
     var image = document.createElement("img");
-    image.src = product.imageUrl;
+    image.src = `../images/${product.imageUrl}.png`;
     image.alt = "Lo siento, este producto no se ha encontrado :(";
     image.classList.add("product-image");
 

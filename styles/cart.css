@@ -74,6 +74,8 @@ td{
 .image-item {
     max-height: 100%;
     max-width: 100%;
+    background-color: white;
+    border-radius: 15px;
 }
 tr{
     text-align: center;
