@@ -62,7 +62,7 @@
     <div id="delete-shop">
       <div>
         <form class="delete">
-          <input type="number" class="user-id" id="user-id-shop" placeholder="ID Usuario">
+          <input type="number" class="user-id" id="user-id-shop" placeholder="ID Usuario para borrar sus compras">
           <button class="btn-outline-primary" onclick="deleteUserShop()">Borrar compras de un usuario</button>
         </form>
       </div>
@@ -73,7 +73,7 @@
     <div id="delete-message">
       <div>
         <form class="delete">
-          <input type="number" class="user-id" id="user-id-message" placeholder="ID Usuario">
+          <input type="number" class="user-id" id="user-id-message" placeholder="ID Usuario para borrar sus mensajes">
           <button class="btn-outline-primary" onclick="deleteUserMessage()">Borrar mensajes de un usuario</button>
         </form>
       </div>
@@ -86,7 +86,7 @@
     </div>
   </div>
   <div id="restock">
-    <button onclick="restock()">Reponer Stock</button>
+    <button class="btn-outline-primary" onclick="restock()">Reponer Stock</button>
   </div>
 
   <script src="../scripts/main.js"></script>
