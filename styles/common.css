@@ -63,6 +63,13 @@ input[type=number]::-webkit-outer-spin-button {
     margin-bottom: 10px;
 }
 
+.plus:hover,
+.less-button:hover,
+.plus-button:hover,
+.minus:hover {
+    background-color: rgb(10 90 198) !important;
+}
+
 .btn-outline-primary{
     font-weight: bold !important;
     --bs-btn-color: white !important;
