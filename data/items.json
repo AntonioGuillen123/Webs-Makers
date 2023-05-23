@@ -3,7 +3,7 @@
       {
         "id": 420,
         "price": 3.99,
-        "name": "PLAN DE HOSTING DE 1 AÑO",
+        "name": "DESARROLLO WEB BÁSICO",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
         "description": "Esto es una fruta amarilla, rica en potasio y original de canarias",
         "stock": 0
@@ -11,7 +11,7 @@
       {
         "id": 421,
         "price": 3.99,
-        "name": "PLAN DE HOSTING DE 6 MESES",
+        "name": "DESARROLLO WEB INTERMEDIO",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
         "description": "Esto es una fruta amarilla, rica en potasio y original de canarias",
         "stock": 0
@@ -19,7 +19,7 @@
       {
         "id": 422,
         "price": 3.99,
-        "name": "PLAN DE HOSTING DE 3 MESES",
+        "name": "DESARROLLO WEB AVANZADO",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
         "description": "Esto es una fruta amarilla, rica en potasio y original de canarias",
         "stock": 0
@@ -27,31 +27,31 @@
       {
         "id": 423,
         "price": 3.99,
-        "name": "PLAN DE DOMINIO DE 1 AÑO",
+        "name": "DESARROLLO TIENDA ONLINE BÁSICA",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
         "description": "Esto es una fruta amarilla, rica en potasio y original de canarias",
         "stock": 0
       },
       {
         "id": 424,
-        "price": 3.99,
-        "name": "PLAN DE DOMINIO DE 6 MESES",
+        "price": 5.96,
+        "name": "DESARROLLO TIENDA ONLINE INTERMEDIA",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
-        "description": "Esto es una fruta amarilla, rica en potasio y original de canarias",
+        "description": "Esto es una fruta roja, rica en vitaminas",
         "stock": 0
       },
       {
         "id": 425,
-        "price": 3.99,
-        "name": "PLAN DE DOMINIO DE 3 MESES",
+        "price": 7.45,
+        "name": "DESARROLLO TIENDA ONLINE AVANZADA",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
-        "description": "Esto es una fruta amarilla, rica en potasio y original de canarias",
-        "stock": 0
+        "description": "Esto es una fruta naranja, rica en vitaminas C, proviene del Tesorillo",
+        "stock": 992
       },
       {
         "id": 426,
         "price": 3.99,
-        "name": "SOPORTE DE 1 AÑO",
+        "name": "PLAN DE HOSTING DE 3 MESES",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
         "description": "Esto es una fruta amarilla, rica en potasio y original de canarias",
         "stock": 0
@@ -59,7 +59,7 @@
       {
         "id": 427,
         "price": 3.99,
-        "name": "SOPORTE DE 6 MESES",
+        "name": "PLAN DE HOSTING DE 6 MESES",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
         "description": "Esto es una fruta amarilla, rica en potasio y original de canarias",
         "stock": 0
@@ -67,7 +67,7 @@
       {
         "id": 428,
         "price": 3.99,
-        "name": "SOPORTE DE 3 MESES",
+        "name": "PLAN DE HOSTING DE 1 AÑO",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
         "description": "Esto es una fruta amarilla, rica en potasio y original de canarias",
         "stock": 0
@@ -75,7 +75,7 @@
       {
         "id": 429,
         "price": 3.99,
-        "name": "PACK DESARROLLO WEB APRENDIZ",
+        "name": "PLAN DE DOMINIO DE 3 MESES",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
         "description": "Esto es una fruta amarilla, rica en potasio y original de canarias",
         "stock": 0
@@ -83,13 +83,53 @@
       {
         "id": 430,
         "price": 3.99,
-        "name": "PACK DESARROLLO WEB JUNIOR",
+        "name": "PLAN DE DOMINIO DE 6 MESES",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
         "description": "Esto es una fruta amarilla, rica en potasio y original de canarias",
         "stock": 0
       },
       {
         "id": 431,
+        "price": 3.99,
+        "name": "PLAN DE DOMINIO DE 1 AÑO",
+        "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
+        "description": "Esto es una fruta amarilla, rica en potasio y original de canarias",
+        "stock": 0
+      },
+      {
+        "id": 432,
+        "price": 3.99,
+        "name": "SOPORTE DE 3 MESES",
+        "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
+        "description": "Esto es una fruta amarilla, rica en potasio y original de canarias",
+        "stock": 0
+      },
+      {
+        "id": 433,
+        "price": 3.99,
+        "name": "SOPORTE DE 6 MESES",
+        "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
+        "description": "Esto es una fruta amarilla, rica en potasio y original de canarias",
+        "stock": 0
+      },
+      {
+        "id": 434,
+        "price": 3.99,
+        "name": "SOPORTE DE 1 AÑO",
+        "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
+        "description": "Esto es una fruta amarilla, rica en potasio y original de canarias",
+        "stock": 0
+      },
+      {
+        "id": 435,
+        "price": 3.99,
+        "name": "PACK DESARROLLO WEB JUNIOR",
+        "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
+        "description": "Esto es una fruta amarilla, rica en potasio y original de canarias",
+        "stock": 0
+      },
+      {
+        "id": 436,
         "price": 3.99,
         "name": "PACK DESARROLLO WEB SEMI-SENIOR",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
@@ -100,14 +140,6 @@
         "id": 432,
         "price": 3.99,
         "name": "PACK DESARROLLO WEB SENIOR",
-        "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
-        "description": "Esto es una fruta amarilla, rica en potasio y original de canarias",
-        "stock": 0
-      },
-      {
-        "id": 433,
-        "price": 3.99,
-        "name": "PACK DESARROLLO TIENDA ONLINE APRENDIZ",
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
         "description": "Esto es una fruta amarilla, rica en potasio y original de canarias",
         "stock": 0
@@ -135,63 +167,6 @@
         "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
         "description": "Esto es una fruta amarilla, rica en potasio y original de canarias",
         "stock": 0
-      },
-
-      {
-        "id": 437,
-        "price": 3.99,
-        "name": "banana",
-        "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
-        "description": "Esto es una fruta amarilla, rica en potasio y original de canarias",
-        "stock": 0
-      },
-      {
-        "id": 438,
-        "price": 3.99,
-        "name": "banana",
-        "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
-        "description": "Esto es una fruta amarilla, rica en potasio y original de canarias",
-        "stock": 0
-      },
-      {
-        "id": 439,
-        "price": 3.99,
-        "name": "banana",
-        "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
-        "description": "Esto es una fruta amarilla, rica en potasio y original de canarias",
-        "stock": 0
-      },
-      {
-        "id": 440,
-        "price": 3.99,
-        "name": "banana",
-        "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
-        "description": "Esto es una fruta amarilla, rica en potasio y original de canarias",
-        "stock": 0
-      },
-      {
-        "id": 441,
-        "price": 3.99,
-        "name": "banana",
-        "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
-        "description": "Esto es una fruta amarilla, rica en potasio y original de canarias",
-        "stock": 0
-      },
-      {
-        "id": 442,
-        "price": 5.96,
-        "name": "manzana",
-        "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
-        "description": "Esto es una fruta roja, rica en vitaminas",
-        "stock": 0
-      },
-      {
-        "id": 443,
-        "price": 7.45,
-        "name": "naranja",
-        "imageUrl": "https://cdn.pixabay.com/photo/2014/04/03/11/07/bananas-311788_640.png",
-        "description": "Esto es una fruta naranja, rica en vitaminas C, proviene del Tesorillo",
-        "stock": 992
       }
     ]
   }
