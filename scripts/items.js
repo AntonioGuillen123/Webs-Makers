@@ -25,6 +25,10 @@ async function startItems() {
     orderBy("opt1");
 }
 
+
+var sessionItems = JSON.parse(sessionStorage.getItem("items"));
+if (sessionItems != null) sessionItems.forEach(element => addProductToShoppingCart(element.item, 0, element.amount));
+
 function addProducts() {
     productList.items.forEach(element => {
         createProduct(element);
@@ -41,7 +45,7 @@ function searchProducts(value) {
         }
     }
 
-    if(value.length === 0){
+    if (value.length === 0) {
         orderBy("opt1");
     }
 }
@@ -129,8 +133,6 @@ function eventListener() {
             var productId = cart[i].getAttribute("id");
             var selectCount = document.querySelector(`[count-id='${productId}']`);
             console.log(findProductById(productId));
-            var sessionItems = JSON.parse(sessionStorage.getItem("items"));
-            if (sessionItems != null) sessionItems.forEach(element => addProductToShoppingCart(element.item, 0, element.amount));
             addProductToShoppingCart(findProductById(productId), parseInt(selectCount.value), null);
             changeTotalAmount(shoppingCart);
             console.log(shoppingCart);
@@ -152,7 +154,8 @@ function eventListener() {
             var countNumber = parseInt(selectCount.value);
             console.log(findProductById(productId));
             var productObject = findProductById(productId);
-            selectCount.value = sum(countNumber, productObject.stock, true);
+            var productAmountCartList = takeAmountProduct(productId);
+            selectCount.value = sum(countNumber, productObject.stock, , true);
             console.log(countNumber, productObject.stock);
         });
     }
@@ -262,4 +265,16 @@ function addProductToShoppingCart(product, selectCount, actualAmount) {
 
 
 
+}
+
+function takeAmountProduct(productId){
+    var amountProductInCart = 0;
+
+    shoppingCart.forEach(product => {
+        if(product.id == productId){
+            amountProductInCart = product.amount;
+        }
+    });
+
+    return amountProductInCart;
 }
