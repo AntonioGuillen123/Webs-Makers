@@ -35,7 +35,8 @@
 }
 
 .delete-all button {
-    color: rgb(255, 247, 0);
+    color: rgb(43, 105, 187);
+    text-shadow: 0 0 8px black;
 }
 
 .delete-all {
@@ -52,10 +53,11 @@
 #shops,
 #messages {
     margin-top: 2%;
-    background: rgb(75, 208, 238);
+    background: rgb(0,74,173);
     color: white;
     font-weight: bold;
     padding: 15px;
     border: 2px solid #717575;
+    text-shadow: 0 0 8px black;
     border-radius: 15px !important;
 }
