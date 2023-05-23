@@ -6,9 +6,6 @@ body {
 }
 
 
-
-
-
 h2 {
     color: #fff !important;
     text-align: center;
@@ -52,21 +49,11 @@ textarea {
     color: #fff;
     padding: 20px;
     border-radius: 8px;
-}
-
-#button:hover {
     cursor: pointer;
-    background-color: rgb(4, 4, 150);
 }
-
 input[type="email"]:invalid {
     border-color: red;
 }
-
-
-
-
-
 
 
 #map-container {
@@ -82,7 +69,6 @@ input[type="email"]:invalid {
 
 
   .contact-info {
-    background-color: #f2f2f2;
     padding: 20px;
     border-radius: 5px;
     width: 320px;
@@ -90,8 +76,8 @@ input[type="email"]:invalid {
     text-align: left;
     margin-top: 20px !important;
     margin: auto;
-   
-    
+    color: white;
+    background-color: rgb(28,63,96);
   }
   
   .contact-info p {
