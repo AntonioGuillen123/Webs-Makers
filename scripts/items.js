@@ -10,10 +10,6 @@ var shoppingCart = [];
 const countProduct = 1;
 
 
-console.log(shoppingCart);
-
-/*FIN :)*/
-
 async function startItems() {
     productList = await giveItems();
 
@@ -180,8 +176,6 @@ function orderItems() {
     var list = productList.slice();
 
     list.sort((a, b) => a.id - b.id);
-
-    console.log(list);
 }
 
 
@@ -267,9 +261,6 @@ function addProductToShoppingCart(product, selectCount, actualAmount) {
             "amount": parseInt(amount)
         });
     }
-
-
-
 }
 
 function takeAmountProduct(productId) {
