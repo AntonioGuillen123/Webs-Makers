@@ -25,7 +25,7 @@ for (let i = 0; i < botones.length; i++) {
     botones[i].addEventListener("click", () => {
         dontSee(info);
         quitStyle(botones);
-        info[i - 1].style.display = "block";
+        info[i].style.display = "block";
         botones[i].classList.add("activeBtn");
 
     })
