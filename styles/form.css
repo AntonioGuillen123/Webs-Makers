@@ -1,5 +1,5 @@
 body {
-    background-color: #374652 !important;
+    background-color: #ffffff !important;
     background-size: 100vw 100vh;
     margin: 0;
     background-attachment: fixed;
@@ -20,7 +20,7 @@ h2 {
 form {
     width: 450px;
     margin: auto;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgb(85, 85, 187);
     padding: 10px 20px;
     box-sizing: border-box;
     margin-top: 20px;
@@ -53,7 +53,7 @@ textarea {
 
 #button:hover {
     cursor: pointer;
-    background-color: rgb(85, 85, 187);
+    background-color: rgb(4, 4, 150);
 }
 
 input[type="email"]:invalid {
