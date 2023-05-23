@@ -17,7 +17,7 @@ p {
 }
 
 button {
-    background: rgb(75, 208, 238);
+    background: rgb(0,74,173);
     color: white;
     font-weight: bold;
     padding: 15px;
@@ -28,16 +28,7 @@ button {
 }
 
 button :active {
-    background: #3554EE;
-    color: black;
-    font-weight: bold;
-    padding: 15px;
-
-    text-align: center;
-    border-collapse: collapse;
-    border: 2px solid #717575;
-    border-radius: 6px;
-
+    background: rgb(29, 109, 212);
 }
 
 .contenido {
@@ -57,7 +48,7 @@ button :active {
 
 
 .activeBtn {
-    background-color: #3554EE;
+    background-color: rgb(29, 109, 212);
     color: black;
 }
 
