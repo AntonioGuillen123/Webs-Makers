@@ -67,14 +67,15 @@ input[type="email"]:invalid {
     
 }
 
+.contact-info > p{
+}
 
   .contact-info {
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 15px;
     width: 320px;
     height: 100%;
     text-align: left;
-    margin-top: 20px !important;
     margin: auto;
     color: white;
     background-color: rgb(28,63,96);
@@ -93,5 +94,12 @@ input[type="email"]:invalid {
 @media(max-width:480px) {
     form {
         width: 100%;
+    }
+}
+
+@media(min-width: 700px){
+    .container{
+        display: flex;
+
     }
 }
