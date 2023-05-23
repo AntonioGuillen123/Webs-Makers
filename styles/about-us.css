@@ -18,6 +18,7 @@ p {
 
 button {
     background: rgb(0,74,173);
+    cursor: pointer;
     color: white;
     font-weight: bold;
     padding: 15px;

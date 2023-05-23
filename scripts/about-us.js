@@ -1,4 +1,4 @@
-var botones = document.querySelectorAll('button');
+var botones = document.querySelectorAll('.button');
 var info = document.querySelectorAll(".contenido");
 
 
