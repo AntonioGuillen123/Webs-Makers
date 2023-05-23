@@ -45,10 +45,6 @@ async function getUsers() {
 
 function viewCartUsers() {
     var users = document.getElementById("usersItems");
-    users.style.border = "2px solid black";
-    users.style.borderRadius = "8px";
-    users.style.backgroundColor = "rgb(28, 63, 96)";
-    users.style.color = "white";
     users.style.marginTop = "2%";
 
     if (arrayCartUsers[0].users != undefined) {
@@ -56,6 +52,11 @@ function viewCartUsers() {
             arrayCartUsers[0].users[i].id = i + 1;
 
             var user = document.createElement("div");
+            user.style.border = "2px solid black";
+            user.style.borderRadius = "8px";
+            user.style.backgroundColor = "rgb(28, 63, 96)";
+            user.style.color = "white";
+            user.style.marginTop = "2%";
             var userName = document.createElement("div");
             var userDate = document.createElement("div");
             var userId = document.createElement("div");
@@ -99,10 +100,6 @@ function viewCartUsers() {
 
 function viewFormUsers() {
     var users = document.getElementById("usersContact");
-    users.style.border = "2px solid black";
-    users.style.borderRadius = "8px";
-    users.style.backgroundColor = "rgb(28, 63, 96)";
-    users.style.color = "white";
     users.style.marginTop = "2%";
 
     if (arrayFormUsers[0].users != undefined) {
@@ -110,6 +107,11 @@ function viewFormUsers() {
             arrayFormUsers[0].users[i].id = i + 1;
 
             var user = document.createElement("div");
+            user.style.border = "2px solid black";
+            user.style.borderRadius = "8px";
+            user.style.backgroundColor = "rgb(28, 63, 96)";
+            user.style.color = "white";
+            user.style.marginTop = "2%";
             var userEmail = document.createElement("div");
             var userAffair = document.createElement("div");
             var userMessage = document.createElement("div");

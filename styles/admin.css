@@ -1,11 +1,12 @@
 #all {
     display: flex;
-    align-items: flex-start
+    align-items: flex-start;
+    justify-content: center;
 }
 
 #usersItems div,
 #usersContact div {
-    padding: 5px;
+    padding: 7px;
 }
 
 #usersItems{
@@ -27,7 +28,6 @@
 .submit {
     background-color: rgb(0, 74, 173);
     color: #fff;
-    cursor: pointer;
 }
 
 .delete {
@@ -39,6 +39,13 @@
     margin: 20px;
     display: flex;
     justify-content: center;
+}
+
+#restock button{
+    background-color: rgb(0, 74, 173);
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 #userItems {
