@@ -184,7 +184,6 @@ async function deleteUserShop() {
 async function deleteUserMessage() {
     var form = document.getElementById("delete-message");
     var input = document.getElementById("user-id-message");
-    var upload = "";
     var users = document.getElementById("usersContact");
 
     if (input.value == "") {
@@ -214,9 +213,7 @@ async function deleteUserMessage() {
             input.value = "";
         }
 
-        upload = JSON.stringify(arrayFormUsers[0]);
-
-        awaitUploadUserMessage(upload);
+        awaitUploadUserMessage(arrayFormUsers[0]);
 
         users.innerHTML = "";
 
@@ -250,12 +247,19 @@ async function awaitUploadUserShop(upload) {
 }
 
 async function awaitUploadUserMessage(upload) {
-    await uploadUserMessage(upload);
+    upload.forEach(user => user.id = "");
+
+    await uploadUserMessage(JSON.stringify(upload));
 }
 
 //var emptyId = (values) => values.forEach(value => value.id = "");
 
 async function restock() {
     var items = await giveItems();
-    
+ 
+    items.items.forEach(item => {
+        item.stock = 999;
+    });
+
+    await uploadItems(JSON.stringify(items));
 }
