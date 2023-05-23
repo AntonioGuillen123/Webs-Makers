@@ -59,10 +59,12 @@ function viewCartUsers() {
             var userName = document.createElement("div");
             var userDate = document.createElement("div");
             var userId = document.createElement("div");
+            var shops = document.createElement("div");
 
             userId.innerHTML = `ID de Usuario: ${arrayCartUsers[0].users[i].id}`;
             userName.innerHTML = `Usuario: ${arrayCartUsers[0].users[i].user}`;
             userDate.innerHTML = `Fecha y hora: ${arrayCartUsers[0].users[i].date} - ${arrayCartUsers[0].users[i].time}`;
+            shops.innerHTML = "Compras realizadas:";
 
             arrayCartItems.push(arrayCartUsers[0].users[i].items);
 
@@ -70,6 +72,7 @@ function viewCartUsers() {
             user.appendChild(userId);
             user.appendChild(userName);
             user.appendChild(userDate);
+            user.appendChild(shops);
 
             for (var j = 0; j < arrayCartItems.length; j++) {
                 var items = document.createElement("div");

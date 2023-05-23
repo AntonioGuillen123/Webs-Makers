@@ -8,6 +8,14 @@
     padding: 5px;
 }
 
+#usersItems{
+    margin-left: 2%;
+}
+
+#usersContact{
+    margin-right: 2%;
+}
+
 .user-id,
 .submit {
     width: 100%;
