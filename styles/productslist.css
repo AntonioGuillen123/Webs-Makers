@@ -151,6 +151,10 @@
         gap: 10px;
     }
 
+    .product-card:hover{
+        box-shadow: 0 0 20px black
+    }
+
     .product-image {
         width: 150px;
         height: auto;
