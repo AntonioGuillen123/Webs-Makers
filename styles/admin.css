@@ -3,11 +3,13 @@
     justify-content: space-around;
 }
 
-#usersItems div, #usersContact div{
+#usersItems div,
+#usersContact div {
     padding: 3px;
 }
 
-.user-id, .submit{
+.user-id,
+.submit {
     width: 100%;
     margin: 15px;
 }
@@ -15,4 +17,10 @@
 .delete {
     display: flex;
     flex-direction: column;
+}
+
+#restock {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
 }

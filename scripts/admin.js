@@ -254,3 +254,8 @@ async function awaitUploadUserMessage(upload) {
 }
 
 //var emptyId = (values) => values.forEach(value => value.id = "");
+
+async function restock() {
+    var items = await giveItems();
+    
+}
