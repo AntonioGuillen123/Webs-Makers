@@ -48,7 +48,7 @@ async function checkStock() {
         // Y este método es como el All de LINQ C#
         var stock = items.items[i].stock;
 
-        if (stock <= 5 && stock > 0) {
+        if (stock < 1000 && stock > 0) {
             title.classList.add("title");
             title.innerHTML = "¡Quedan pocas unidades!";
 
