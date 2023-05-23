@@ -213,6 +213,7 @@
 
 .form-floating {
     border: 2px solid #ccc;
+    border-radius: 0.375rem;
 }
 
 #basic-addon1 {
