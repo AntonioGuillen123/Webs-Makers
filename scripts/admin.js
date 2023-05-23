@@ -173,6 +173,7 @@ async function deleteUserShop() {
         upload = JSON.stringify(arrayCartUsers[0]);
 
         awaitUploadUserShop(upload);
+        //awaitUploadUserShop(arrayCartUsers[0].users);
 
         users.innerHTML = "";
 
@@ -245,8 +246,11 @@ async function uploadUserMessage(data) {
 
 async function awaitUploadUserShop(upload) {
     await uploadUserShop(upload);
+    //await uploadUserShop(JSON.stringify(emptyId(upload)));
 }
 
 async function awaitUploadUserMessage(upload) {
     await uploadUserMessage(upload);
 }
+
+//var emptyId = (values) => values.forEach(value => value.id = "");
