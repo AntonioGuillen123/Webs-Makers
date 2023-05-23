@@ -334,13 +334,3 @@ async function uploadData(data) {
         }
     });
 }
-
-async function uploadItems(items) {
-    await fetch("https://getpantry.cloud/apiv1/pantry/f05c7024-db22-4ef2-9691-d82f3c50cd0e/basket/items", {
-        method: "POST",
-        body: items,
-        headers: {
-            "Content-type": "application/json"
-        }
-    });
-}
