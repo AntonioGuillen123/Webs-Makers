@@ -40,6 +40,10 @@ function searchProducts(value) {
             createProduct(productList.items[i]);
         }
     }
+
+    if(value.length === 0){
+        orderBy("opt1");
+    }
 }
 
 function createProduct(product) {
