@@ -250,8 +250,6 @@ async function uploadUserMessage(data) {
     });
 }
 
-/* var fillEmpty = (upload) => upload == "" ? upload : upload.users.forEach(user => user.id = ""); */
-
 function fillEmpty(upload){
     if(upload != ""){
         upload.users.forEach(user => user.id = "")
