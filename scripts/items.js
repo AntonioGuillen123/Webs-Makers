@@ -47,6 +47,8 @@ function searchProducts(value) {
 
     if (value.length === 0) {
         orderBy("opt1");
+    } else {
+        eventListener();
     }
 }
 
@@ -272,11 +274,11 @@ function addProductToShoppingCart(product, selectCount, actualAmount) {
 
 }
 
-function takeAmountProduct(productId){
+function takeAmountProduct(productId) {
     var amountProductInCart = 0;
 
     shoppingCart.forEach(item => {
-        if(item.item.id == productId){
+        if (item.item.id == productId) {
             amountProductInCart = item.amount;
         }
     });
