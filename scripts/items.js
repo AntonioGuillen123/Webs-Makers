@@ -21,6 +21,8 @@ async function startItems() {
     addProducts();
 
     eventListener();
+
+    orderBy("opt1");
 }
 
 function addProducts() {

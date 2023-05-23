@@ -148,10 +148,11 @@
         align-items: center;
         width: auto;
         justify-content: space-between;
+        gap: 10px;
     }
 
     .product-image {
-        width: 100%;
+        width: 150px;
         height: auto;
     }
 
@@ -160,7 +161,7 @@
     }
 
     .product-name {
-        text-align: left;
+        text-align: center;
     }
 
     .product-description {
