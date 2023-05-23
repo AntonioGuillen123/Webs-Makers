@@ -250,11 +250,18 @@ async function uploadUserMessage(data) {
     });
 }
 
-var fillEmpty = async (upload) => upload == "" ? upload : upload.users.forEach(user => user.id = "");
+/* var fillEmpty = (upload) => upload == "" ? upload : upload.users.forEach(user => user.id = ""); */
+
+function fillEmpty(upload){
+    if(upload != ""){
+        upload.users.forEach(user => user.id = "")
+    }
+    return upload;
+}
 
 async function awaitUploadUserShop(upload) {
 
-    var a = await fillEmpty(upload);
+    var a = JSON.stringify(await fillEmpty(upload));
 
     await uploadUserShop(a);
 
@@ -263,7 +270,7 @@ async function awaitUploadUserShop(upload) {
 
 async function awaitUploadUserMessage(upload) {
 
-    var a = await fillEmpty(upload);
+    var a = JSON.stringify(await fillEmpty(upload));
 
     await uploadUserMessage(a);
 
