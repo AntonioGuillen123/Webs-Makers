@@ -11,7 +11,15 @@
 .user-id,
 .submit {
     width: 100%;
-    margin: 15px;
+    margin: 15%;
+}
+
+.submit {
+    background-color: rgb(85, 85, 187);
+    color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .delete {
@@ -23,4 +31,13 @@
     margin: 20px;
     display: flex;
     justify-content: center;
+}
+
+#userItems {
+    border: 5px solid black;
+}
+
+.delete-all {
+    color: rgb(255, 0, 0);
+    text-shadow: 0 0 5px black;
 }

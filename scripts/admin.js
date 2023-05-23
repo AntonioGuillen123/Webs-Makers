@@ -45,6 +45,11 @@ async function getUsers() {
 
 function viewCartUsers() {
     var users = document.getElementById("usersItems");
+    users.style.border = "2px solid black";
+    users.style.borderRadius = "8px";
+    users.style.backgroundColor = "#374652";
+    users.style.color = "white";
+    users.style.marginTop = "2%";
 
     if (arrayCartUsers[0].users != undefined) {
         for (var i = 0; i < arrayCartUsers[0].users.length; i++) {
@@ -91,6 +96,11 @@ function viewCartUsers() {
 
 function viewFormUsers() {
     var users = document.getElementById("usersContact");
+    users.style.border = "2px solid black";
+    users.style.borderRadius = "8px";
+    users.style.backgroundColor = "#374652";
+    users.style.color = "white";
+    users.style.marginTop = "2%";
 
     if (arrayFormUsers[0].users != undefined) {
         for (var i = 0; i < arrayFormUsers[0].users.length; i++) {
@@ -175,7 +185,7 @@ async function deleteUserShop() {
 
         users.innerHTML = "";
 
-        
+
     })
 }
 
@@ -237,7 +247,7 @@ async function uploadUserMessage(data) {
     });
 }
 
-async function fillEmpty(upload){
+async function fillEmpty(upload) {
     upload.users.forEach(user => user.id = "");
 
     return upload;
@@ -254,7 +264,7 @@ async function awaitUploadUserShop(upload) {
 }
 
 async function awaitUploadUserMessage(upload) {
-    
+
     await fillEmpty(upload);
 
     await uploadUserMessage(JSON.stringify(upload));
@@ -262,11 +272,9 @@ async function awaitUploadUserMessage(upload) {
     viewFormUsers();
 }
 
-//var emptyId = (values) => values.forEach(value => value.id = "");
-
 async function restock() {
     var items = await giveItems();
- 
+
     items.items.forEach(item => {
         item.stock = 999;
     });
