@@ -8,24 +8,21 @@
 }
 
 #finish,
-#data,
-#submit {
+#data {
     border: 3px black solid;
     border-radius: 15px;
 }
 
-.btn-count{
-    background-color: rgb(0,74,173) !important;
-    color: white;
-    font-weight: bold;
+.btn-outline-primary:disabled{
+    color: white !important;
 }
 
-.btn-outline-primary{
-    font-weight: bold !important;
-    --bs-btn-bg: rgb(17 51 83) !important;
-    --bs-btn-border-color: rgb(0,74,173) !important;
-    --bs-btn-hover-bg: rgb(0,74,173) !important;
-    --bs-btn-hover-border-color: rgb(0,74,173)  !important;
+.btn-secondary{
+    background-color: rgb(211, 33, 33) !important;
+}
+
+.btn-secondary:hover{
+    background-color: rgb(149, 36, 36) !important;
 }
 
 #finish-container {
@@ -122,6 +119,7 @@ td {
     border-radius: 5px;
     background-color: rgb(0,74,173);
     color: white;
+    font-weight: bold;
 }
 
 #total-container{
@@ -145,8 +143,17 @@ td {
     flex-wrap: wrap;
     align-content: center;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
     margin: 0 5vw;
+}
+
+.modal-title{
+    font-weight: bold !important;
+}
+
+.modal-content{
+    background-color: rgb(28,63,96) !important;
+    color: white !important;
 }
 
 #close {
@@ -161,4 +168,12 @@ td {
 
 #buy-table{
     width: 30vw;
+    display: flex;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 768px) {
+    .name-item{
+        font-size: 10px;
+    }
 }

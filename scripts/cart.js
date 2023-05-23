@@ -74,7 +74,7 @@ function createItems(items, itemsContainer) {
         imageItem.classList.add("image-item");
 
         var itemName = document.createElement("td");
-        itemName.innerHTML = item.item.name[0].toUpperCase() + item.item.name.slice(1);
+        itemName.innerHTML = item.item.name;
         itemName.classList.add("name-item");
 
         var itemID = document.createElement("td");
@@ -105,11 +105,11 @@ function createItems(items, itemsContainer) {
         lessButton.addEventListener("click", () => changeAmount(id, "less"));
 
         var itemPrice = document.createElement("td");
-        itemPrice.innerHTML = `${item.item.price} €`;
+        itemPrice.innerHTML = `${item.item.price}€`;
         itemPrice.classList.add("cost-item");
 
         var totalItemPrice = document.createElement("td");
-        totalItemPrice.innerHTML = `${amountPrice.toFixed(2)} €`;
+        totalItemPrice.innerHTML = `${amountPrice.toFixed(2)}€`;
         totalItemPrice.classList.add("total-cost-item");
 
         itemsContainer.appendChild(itemContainer);
@@ -164,7 +164,7 @@ function createFooter(footer){
 
     var total = document.createElement("p");
     total.setAttribute("id", "total");
-    total.innerHTML = `${totalPrice.toFixed(2)} €`;
+    total.innerHTML = `${totalPrice.toFixed(2)}€`;
 
 
     totalContainer.appendChild(totalText);
@@ -205,7 +205,7 @@ function changePrice(id) {
     var itemPrice = item.getElementsByClassName("cost-item")[0].innerHTML.split(" ")[0];
 
     var itemAmountPrice = item.getElementsByClassName("total-cost-item")[0];
-    itemAmountPrice.innerHTML = `${(parseFloat(itemPrice) * parseInt(itemAmount)).toFixed(2)} €`;
+    itemAmountPrice.innerHTML = `${(parseFloat(itemPrice) * parseInt(itemAmount)).toFixed(2)}€`;
 
     var allAmountPrice = document.getElementsByClassName("total-cost-item");
 
@@ -216,7 +216,7 @@ function changePrice(id) {
     }
 
     totalPrice = parseFloat(amountPrice.toFixed(2));
-    total.innerHTML = `${totalPrice} €`;
+    total.innerHTML = `${totalPrice}€`;
 }
 
 async function changeAmount(id, option) {
@@ -276,7 +276,7 @@ function buttonState(text) {
     if (text.length != 0) {
         button.removeAttribute("disabled");
     } else {
-        button.setAttribute("disabled");
+        button.setAttribute("disabled", "");
     }
 }
 

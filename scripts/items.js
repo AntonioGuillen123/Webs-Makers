@@ -18,6 +18,8 @@ async function startItems() {
     eventListener();
 
     orderBy("opt1");
+
+    await checkButtons();
 }
 
 
@@ -30,7 +32,7 @@ function addProducts() {
     });
 }
 
-function searchProducts(value) {
+async function searchProducts(value) {
     var itemList = document.getElementById("items-list");
     itemList.innerHTML = "";
 
@@ -45,6 +47,7 @@ function searchProducts(value) {
     } else {
         eventListener();
     }
+    await checkButtons();
 }
 
 function createProduct(product) {
@@ -101,15 +104,15 @@ function createProduct(product) {
 
 
     var productPrice = document.createElement("p");
-    productPrice.innerHTML = product.price;
+    productPrice.innerHTML = `${product.price}€`;
     productPrice.classList.add("product-price");
 
     var btnToCart = document.createElement("button");
     btnToCart.classList.add("btn-to-cart");
     btnToCart.classList.add("btn");
-    btnToCart.classList.add("btn-primary");
+    btnToCart.classList.add("btn-outline-primary");
     btnToCart.setAttribute("id", product.id);
-    btnToCart.innerHTML = "Añadir al carrito";
+    btnToCart.innerHTML = "AÑADIR";
 
     abreviature.appendChild(image);
     divImage.appendChild(abreviature);
@@ -137,6 +140,7 @@ function eventListener() {
             addProductToShoppingCart(findProductById(productId), parseInt(selectCount.value), null);
             changeTotalAmount(shoppingCart);
             sessionStorage.setItem("items", JSON.stringify(shoppingCart));
+            checkButtons();
         });
     }
 
@@ -273,4 +277,19 @@ function takeAmountProduct(productId) {
     });
 
     return amountProductInCart;
+}
+
+function checkButtons() {
+    productList.items.forEach(item => {
+        var productId = item.id;
+        var productInputCount = document.querySelector(`[count-id='${productId}']`);
+
+        if (item.stock === 0) {
+            var productBtn = document.querySelector(`[id='${productId}'].btn-to-cart`);
+            productBtn.setAttribute("disabled", "");
+        } else if(takeAmountProduct(productId) + productInputCount.value >= item.stock ){
+            var productBtn = document.querySelector(`[id='${productId}'].btn-to-cart`);
+            productBtn.setAttribute("disabled", "");
+        }
+    });
 }

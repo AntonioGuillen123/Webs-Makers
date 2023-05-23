@@ -47,6 +47,14 @@
     </nav>
   </header>
 
+  <div id="shop-and-messages">
+    <div id="shops">
+      Compras:
+    </div>
+    <div id="messages">
+      Mensajes:
+    </div>
+  </div>
   <div id="all">
     <div id="usersItems">
 
@@ -54,23 +62,23 @@
     <div id="delete-shop">
       <div>
         <form class="delete">
-          <input type="number" class="user-id" id="user-id-shop" placeholder="ID Usuario">
-          <button class="submit" onclick="deleteUserShop()"><b>Borrar compras de un usuario</b></button>
+          <input type="number" class="user-id" id="user-id-shop" placeholder="ID Usuario para borrar sus compras">
+          <button class="btn-outline-primary" onclick="deleteUserShop()">Borrar compras de un usuario</button>
         </form>
       </div>
       <div class="delete-all">
-        <button class="submit" onclick="deleteAllShops()"><b>*Borrar todas las compras*</b></button>
+        <button class="btn-outline-primary" onclick="deleteAllShops()">*Borrar todas las compras*</button>
       </div>
     </div>
     <div id="delete-message">
       <div>
         <form class="delete">
-          <input type="number" class="user-id" id="user-id-message" placeholder="ID Usuario">
-          <button class="submit" onclick="deleteUserMessage()"><b>Borrar mensajes de un usuario</b></button>
+          <input type="number" class="user-id" id="user-id-message" placeholder="ID Usuario para borrar sus mensajes">
+          <button class="btn-outline-primary" onclick="deleteUserMessage()">Borrar mensajes de un usuario</button>
         </form>
       </div>
       <div class="delete-all">
-        <button class="submit" onclick="deleteAllMessages()"><b>*Borrar todos los mensajes*</b></button>
+        <button class="btn-outline-primary" onclick="deleteAllMessages()">*Borrar todos los mensajes*</button>
       </div>
     </div>
     <div id="usersContact">
@@ -78,7 +86,7 @@
     </div>
   </div>
   <div id="restock">
-    <button onclick="restock()">Reponer Stock</button>
+    <button class="btn-outline-primary" onclick="restock()">Reponer Stock</button>
   </div>
 
   <script src="../scripts/main.js"></script>

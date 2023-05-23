@@ -46,6 +46,7 @@ async function getUsers() {
 function viewCartUsers() {
     var users = document.getElementById("usersItems");
     users.style.marginTop = "2%";
+    users.style.marginLeft = "2%";
 
     if (arrayCartUsers[0].users != undefined) {
         for (var i = 0; i < arrayCartUsers[0].users.length; i++) {
@@ -101,6 +102,7 @@ function viewCartUsers() {
 function viewFormUsers() {
     var users = document.getElementById("usersContact");
     users.style.marginTop = "2%";
+    users.style.marginRight = "2%";
 
     if (arrayFormUsers[0].users != undefined) {
         for (var i = 0; i < arrayFormUsers[0].users.length; i++) {
@@ -152,7 +154,7 @@ function deleteAllMessages() {
     users.innerHTML = "";
 }
 
-async function deleteUserShop() {
+function deleteUserShop() {
     var form = document.getElementById("delete-shop");
     var input = document.getElementById("user-id-shop");
     var users = document.getElementById("usersItems");
@@ -190,7 +192,7 @@ async function deleteUserShop() {
     })
 }
 
-async function deleteUserMessage() {
+function deleteUserMessage() {
     var form = document.getElementById("delete-message");
     var input = document.getElementById("user-id-message");
     var users = document.getElementById("usersContact");
