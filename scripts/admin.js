@@ -152,7 +152,7 @@ function deleteAllMessages() {
     users.innerHTML = "";
 }
 
-async function deleteUserShop() {
+function deleteUserShop() {
     var form = document.getElementById("delete-shop");
     var input = document.getElementById("user-id-shop");
     var users = document.getElementById("usersItems");
@@ -190,7 +190,7 @@ async function deleteUserShop() {
     })
 }
 
-async function deleteUserMessage() {
+function deleteUserMessage() {
     var form = document.getElementById("delete-message");
     var input = document.getElementById("user-id-message");
     var users = document.getElementById("usersContact");
