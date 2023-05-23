@@ -1,6 +1,7 @@
 var giveSession = JSON.parse(sessionStorage.getItem("items"));
 var totalPrice = 0;
 var productList;
+var canDelete = true;
 
 /*TODO :)
 document.getElementById("jii").addEventListener("click", () => {
@@ -40,7 +41,7 @@ function isEmpty() {
     var footer = document.getElementById("footer-container");
 
     if (items.length == 0) {
-        itemsContainer.appendChild(makeEmpty());
+        if(canDelete) itemsContainer.appendChild(makeEmpty());
         footer.remove();
     }
 }
@@ -50,6 +51,7 @@ function makeEmpty(){
     empty.setAttribute("id", "empty");
     empty.setAttribute("colspan", 6);
     empty.innerHTML = "SU CARRITO ESTÁ VACIO :(";
+    canDelete = false;
     
     return empty;
 }
