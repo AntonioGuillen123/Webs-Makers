@@ -53,7 +53,7 @@ textarea {
 
 #button:hover {
     cursor: pointer;
-    background-color: rgb(4, 4, 150);
+    background-color:  rgb(28,63,96);
 }
 
 input[type="email"]:invalid {
