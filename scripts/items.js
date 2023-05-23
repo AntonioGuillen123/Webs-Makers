@@ -138,11 +138,8 @@ function eventListener() {
         cart[i].addEventListener("click", () => {
             var productId = cart[i].getAttribute("id");
             var selectCount = document.querySelector(`[count-id='${productId}']`);
-            console.log(findProductById(productId));
             addProductToShoppingCart(findProductById(productId), parseInt(selectCount.value), null);
             changeTotalAmount(shoppingCart);
-            console.log(shoppingCart);
-            console.log(JSON.parse(sessionStorage.getItem("items")));
             sessionStorage.setItem("items", JSON.stringify(shoppingCart));
         });
     }
