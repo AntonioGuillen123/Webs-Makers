@@ -1,4 +1,4 @@
-#img-container{
+#img-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -93,6 +93,7 @@
 
   font-size: 17px;
   color: white;
+  text-align: center;
 
 }
 
@@ -115,14 +116,14 @@
     width: 100%;
   }
 }
-#move{
+
+#move {
   margin-left: 140px;
   margin-right: 50px;
 }
 
 .toolsTextContainer {
   padding-top: 10px;
-  padding-left: 50px;
 }
 
 .toolsTitle {
@@ -132,19 +133,21 @@
   color: white;
 
 }
-#fewUnits{
+
+#fewUnits {
   width: 800px;
   height: auto;
   margin: auto;
   padding: 20px;
-  
+
 }
-.title{
+
+.title {
   text-align: center;
 }
 
 
-.divProduct{
+.divProduct {
   width: auto;
   height: auto;
   border: 1px solid black;
@@ -153,24 +156,25 @@
   margin-bottom: 20px;
 }
 
-.productImage{
+.productImage {
   width: 80px;
   height: 80px;
   margin-left: 20px;
   margin-bottom: 20px;
-  
+
 }
+
 .productName {
   font-size: 1.4em;
   font-weight: bold;
   margin-left: 20px;
-  
+
 }
 
 .productDescription {
   font-size: 0.9em;
   margin-left: 20px;
-  
+
 }
 
 .productPrice {
@@ -179,29 +183,31 @@
   margin-left: 20px;
 }
 
-.a{
+.a {
   text-decoration: none;
   color: black;
 }
 
-.a1{
+.a1 {
   text-decoration: underline;
   color: black;
   font-weight: bold;
-  
+
 }
-.a2{
+
+.a2 {
   text-decoration: underline;
   color: white;
   font-weight: bold;
-  
+
 }
-.fullProducts{
+
+.fullProducts {
   text-align: center;
   font-weight: bold;
 }
 
-#photoWM{
+#photoWM {
   display: inline-block;
   text-align: center;
   width: 40%;
@@ -210,19 +216,20 @@
 }
 
 
-.image{
+.image {
   width: 500px;
   height: 300px;
- 
+
   margin-left: 100px;
 }
-.h1{
+
+.h1 {
   text-align: center;
   font-weight: bold;
   margin-left: 100px;
 }
 
-.p{
+.p {
   text-align: center;
   font-size: larger;
   margin-left: 100px;
