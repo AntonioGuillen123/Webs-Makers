@@ -78,16 +78,19 @@ function maxStock(countNumber, avaliable) {
     }
 
 
-    if (avaliable) {
-        var btnToCart = document.getElementById("420").childNodes[5];
-        btnToCart.setAttribute("disabled", "");
-        btnToCart.classList.remove("btn-to-cart");
-        btnToCart.classList.add("btn");
-        // btnToCart.classList.add("btn-sm");
-        btnToCart.classList.add("btn-primary");
-    }
+    // if (avaliable) {
+    //     var btnToCart = document.getElementById("420").childNodes[5];
+    //     btnToCart.setAttribute("disabled", "");
+    //     btnToCart.classList.remove("btn-to-cart");
+    //     btnToCart.classList.add("btn");
+    //     // btnToCart.classList.add("btn-sm");
+    //     btnToCart.classList.add("btn-primary");
+    // }
 
     console.log("a funcionado!!")
+
+    var alertElement = document.getElementById('alert-content'); // Reemplaza 'alert' con el ID de tu elemento de alerta
+    alertElement.scrollIntoView({ behavior: 'smooth' });
 
     return countNumber;
 }
