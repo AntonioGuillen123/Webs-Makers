@@ -1,4 +1,4 @@
-const truePassword = "mariconelhijodeputadelKevin";
+const truePassword = "AMBKOR2K13";
 var count = 3;
 
 function writePassword() {
