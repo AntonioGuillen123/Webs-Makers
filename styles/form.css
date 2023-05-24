@@ -66,8 +66,6 @@ input[type="email"]:invalid {
     margin-top: 5vh;
 }
 
-
-
 .contact-info {
     padding: 20px;  
     border-radius: 15px;
@@ -107,4 +105,5 @@ input[type="email"]:invalid {
     display: block;
     margin: 0 auto;
     border: 10px solid #1C3F60 !important;
+    border-radius: 15px !important;
 }
