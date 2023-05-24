@@ -156,30 +156,26 @@
 }
 
 .productImage {
-  width: 80px;
-  height: 80px;
-  margin-left: 20px;
-  margin-bottom: 20px;
-
+  width: 150px;
+  display: block;
+  margin: 1vh auto;
 }
 
 .productName {
   font-size: 1.4em;
   font-weight: bold;
-  margin-left: 20px;
-
+  text-align: center;
 }
 
 .productDescription {
   font-size: 0.9em;
-  margin-left: 20px;
-
+  text-align: center;
 }
 
 .productPrice {
   font-size: 1.0em;
   font-weight: bold;
-  margin-left: 20px;
+  text-align: center;
 }
 
 .a {
