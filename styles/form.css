@@ -106,5 +106,5 @@ input[type="email"]:invalid {
     width: 80%;
     display: block;
     margin: 0 auto;
-    border: 10px solid #1C3F60;
+    border: 10px solid #1C3F60 !important;
 }

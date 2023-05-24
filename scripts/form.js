@@ -12,24 +12,24 @@ async function validateForm() {
       alert('Porfavor introduzca un email y mensaje valido.');
     } else {
 
-    var data = {
-      "users": [
-        {
-          "id": "",
-          "email": email,
-          "affair": affair,
-          "message": message,
-          "date": getDate,
-          "time": getTime
-        }
-      ]
-    };
+      var data = {
+        "users": [
+          {
+            "id": "",
+            "email": email,
+            "affair": affair,
+            "message": message,
+            "date": getDate,
+            "time": getTime
+          }
+        ]
+      };
 
-    await createData(JSON.stringify(data));
-    alert('Se ha subido correctamente.');
-    form.reset();
+      await createData(JSON.stringify(data));
+      alert('Se ha subido correctamente.');
+      form.reset();
 
-  }
+    }
   });
 }
 
@@ -56,17 +56,21 @@ function showMap() {
     if (isMapVisible) {
       mapContainer.style.display = "none";
       buttonContainer.style.display = "none";
-     
+
     } else {
       mapContainer.style.display = "block";
       buttonContainer.style.display = "flex";
-      
+
     }
     isMapVisible = !isMapVisible;
   });
+
+  mapButton.addEventListener('click', () => {
+    buttonContainer.scrollIntoView({ behavior: 'smooth' });
+  });
 }
 
-  showMap();
+showMap();
 
 
 
