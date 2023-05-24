@@ -172,8 +172,19 @@ td {
     justify-content: center;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 980px) {
     .name-item{
         font-size: 10px;
+    }
+    #footer-container{
+        flex-wrap: nowrap;
+    }
+
+    #total-container{
+        gap: 1rem;
+    }
+
+    .btn-lg, #total-text{
+        font-size: 15px !important;
     }
 }
