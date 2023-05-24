@@ -1,5 +1,6 @@
 const cartURL = "https://getpantry.cloud/apiv1/pantry/f05c7024-db22-4ef2-9691-d82f3c50cd0e/basket/cart-shopping";
 const formURL = "https://getpantry.cloud/apiv1/pantry/f05c7024-db22-4ef2-9691-d82f3c50cd0e/basket/form";
+const fullStock = 15;
 
 var arrayCartUsers = [];
 var arrayCartItems = [];
@@ -293,7 +294,7 @@ async function restock() {
     var items = await giveItems();
 
     items.items.forEach(item => {
-        item.stock = 999;
+        item.stock = fullStock;
     });
 
     await uploadItems(JSON.stringify(items));
