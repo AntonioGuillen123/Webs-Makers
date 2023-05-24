@@ -15,15 +15,6 @@ async function youAreAdmin() {
         sessionStorage.setItem("firstTime", true);
     }
 
-    /* window.addEventListener("beforeunload", () => {
-        var currentUrl = window.location.href;
-        var splitUrl = currentUrl.split('/');
-
-        if (splitUrl[4] != "admin.html") {
-            sessionStorage.setItem("firstTime", true);
-        }
-    }); */
-
     await getItems();
     await getUsers();
 }
@@ -298,4 +289,48 @@ async function restock() {
     });
 
     await uploadItems(JSON.stringify(items));
+}
+
+function confirmDeleteUserShop() {
+    var accept = confirm("¿Seguro que quieres eliminar las compras del usuario?");
+
+    if (accept) {
+        deleteUserShop();
+    }
+    else{
+        alert("No se ha borrado nada");
+    }
+}
+
+function confirmDeleteUserMessage() {
+    var accept = confirm("¿Seguro que quieres eliminar los mensajes del usuario?");
+
+    if (accept) {
+        deleteUserMessage();
+    }
+    else{
+        alert("No se ha borrado nada");
+    }
+}
+
+function confirmDeleteAllShops() {
+    var accept = confirm("¿Seguro que quieres eliminar todas las compras?");
+
+    if (accept) {
+        deleteAllShops();
+    }
+    else{
+        alert("No se ha borrado nada");
+    }
+}
+
+function confirmDeleteAllMessages() {
+    var accept = confirm("¿Seguro que quieres eliminar todos los mensajes?");
+
+    if (accept) {
+        deleteAllMessages();
+    }
+    else{
+        alert("No se ha borrado nada");
+    }
 }
