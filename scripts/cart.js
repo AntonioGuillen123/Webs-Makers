@@ -76,7 +76,7 @@ function createItems(items, itemsContainer) {
         imageContainer.classList.add("image-container");
 
         var imageItem = document.createElement("img");
-        imageItem.src = `../images/${item.item.imageUrl}.png`;
+        imageItem.src = `../images/productsImg/${item.item.imageUrl}.png`;
         imageItem.classList.add("image-item");
 
         var itemName = document.createElement("td");
