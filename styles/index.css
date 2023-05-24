@@ -123,6 +123,11 @@
   #slogan{
     text-align: center;
   }
+
+  .col-md-5{
+    margin: 0 !important;
+    margin-top: 1vh !important;
+  }
 }
 
 #move {
