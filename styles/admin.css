@@ -17,12 +17,8 @@
     border-radius: 10px;
 }
 
-.submit {
-    background-color: rgb(0, 74, 173);
-    color: #fff;
-}
-
-#delete-shop, #delete-message{
+#delete-shop,
+#delete-message {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -35,8 +31,7 @@
 }
 
 .delete-all button {
-    color: rgb(43, 105, 187);
-    text-shadow: 0 0 8px black;
+    max-width: 73%;
 }
 
 .delete-all {
@@ -45,15 +40,19 @@
     margin-top: 8%;
 }
 
+.delete-button {
+    width: 73%;
+}
+
 #shop-and-messages {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
 #shops,
 #messages {
     margin-top: 2%;
-    background: rgb(0,74,173);
+    background: rgb(0, 74, 173);
     color: white;
     font-weight: bold;
     padding: 15px;
@@ -63,5 +62,54 @@
 }
 
 @media(max-width:480px) {
-    
+    #all {
+        display: flex;
+        align-items: baseline;
+    }
+
+    #usersItems,
+    #usersContact {
+        width: 30%;
+    }
+
+    #usersItems {
+        margin-right: -4%;
+    }
+
+    #usersContact {
+        margin-left: -4.5%;
+    }
+
+    .user-id {
+        width: 75%;
+        margin-left: -1%;
+    }
+
+    #delete-shop,
+    #delete-message {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: normal;
+    }
+
+    .delete-button {
+        width: 75%;
+    }
+
+    .delete-all {
+        justify-content: normal;
+        margin-top: 8%;
+    }
+
+    .delete-all button {
+        width: 75%;
+    }
+
+    #form-shops {
+        margin-left: 5%;
+    }
+
+    #form-messages {
+        margin-left: -4%;
+    }
 }
