@@ -132,12 +132,14 @@
 }
 
 #fewUnits {
-  width: 800px;
-  height: auto;
-  margin: auto;
-  padding: 20px;
-
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 100%);
+  gap: 3vw;
+  margin: 10vw;
+  justify-content: center;
 }
+
+
 
 .title {
   text-align: center;
