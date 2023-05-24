@@ -112,6 +112,9 @@
   .toolsContainer {
     width: 100%;
   }
+  #slogan{
+    text-align: center;
+  }
 }
 
 #move {
