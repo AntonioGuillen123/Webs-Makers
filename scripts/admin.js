@@ -49,7 +49,7 @@ function viewCartUsers() {
             user.style.borderRadius = "8px";
             user.style.backgroundColor = "rgb(28, 63, 96)";
             user.style.color = "white";
-            user.style.marginTop = "2%";
+            user.style.marginTop = "5%";
             var userName = document.createElement("div");
             var userDate = document.createElement("div");
             var userId = document.createElement("div");
@@ -105,7 +105,7 @@ function viewFormUsers() {
             user.style.borderRadius = "8px";
             user.style.backgroundColor = "rgb(28, 63, 96)";
             user.style.color = "white";
-            user.style.marginTop = "2%";
+            user.style.marginTop = "5%";
             var userEmail = document.createElement("div");
             var userAffair = document.createElement("div");
             var userMessage = document.createElement("div");
