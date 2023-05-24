@@ -1,10 +1,5 @@
 var productList;
 
-/*Esto es una prueba para enviar los items al carrito*/
-// EL JSON TIENE QUE TRAER UN ARRAY DE OBJETOS, EN CADA OBJETO TIENE QUE HABER UNA SINTAXIS COMO LA DE ABAJO, ES DECIR,
-// TIENE QUE APARECER UN OBJETO CON EL PRODUCTO Y LA CANTIDAD DE ESTE
-// TAMBIÉN IDEA DE VARIABLE EN EL MAIN PARA TODOS QUE SALGA EL CARRITO DE COMPRA EN TODDAS LAS VISTAS Y CADA VEZ QUE SE LE SUME UNO U SE LE RESTE, SE CAMBIE
-
 var shoppingCart = [];
 
 const countProduct = 1;
@@ -145,9 +140,6 @@ function eventListener() {
     }
 
 
-    // DE MOMENTO SE QUEDA ASÍ PERO LUEGO HABRÁ QUE HACER EL CODIGO MÁS EFICIENTE Y LUEGO COMPROBAR
-    // QUE A LA HORA DE SUMAR Y RESTAR NI SE PASE PARA ARRIBA NI PARA ABAJO :) | :(
-
     var plusBtn = document.getElementsByClassName("plus");
 
     for (let i = 0; i < plusBtn.length; i++) {
@@ -287,7 +279,7 @@ function checkButtons() {
         if (item.stock === 0) {
             var productBtn = document.querySelector(`[id='${productId}'].btn-to-cart`);
             productBtn.setAttribute("disabled", "");
-        } else if(takeAmountProduct(productId) + productInputCount.value >= item.stock ){
+        } else if (takeAmountProduct(productId) + productInputCount.value >= item.stock) {
             var productBtn = document.querySelector(`[id='${productId}'].btn-to-cart`);
             productBtn.setAttribute("disabled", "");
         }
