@@ -17,7 +17,7 @@ h2 {
 form {
     width: 450px;
     margin: auto;
-    background: rgb(28,63,96);
+    background: rgb(28, 63, 96);
     padding: 10px 20px;
     box-sizing: border-box;
     margin-top: 20px;
@@ -51,6 +51,7 @@ textarea {
     border-radius: 8px;
     cursor: pointer;
 }
+
 input[type="email"]:invalid {
     border-color: red;
 }
@@ -58,37 +59,35 @@ input[type="email"]:invalid {
 
 #map-container {
     display: none;
-    
-    width: 500px;
-    position:relative;
-    margin:auto;
+    position: relative;
+    margin: auto;
     padding: 20px;
-    
-    
+    width: 100%;
+    margin-top: 5vh;
 }
 
 
 
-  .contact-info {
-    padding: 20px;
+.contact-info {
+    padding: 20px;  
     border-radius: 15px;
     width: 320px;
     height: 100%;
     text-align: left;
     margin: auto;
     color: white;
-    background-color: rgb(28,63,96);
-  }
-  
-  .contact-info p {
-    margin: 0 0 10px 0;
-  }
-  
-  .contact-info strong {
-    font-weight: bold;
-  }
+    background-color: rgb(28, 63, 96);
+}
 
-  
+.contact-info p {
+    margin: 0 0 10px 0;
+}
+
+.contact-info strong {
+    font-weight: bold;
+}
+
+
 
 @media(max-width:480px) {
     form {
@@ -96,9 +95,16 @@ input[type="email"]:invalid {
     }
 }
 
-@media(min-width: 700px){
-    .container{
+@media(min-width: 700px) {
+    .container {
         display: flex;
 
     }
+}
+
+#iframe {
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+    border: 10px solid #1C3F60 !important;
 }

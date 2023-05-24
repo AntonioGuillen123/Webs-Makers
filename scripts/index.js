@@ -70,7 +70,7 @@ async function checkStock() {
 
             var productPhoto = items.items[i].imageUrl;
             var img = document.createElement("img");
-            img.src = `images/${productPhoto}.png`;
+            img.src = `images/productsImg/${productPhoto}.png`;
             img.classList.add("productImage");
             divProduct.appendChild(img);
 
