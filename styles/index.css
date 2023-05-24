@@ -36,6 +36,14 @@
   src: url(fonts/Semakin.otf);
 }
 
+.col-md-5{
+  margin: 8px !important;
+}
+
+#shopImg{
+  border-radius: 15px !important;
+}
+
 #slogan {
   font-family: slogan;
   color: rgb(0, 74, 173);
@@ -249,7 +257,8 @@
   margin-bottom: 10vh;
   width: 90%;
   margin-top: 5vh;
-  background: rgb(19, 156, 235);
+  background: rgb(0,74,173);
+  color: white;
 }
 
 #img-text-container div {
