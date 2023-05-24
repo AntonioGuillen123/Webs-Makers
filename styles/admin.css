@@ -1,6 +1,6 @@
 #all {
     display: flex;
-    align-items: flex-start;
+    align-items: baseline;
     justify-content: center;
 }
 
@@ -60,4 +60,8 @@
     border: 2px solid #717575;
     text-shadow: 0 0 8px black;
     border-radius: 15px !important;
+}
+
+@media(max-width:480px) {
+    
 }
