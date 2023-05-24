@@ -38,13 +38,13 @@
 
 #slogan {
   font-family: slogan;
-  color: rgb(0,74,173);
+  color: rgb(0, 74, 173);
   -webkit-text-stroke: 1px black;
   font-size: 250%;
 }
 
-#slogan-name{
-  color: rgb(28,63,96);
+#slogan-name {
+  color: rgb(28, 63, 96);
 }
 
 #image {
@@ -58,7 +58,7 @@
   margin-top: 100px;
   margin-bottom: 100px;
   background: black;
-  
+
 }
 
 #background1 {
@@ -249,4 +249,34 @@
 #textImg {
   display: flex;
   align-items: center;
+}
+
+#img-text-container {
+  transition: all 0.3s;
+  border-radius: 10px;
+  margin-bottom: 10vh;
+  width: 90%;
+}
+
+#img-text-container div {
+  display: flex;
+  align-items: center;
+}
+
+#shopImg {
+  width: 100%;
+}
+
+#shop-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+.title{
+  font-family: cursive;
+  font-weight: bold;
+  font-size: 2rem;
 }
