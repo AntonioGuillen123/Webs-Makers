@@ -4,29 +4,32 @@ async function startIndex() {
 }
 
 function enterAdmin() {
-    var logo = document.getElementById("logoImg");
-    var go = false;
+    var logo = document.getElementById("logoImg")
+    var go = false
+    let timeOut
 
     logo.addEventListener("mouseover", () => {
-        go = true;
+        go = true
 
-        logo.style.transform = "rotate(360deg)";
+        logo.style.transform = "rotate(360deg)"
 
-        setTimeout(() => {
+        clearTimeout(timeOut)
+
+        timeOut = setTimeout(() => {
             if (go) {
                 logo.style.transform = "none";
 
                 setTimeout(() => {
                     window.location.href = "pages/password.html";
-                }, 1000);
+                }, 1000)
             }
-        }, 8000);
+        }, 8000)
     });
 
     logo.addEventListener("mouseleave", () => {
-        go = false;
+        go = false
 
-        logo.style.transform = "none";
+        logo.style.transform = "none"
     });
 }
 
